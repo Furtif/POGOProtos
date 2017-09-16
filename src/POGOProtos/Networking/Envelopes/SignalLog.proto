@@ -3,11 +3,8 @@ package POGOProtos.Networking.Envelopes;
 
 message SignalLog {
     repeated bytes field1 = 1;
-
     int64 timestamp_ms_since_start = 2;
-
     string device_id = 3; // nia.hardware.SignalLog.device_id
-
     repeated LocationUpdate location_updates = 4; // Multiple location updates at a time. This is all the updates since the last time we sent a request
     repeated AndroidGpsInfo android_gps_info = 5;
     repeated Activity activities = 6;
@@ -15,7 +12,6 @@ message SignalLog {
     DeviceInformation device_info = 8; // device info - need to find this still to verify everything
     IOSDeviceInfo ios_device_info = 9; // iOS only - likely device capabilities? (Or even simpler being iOS device version flags)
     int32 location_hash_by_token_seed = 10; // Hashed location using the auth token as the seed (hashed auth token -> location hash seed)
-
     bool field11 = 11;
     bool field12 = 12;
     int32 field13 = 13;
@@ -28,7 +24,6 @@ message SignalLog {
     int32 location_hash = 20;
     bool field21 = 21;
     bytes field22 = 22; // 32 random bytes, unique per session.
-
     int64 epoch_timestamp_ms = 23;
     repeated int64 request_hashes = 24; // hashes of each request message in a hashArray signed based on the auth_token or auth_info
     int64 version_hash = 25; // Grover_c13 claims this is a xxHash64 of a SHA1 for the current version of the game? Yet to be confirmed, but possible.
@@ -43,7 +38,6 @@ message Activity {
     int32 automotive = 6;
     int32 tilting = 7;
     int32 cycling = 8;
-
     Status status = 9;
 
     enum Status {
