@@ -4,14 +4,14 @@ package POGOProtos.Networking.Responses;
 import "POGOProtos/Data/Raid/Lobby.proto";
 
 message SetLobbyVisibilityResponse {
-    Result result = 1;
-    .POGOProtos.Data.Raid.Lobby lobby = 2;
+	Result result = 1;
+	.POGOProtos.Data.Raid.Lobby lobby = 2;
 
-    enum Result {
-        UNSET = 0;
-        SUCCESS = 1;
-        ERROR_NOT_LOBBY_CREATOR = 2;
-        ERROR_LOBBY_NOT_FOUND = 3;
-        ERROR_RAID_UNAVAILABLE = 4;
-    }
+	enum Result {
+		UNSET = 0;
+		SUCCESS = 1;
+		ERROR_NOT_LOBBY_CREATOR = 2;
+		ERROR_LOBBY_NOT_FOUND = 3;
+		ERROR_RAID_UNAVAILABLE = 4;
+	}
 }
