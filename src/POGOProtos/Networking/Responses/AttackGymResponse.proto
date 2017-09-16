@@ -6,17 +6,17 @@ import "POGOProtos/Data/Battle/BattlePokemonInfo.proto";
 import "POGOProtos/Data/Battle/BattleUpdate.proto";
 
 message AttackGymResponse {
-	.POGOProtos.Networking.Responses.AttackGymResponse.Result result = 1;
-	.POGOProtos.Data.Battle.BattleLog battle_log = 2;
-	string battle_id = 3;
-	.POGOProtos.Data.Battle.BattlePokemonInfo active_defender = 4;
-	.POGOProtos.Data.Battle.BattlePokemonInfo active_attacker = 5;
-	.POGOProtos.Data.Battle.BattleUpdate battle_update = 6;
+    .POGOProtos.Networking.Responses.AttackGymResponse.Result result = 1;
+    .POGOProtos.Data.Battle.BattleLog battle_log = 2;
+    string battle_id = 3;
+    .POGOProtos.Data.Battle.BattlePokemonInfo active_defender = 4;
+    .POGOProtos.Data.Battle.BattlePokemonInfo active_attacker = 5;
+    .POGOProtos.Data.Battle.BattleUpdate battle_update = 6;
 
-	enum Result {
-		UNSET = 0;
-		SUCCESS = 1;
-		ERROR_INVALID_ATTACK_ACTIONS = 2;
-		ERROR_NOT_IN_RANGE = 3;
-	}
+    enum Result {
+        UNSET = 0;
+        SUCCESS = 1;
+        ERROR_INVALID_ATTACK_ACTIONS = 2;
+        ERROR_NOT_IN_RANGE = 3;
+    }
 }
