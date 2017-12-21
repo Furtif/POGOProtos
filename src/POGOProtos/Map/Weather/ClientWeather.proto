@@ -6,7 +6,7 @@ import "POGOProtos/Map/Weather/GameplayWeather.proto";
 import "POGOProtos/Map/Weather/WeatherAlert.proto";
 
 message ClientWeather {
-	int64 s2_cell_id = 1;
+	uint64 s2_cell_id = 1;
 	.POGOProtos.Map.Weather.DisplayWeather display_weather = 2;
 	.POGOProtos.Map.Weather.GameplayWeather gameplay_weather = 3;
 	repeated .POGOProtos.Map.Weather.WeatherAlert alerts = 4;
