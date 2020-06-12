@@ -4,7 +4,7 @@ package POGOProtos.Networking.Requests.Messages;
 import "POGOProtos/Data/Sticker/StickerSent.proto";
 
 message SendGiftMessage {
-	fixed64 giftbox_id = 1;
+	uint64 giftbox_id = 1;
 	string player_id = 2;
 	repeated .POGOProtos.Data.Sticker.StickerSent stickers_sent = 3;
 }

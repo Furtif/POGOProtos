@@ -4,7 +4,7 @@ package POGOProtos.Data.Gift;
 import "POGOProtos/Data/Sticker/StickerSent.proto";
 
 message GiftBoxDetails {
-	fixed64 giftbox_id = 1;
+	uint64 giftbox_id = 1;
 	string sender_id = 2;
 	string sender_codename = 3;
 	string receiver_id = 4;

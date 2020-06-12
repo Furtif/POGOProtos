@@ -2,6 +2,6 @@ syntax = "proto3";
 package POGOProtos.Networking.Requests.Messages;
 
 message GiftDetailsMessage {
-	repeated fixed64 giftbox_id = 1;
+	repeated uint64 giftbox_id = 1;
 	string player_id = 2;
 }

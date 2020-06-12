@@ -3,5 +3,5 @@ package POGOProtos.Networking.Requests.Messages;
 
 message DeleteGiftMessage {
 	string player_id = 1;
-	fixed64 giftbox_id = 2;
+	uint64 giftbox_id = 2;
 }
