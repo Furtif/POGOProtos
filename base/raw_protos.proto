@@ -10654,7 +10654,7 @@ message GiftBoxesProto {
 
 // ref: Holoholo.Rpc.GiftBoxProto
 message GiftBoxProto {
-	fixed64 giftbox_id = 1;
+	int64 giftbox_id = 1;
 	string sender_id = 2;
 	string receiver_id = 3;
 	string fort_id = 4;
