@@ -8782,7 +8782,7 @@ message PlayerData {
 	DailyBonusProto daily_bonus = 11;
 	EquippedBadgeProto equipped_badge = 12;
 	ContactSettingsProto contact_settings = 13;
-	repeated CurrencyQuantityProto currency_balance = 14;
+	repeated CurrencyQuantity currency_balance = 14;
 	int32 remaining_codename_claims = 15;
 	BuddyPokemonProto buddy_pokemon = 16;
 	int64 battle_lockout_end_ms = 17;
@@ -13038,7 +13038,7 @@ message LONMBONDPEP {
 	string gdhnjegbchh = 1;
 }
 
-message CurrencyQuantityProto {
+message CurrencyQuantity {
 	string currency_type = 1;
 	int32 quantity = 2;
 	int32 fiat_purchased_quantity = 3;
