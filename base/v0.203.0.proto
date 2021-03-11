@@ -350,11 +350,6 @@ enum DeviceServiceTelemetryIds {
 	DEVICE_SERVICE_TELEMETRY_IDS_ADVENTURE_SYNC = 5;
 }
 
-enum EBCFGJONPDB {
-	EBCFGJONPDB_REGULAR = 0;
-	EBCFGJONPDB_BELUGA = 1;
-}
-
 enum ECBCJBDICOM {
 	ECBCJBDICOM_DEFAULT = 0;
 	ECBCJBDICOM_NICE = 1;
@@ -3646,6 +3641,11 @@ enum RemoteRaidTelemetryIds {
 enum RouteType {
 	ROUTE_TYPE_ORGANIC = 0;
 	ROUTE_TYPE_OFFICIAL = 1;
+}
+
+enum SelectMode {
+	SELECT_MODE_REGULAR = 0;
+	SELECT_MODE_BELUGA = 1;
 }
 
 enum SfidaConnectState {

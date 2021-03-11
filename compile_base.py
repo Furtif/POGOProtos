@@ -647,11 +647,14 @@ def open_proto_file(main_file, head):
             messages_dic.setdefault(proto_line.split(" ")[0].strip(), "Status")
         elif operator.contains(proto_line, "CHARACTER_BLANCHE = 1;") and len(proto_name) == 11 and proto_name.isupper():
             messages_dic.setdefault(proto_name, "InvasionCharacter")
+
         ## Needs double clean or rebuild for auto mode..
         elif operator.contains(proto_line, "PLATINUM = 4;") and len(proto_name) == 11 and proto_name.isupper():
             messages_dic.setdefault(proto_name, "BadgeRank")
         elif operator.contains(proto_line, "_GEN8 = 7;") and len(proto_name) == 11 and proto_name.isupper():
             messages_dic.setdefault(proto_name, "PokedexGenerationId")
+        elif operator.contains(proto_line, "BELUGA = 1;") and len(proto_name) == 11 and proto_name.isupper():
+            messages_dic.setdefault(proto_name, "SelectMode")
 
         if operator.contains(proto_line, "{") and len(proto_name) == 11 and proto_name.isupper():
             if operator.contains(proto_line, "oneof "):
@@ -666,6 +669,8 @@ def open_proto_file(main_file, head):
             messages_dic.setdefault("BadgeRank_", "BADGE_RANK_")
         elif proto_name == "PokedexGenerationId" and operator.contains(proto_line, "PokedexGenerationId_") and not operator.contains(proto_line, "{"):
             messages_dic.setdefault("PokedexGenerationId_", "POKEDEX_GENERATION_ID_")
+        elif proto_name == "SelectMode" and operator.contains(proto_line, "SelectMode_") and not operator.contains(proto_line, "{"):
+            messages_dic.setdefault("SelectMode_", "SELECT_MODE_")
 
 
     ## fix messages obfuscated names
