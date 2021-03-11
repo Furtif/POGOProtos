@@ -160,22 +160,22 @@ with open(base_file, 'r') as proto_file:
         if base_as_data:
             base_data += proto_line
 
-try:
-    os.remove(base_file)
-except OSError:
-    pass
-
-open_for_new = open(base_file, 'a')
-new_base_file = head
-
-# Re-order base
-for p in sorted(base_enums):
-    new_base_file += base_enums[p] + "\n"
-for p in sorted(base_messages):
-    new_base_file += base_messages[p] + "\n"
-
-open_for_new.writelines(new_base_file[:-1])
-open_for_new.close()
+# try:
+#     os.remove(base_file)
+# except OSError:
+#     pass
+#
+# open_for_new = open(base_file, 'a')
+# new_base_file = head
+#
+# # Re-order base
+# for p in sorted(base_enums):
+#     new_base_file += base_enums[p] + "\n"
+# for p in sorted(base_messages):
+#     new_base_file += base_messages[p] + "\n"
+#
+# open_for_new.writelines(new_base_file[:-1])
+# open_for_new.close()
 
 # Clean up previous out
 try:
