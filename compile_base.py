@@ -647,6 +647,8 @@ def open_proto_file(main_file, head):
             messages_dic.setdefault(proto_line.split(" ")[0].strip(), "Status")
         elif operator.contains(proto_line, "CHARACTER_BLANCHE = 1;") and len(proto_name) == 11 and proto_name.isupper():
             messages_dic.setdefault(proto_name, "InvasionCharacter")
+        elif operator.contains(proto_line, "PLATINUM = 4;") and len(proto_name) == 11 and proto_name.isupper():
+            messages_dic.setdefault(proto_name, "BadgeRank")
 
         if operator.contains(proto_line, "{") and len(proto_name) == 11 and proto_name.isupper():
             if operator.contains(proto_line, "oneof "):
@@ -656,10 +658,15 @@ def open_proto_file(main_file, head):
             else:
                 print("Enum: " + proto_name)
 
+        ## clean some after conditions...
+        if proto_name == "BadgeRank" and operator.contains(proto_line, "BadgeRank_") and not operator.contains(proto_line, "{"):
+            messages_dic.setdefault("BadgeRank_", "BADGE_RANK_") ## ok in double build gen vx.xxx.x
+
+
     ## fix messages obfuscated names
     # print("Cleaning process on messages...")
     for _message in messages_dic:
-        # print("Obfuscated message name " + _message + " clean message name " + messages_dic[_message])
+        print("Cleaned obfuscated message name " + _message + " clean message name " + messages_dic[_message])
         messages = messages.replace(_message, messages_dic[_message])
 
     ## Reorder all this...
