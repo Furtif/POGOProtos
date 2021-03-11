@@ -664,7 +664,7 @@ def open_proto_file(main_file, head):
             else:
                 print("Enum: " + proto_name)
 
-        ## clean some after conditions, ok in double build gen vx.xxx.x...
+        ## clean some after conditions, ok in double build gen vx.xxx.x... (enums only stuff)
         if proto_name == "BadgeRank" and operator.contains(proto_line, "BadgeRank_") and not operator.contains(proto_line, "{"):
             messages_dic.setdefault("BadgeRank_", "BADGE_RANK_")
         elif proto_name == "PokedexGenerationId" and operator.contains(proto_line, "PokedexGenerationId_") and not operator.contains(proto_line, "{"):
