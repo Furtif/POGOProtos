@@ -663,6 +663,12 @@ def open_proto_file(main_file, head):
             messages_dic.setdefault(proto_name, "AdFeedbackLikeReason")
         elif operator.contains(proto_line, "FOLLOW_Z = 4;") and len(proto_name) == 11 and proto_name.isupper():
             messages_dic.setdefault(proto_name, "POIDecorationFollowFlags")
+        elif operator.contains(proto_line, "STARDUST = 2;") and len(proto_name) == 11 and proto_name.isupper():
+            messages_dic.setdefault(proto_name, "CurrencyType")
+        elif operator.contains(proto_line, "CLIENT_TIME_ZONE_DISABLE_MS = 6;") and len(proto_name) == 11 and proto_name.isupper():
+            messages_dic.setdefault(proto_name, "PresentationType")
+        elif operator.contains(proto_line, "PERMISSION_DENIED = -2") and len(proto_name) == 11 and proto_name.isupper():
+            messages_dic.setdefault(proto_name, "CalendarAddResult")
 
         # clean some after conditions, ok in double build gen vx.xxx.x... (enums only stuff)
         if proto_name == "BadgeRank" and operator.contains(proto_line, "BadgeRank_") and not operator.contains(proto_line, "{"):
@@ -677,6 +683,12 @@ def open_proto_file(main_file, head):
             messages_dic.setdefault("AdFeedbackLikeReason_", "")
         elif proto_name == "POIDecorationFollowFlags" and operator.contains(proto_line, "POIDecorationFollowFlags_") and not operator.contains(proto_line, "{"):
             messages_dic.setdefault("POIDecorationFollowFlags_", "POI_DECORATION_FOLLOW_FLAGS_")
+        elif proto_name == "CurrencyType" and operator.contains(proto_line, "CurrencyType_") and not operator.contains(proto_line, "{"):
+            messages_dic.setdefault("CurrencyType_", "CURRENCY_TYPE_")
+        elif proto_name == "PresentationType" and operator.contains(proto_line, "PresentationType_") and not operator.contains(proto_line, "{"):
+            messages_dic.setdefault("PresentationType_", "PRESENTATION_TYPE_")
+        elif proto_name == "CalendarAddResult" and operator.contains(proto_line, "CalendarAddResult_") and not operator.contains(proto_line, "{"):
+            messages_dic.setdefault("CalendarAddResult_", "CALENDAR_ADD_RESULT_")
         ##
 
         ## shows still obfuscated
