@@ -648,13 +648,15 @@ def open_proto_file(main_file, head):
         elif operator.contains(proto_line, "CHARACTER_BLANCHE = 1;") and len(proto_name) == 11 and proto_name.isupper():
             messages_dic.setdefault(proto_name, "InvasionCharacter")
 
-        ## Needs double clean or rebuild for auto mode..
+        ## Needs double clean or rebuild for auto mode... (enums only stuff)
         elif operator.contains(proto_line, "PLATINUM = 4;") and len(proto_name) == 11 and proto_name.isupper():
             messages_dic.setdefault(proto_name, "BadgeRank")
         elif operator.contains(proto_line, "_GEN8 = 7;") and len(proto_name) == 11 and proto_name.isupper():
             messages_dic.setdefault(proto_name, "PokedexGenerationId")
         elif operator.contains(proto_line, "BELUGA = 1;") and len(proto_name) == 11 and proto_name.isupper():
             messages_dic.setdefault(proto_name, "SelectMode")
+        elif operator.contains(proto_line, "AD_FEEDBACK_NOT_INTERESTED_REASON_INVALID = 0;") and len(proto_name) == 11 and proto_name.isupper():
+            messages_dic.setdefault(proto_name, "AdFeedbackNotInterestedReason")
 
         if operator.contains(proto_line, "{") and len(proto_name) == 11 and proto_name.isupper():
             if operator.contains(proto_line, "oneof "):
@@ -671,6 +673,8 @@ def open_proto_file(main_file, head):
             messages_dic.setdefault("PokedexGenerationId_", "POKEDEX_GENERATION_ID_")
         elif proto_name == "SelectMode" and operator.contains(proto_line, "SelectMode_") and not operator.contains(proto_line, "{"):
             messages_dic.setdefault("SelectMode_", "SELECT_MODE_")
+        elif proto_name == "AdFeedbackNotInterestedReason" and operator.contains(proto_line, "AdFeedbackNotInterestedReason_") and not operator.contains(proto_line, "{"):
+            messages_dic.setdefault("AdFeedbackNotInterestedReason_", "")
 
 
     ## fix messages obfuscated names
