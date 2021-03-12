@@ -655,9 +655,10 @@ def open_proto_file(main_file, head):
             messages_dic.setdefault(proto_name, "PokedexGenerationId")
         elif operator.contains(proto_line, "BELUGA = 1;") and len(proto_name) == 11 and proto_name.isupper():
             messages_dic.setdefault(proto_name, "SelectMode")
-        elif operator.contains(proto_line, "AD_FEEDBACK_NOT_INTERESTED_REASON_INVALID = 0;") and len(
-                proto_name) == 11 and proto_name.isupper():
+        elif operator.contains(proto_line, "AD_FEEDBACK_NOT_INTERESTED_REASON_INVALID = 0;") and len(proto_name) == 11 and proto_name.isupper():
             messages_dic.setdefault(proto_name, "AdFeedbackNotInterestedReason")
+        elif operator.contains(proto_line, "AD_FEEDBACK_LIKE_REASON_INVALID = 0;") and len(proto_name) == 11 and proto_name.isupper():
+            messages_dic.setdefault(proto_name, "AdFeedbackLikeReason")
         elif operator.contains(proto_line, "FOLLOW_Z = 4;") and len(proto_name) == 11 and proto_name.isupper():
             messages_dic.setdefault(proto_name, "POIDecorationFollowFlags")
 
@@ -670,28 +671,22 @@ def open_proto_file(main_file, head):
                 print("Enum: " + proto_name)
 
         ## clean some after conditions, ok in double build gen vx.xxx.x... (enums only stuff)
-        if proto_name == "BadgeRank" and operator.contains(proto_line, "BadgeRank_") and not operator.contains(
-                proto_line, "{"):
+        if proto_name == "BadgeRank" and operator.contains(proto_line, "BadgeRank_") and not operator.contains(proto_line, "{"):
             messages_dic.setdefault("BadgeRank_", "BADGE_RANK_")
-        elif proto_name == "PokedexGenerationId" and operator.contains(proto_line,
-                                                                       "PokedexGenerationId_") and not operator.contains(
-                proto_line, "{"):
+        elif proto_name == "PokedexGenerationId" and operator.contains(proto_line, "PokedexGenerationId_") and not operator.contains(proto_line, "{"):
             messages_dic.setdefault("PokedexGenerationId_", "POKEDEX_GENERATION_ID_")
-        elif proto_name == "SelectMode" and operator.contains(proto_line, "SelectMode_") and not operator.contains(
-                proto_line, "{"):
+        elif proto_name == "SelectMode" and operator.contains(proto_line, "SelectMode_") and not operator.contains(proto_line, "{"):
             messages_dic.setdefault("SelectMode_", "SELECT_MODE_")
-        elif proto_name == "AdFeedbackNotInterestedReason" and operator.contains(proto_line,
-                                                                                 "AdFeedbackNotInterestedReason_") and not operator.contains(
-                proto_line, "{"):
+        elif proto_name == "AdFeedbackNotInterestedReason" and operator.contains(proto_line, "AdFeedbackNotInterestedReason_") and not operator.contains(proto_line, "{"):
             messages_dic.setdefault("AdFeedbackNotInterestedReason_", "")
-        elif proto_name == "POIDecorationFollowFlags" and operator.contains(proto_line,
-                                                                            "POIDecorationFollowFlags_") and not operator.contains(
-                proto_line, "{"):
+        elif proto_name == "AdFeedbackLikeReason" and operator.contains(proto_line, "AdFeedbackLikeReason_") and not operator.contains(proto_line, "{"):
+            messages_dic.setdefault("AdFeedbackLikeReason_", "")
+        elif proto_name == "POIDecorationFollowFlags" and operator.contains(proto_line, "POIDecorationFollowFlags_") and not operator.contains(proto_line, "{"):
             messages_dic.setdefault("POIDecorationFollowFlags_", "POI_DECORATION_FOLLOW_FLAGS_")
 
+
     ## Others cleans..
-    messages_dic.setdefault("POI_DECORATION_FOLLOW_FLAGS_POI_DECORATION_FOLLOW_FLAGS_AUTO_INVALID",
-                            "POI_DECORATION_FOLLOW_FLAGS_UNSET")
+    messages_dic.setdefault("POI_DECORATION_FOLLOW_FLAGS_POI_DECORATION_FOLLOW_FLAGS_AUTO_INVALID", "POI_DECORATION_FOLLOW_FLAGS_UNSET")
 
     ## fix messages obfuscated names
     # print("Cleaning process on messages...")
@@ -721,12 +716,9 @@ def open_proto_file(main_file, head):
                 new_base_enums.setdefault(new_base_proto_name, new_base_data)
             else:
                 # fix Weather stuff
-                if new_base_proto_name == "WeatherAlertProto" and not operator.contains(new_base_data,
-                                                                                        "Severity severity = 1;"):
-                    new_base_data = new_base_data.replace("bool warn_weather = 2;",
-                                                          "Severity severity = 1;\n\tbool warn_weather = 2;")
-                if new_base_proto_name == "GameplayWeatherProto" and not operator.contains(new_base_data,
-                                                                                           "WeatherCondition gameplay_condition = 1;"):
+                if new_base_proto_name == "WeatherAlertProto" and not operator.contains(new_base_data, "Severity severity = 1;"):
+                    new_base_data = new_base_data.replace("bool warn_weather = 2;", "Severity severity = 1;\n\tbool warn_weather = 2;")
+                if new_base_proto_name == "GameplayWeatherProto" and not operator.contains(new_base_data, "WeatherCondition gameplay_condition = 1;"):
                     new_base_data = new_base_data.replace("\t}", "\t}\n\n\tWeatherCondition gameplay_condition = 1;")
                 new_base_messages.setdefault(new_base_proto_name, new_base_data)
             new_base_as_data = False
