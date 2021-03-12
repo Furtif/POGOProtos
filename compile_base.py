@@ -669,6 +669,8 @@ def open_proto_file(main_file, head):
             messages_dic.setdefault(proto_name, "PresentationType")
         elif operator.contains(proto_line, "PERMISSION_DENIED = -2") and len(proto_name) == 11 and proto_name.isupper():
             messages_dic.setdefault(proto_name, "CalendarAddResult")
+        elif operator.contains(proto_line, "GYM_REMOVAL = 1;") and len(proto_name) == 11 and proto_name.isupper():
+            messages_dic.setdefault(proto_name, "ClientInboxServiceNotificationCategory")
 
         # clean some after conditions, ok in double build gen vx.xxx.x... (enums only stuff)
         if proto_name == "BadgeRank" and operator.contains(proto_line, "BadgeRank_") and not operator.contains(proto_line, "{"):
@@ -689,6 +691,8 @@ def open_proto_file(main_file, head):
             messages_dic.setdefault("PresentationType_", "PRESENTATION_TYPE_")
         elif proto_name == "CalendarAddResult" and operator.contains(proto_line, "CalendarAddResult_") and not operator.contains(proto_line, "{"):
             messages_dic.setdefault("CalendarAddResult_", "CALENDAR_ADD_RESULT_")
+        elif proto_name == "ClientInboxServiceNotificationCategory" and operator.contains(proto_line, "ClientInboxServiceNotificationCategory_") and not operator.contains(proto_line, "{"):
+            messages_dic.setdefault("ClientInboxServiceNotificationCategory_", "CLIENT_INBOX_SERVICE_NOTIFICATION_CATEGORY_")
         ##
 
         ## shows still obfuscated
@@ -701,7 +705,7 @@ def open_proto_file(main_file, head):
                 print("Enum: " + proto_name)
         ##
 
-    ## Others cleans..
+    ## Others cleans if present..
     messages_dic.setdefault("POI_DECORATION_FOLLOW_FLAGS_POI_DECORATION_FOLLOW_FLAGS_AUTO_INVALID", "POI_DECORATION_FOLLOW_FLAGS_UNSET")
     ##
 
