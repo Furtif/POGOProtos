@@ -4,9 +4,11 @@
 import argparse
 import operator
 import os
-import re
+# import re
 import shutil
 from subprocess import call
+#import warnings
+#warnings.simplefilter('error')
 
 # Variables
 global_version = '0.203.0'
@@ -82,7 +84,7 @@ if gen_asset_digest is not None:
     for command in commands:
         call(command, shell=True)
 
-    exit(0);
+    exit(0)
 
 if gen_game_master is not None:
     if not os.path.exists(gen_game_master):
@@ -107,7 +109,7 @@ if gen_game_master is not None:
     for command in commands:
         call(command, shell=True)
 
-    exit(0);
+    exit(0)
 
 # Add licenses
 head = '/*\n'
@@ -662,15 +664,7 @@ def open_proto_file(main_file, head):
         elif operator.contains(proto_line, "FOLLOW_Z = 4;") and len(proto_name) == 11 and proto_name.isupper():
             messages_dic.setdefault(proto_name, "POIDecorationFollowFlags")
 
-        if operator.contains(proto_line, "{") and len(proto_name) == 11 and proto_name.isupper():
-            if operator.contains(proto_line, "oneof "):
-                print("OneOf: " + proto_name)
-            elif operator.contains(proto_line, "message "):
-                print("Message: " + proto_name)
-            else:
-                print("Enum: " + proto_name)
-
-        ## clean some after conditions, ok in double build gen vx.xxx.x... (enums only stuff)
+        # clean some after conditions, ok in double build gen vx.xxx.x... (enums only stuff)
         if proto_name == "BadgeRank" and operator.contains(proto_line, "BadgeRank_") and not operator.contains(proto_line, "{"):
             messages_dic.setdefault("BadgeRank_", "BADGE_RANK_")
         elif proto_name == "PokedexGenerationId" and operator.contains(proto_line, "PokedexGenerationId_") and not operator.contains(proto_line, "{"):
@@ -683,16 +677,28 @@ def open_proto_file(main_file, head):
             messages_dic.setdefault("AdFeedbackLikeReason_", "")
         elif proto_name == "POIDecorationFollowFlags" and operator.contains(proto_line, "POIDecorationFollowFlags_") and not operator.contains(proto_line, "{"):
             messages_dic.setdefault("POIDecorationFollowFlags_", "POI_DECORATION_FOLLOW_FLAGS_")
+        ##
 
+        ## shows still obfuscated
+        if operator.contains(proto_line, "{") and len(proto_name) == 11 and proto_name.isupper():
+            if operator.contains(proto_line, "oneof "):
+                print("OneOf: " + proto_name)
+            elif operator.contains(proto_line, "message "):
+                print("Message: " + proto_name)
+            else:
+                print("Enum: " + proto_name)
+        ##
 
     ## Others cleans..
     messages_dic.setdefault("POI_DECORATION_FOLLOW_FLAGS_POI_DECORATION_FOLLOW_FLAGS_AUTO_INVALID", "POI_DECORATION_FOLLOW_FLAGS_UNSET")
+    ##
 
     ## fix messages obfuscated names
     # print("Cleaning process on messages...")
     for _message in messages_dic:
         # print("Cleaned obfuscated message name " + _message + " clean message name " + messages_dic[_message])
         messages = messages.replace(_message, messages_dic[_message])
+    ##
 
     ## Reorder all this...
     new_base_enums = {}
@@ -754,6 +760,7 @@ def open_proto_file(main_file, head):
             open_for_new_message.writelines(head_file)
             open_for_new_message.writelines(new_base_messages[p])
             open_for_new_message.close()
+    ##
 
     ## find imports ..
     if head_file is not None:
