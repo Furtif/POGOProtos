@@ -683,6 +683,8 @@ def open_proto_file(main_file, head):
             messages_dic.setdefault(proto_name, "UpdateType")
         elif operator.contains(proto_line, "RESTRICTION_VIOLATION = 3;") and len(proto_name) == 11 and proto_name.isupper():
             messages_dic.setdefault(proto_name, "BannedPlayerReason")
+        elif operator.contains(proto_line, "AD_FEEDBACK_COMPLAINT_REASON_INVALID = 0;") and len(proto_name) == 11 and proto_name.isupper():
+            messages_dic.setdefault(proto_name, "AdFeedbackComplaintReason")
 
         # clean some after conditions, ok in double build gen vx.xxx.x... (enums only stuff)
         if proto_name == "BadgeRank" and operator.contains(proto_line, "BadgeRank_") and not operator.contains(proto_line, "{"):
@@ -717,6 +719,8 @@ def open_proto_file(main_file, head):
             messages_dic.setdefault("UpdateType_", "UPDATE_TYPE_")
         elif proto_name == "BannedPlayerReason" and operator.contains(proto_line, "BannedPlayerReason_") and not operator.contains(proto_line, "{"):
             messages_dic.setdefault("BannedPlayerReason_", "BANNED_PLAYER_REASON_")
+        elif proto_name == "AdFeedbackComplaintReason" and operator.contains(proto_line, "AdFeedbackComplaintReason_") and not operator.contains(proto_line, "{"):
+            messages_dic.setdefault("AdFeedbackComplaintReason_", "")
         ##
 
         ## shows still obfuscated
