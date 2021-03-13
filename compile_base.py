@@ -1,5 +1,4 @@
 #!/usr/bin/env python
-# This Python file uses the following encoding: utf-8
 
 import argparse
 import operator
@@ -162,6 +161,7 @@ with open(base_file, 'r') as proto_file:
         if base_as_data:
             base_data += proto_line
 
+# not needed because last base.proto file is already by order alpha..
 # try:
 #     os.remove(base_file)
 # except OSError:
@@ -675,6 +675,14 @@ def open_proto_file(main_file, head):
             messages_dic.setdefault(proto_name, "IncidentDynamicStringTypes")
         elif operator.contains(proto_line, "CONTINUE_BATTLE = 2;") and len(proto_name) == 11 and proto_name.isupper():
             messages_dic.setdefault(proto_name, "BattleResultsExit")
+        elif operator.contains(proto_line, "SURROUNDING = 2;") and len(proto_name) == 11 and proto_name.isupper():
+            messages_dic.setdefault(proto_name, "PoiImageType")
+        elif operator.contains(proto_line, "MY_POKEMON_FOCUS = 3;") and len(proto_name) == 11 and proto_name.isupper():
+            messages_dic.setdefault(proto_name, "CameraType")
+        elif operator.contains(proto_line, "ROLLED_BACK_REMOVE = 6;") and len(proto_name) == 11 and proto_name.isupper():
+            messages_dic.setdefault(proto_name, "UpdateType")
+        elif operator.contains(proto_line, "RESTRICTION_VIOLATION = 3;") and len(proto_name) == 11 and proto_name.isupper():
+            messages_dic.setdefault(proto_name, "BannedPlayerReason")
 
         # clean some after conditions, ok in double build gen vx.xxx.x... (enums only stuff)
         if proto_name == "BadgeRank" and operator.contains(proto_line, "BadgeRank_") and not operator.contains(proto_line, "{"):
@@ -701,6 +709,14 @@ def open_proto_file(main_file, head):
             messages_dic.setdefault("IncidentDynamicStringTypes_", "INCIDENT_DYNAMIC_STRING_TYPES_")
         elif proto_name == "BattleResultsExit" and operator.contains(proto_line, "BattleResultsExit_") and not operator.contains(proto_line, "{"):
             messages_dic.setdefault("BattleResultsExit_", "BATTLE_RESULTS_EXIT_")
+        elif proto_name == "PoiImageType" and operator.contains(proto_line, "PoiImageType_") and not operator.contains(proto_line, "{"):
+            messages_dic.setdefault("PoiImageType_", "POI_IMAGE_TYPE_")
+        elif proto_name == "CameraType" and operator.contains(proto_line, "CameraType_") and not operator.contains(proto_line, "{"):
+            messages_dic.setdefault("CameraType_", "CAMERA_TYPE_")
+        elif proto_name == "UpdateType" and operator.contains(proto_line, "UpdateType_") and not operator.contains(proto_line, "{"):
+            messages_dic.setdefault("UpdateType_", "UPDATE_TYPE_")
+        elif proto_name == "BannedPlayerReason" and operator.contains(proto_line, "BannedPlayerReason_") and not operator.contains(proto_line, "{"):
+            messages_dic.setdefault("BannedPlayerReason_", "BANNED_PLAYER_REASON_")
         ##
 
         ## shows still obfuscated
