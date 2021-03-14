@@ -29,6 +29,20 @@
       "size": 7446
     },
     {
+      "assetId": "004c4faa-7a80-44c9-b21f-e722b0be5a53/1614388635527248",
+      "bundleName": "m_shoes_elesa_00_bundle_icon",
+      "version": "1614388635527248",
+      "checksum": 3818338378,
+      "size": 9383
+    },
+    {
+      "assetId": "005d44ac-817d-437f-885a-239f21cbb166/1614388648333663",
+      "bundleName": "m_shirt_elesa_bundle",
+      "version": "1614388648333663",
+      "checksum": 921796694,
+      "size": 230716
+    },
+    {
       "assetId": "00638b9b-ca6a-48a8-9711-214c77c045c4/1603475016137769",
       "bundleName": "m_hat_sableyegoggles_00_bundle_icon",
       "version": "1603475016137769",
@@ -705,11 +719,11 @@
       "size": 27970
     },
     {
-      "assetId": "0861fd39-eb65-4b98-828b-0f54f5d443c3/1608077263772857",
+      "assetId": "0861fd39-eb65-4b98-828b-0f54f5d443c3/1614388655435605",
       "bundleName": "m_avatar_poses_bundle",
-      "version": "1608077263772857",
-      "checksum": 546627790,
-      "size": 223334
+      "version": "1614388655435605",
+      "checksum": 3952309259,
+      "size": 229530
     },
     {
       "assetId": "086ac75b-11be-449a-9f87-0193c30f2d72/1584914569254248",
@@ -853,11 +867,11 @@
       "size": 20402
     },
     {
-      "assetId": "098beef3-6e27-45f5-9f27-80c43e60a388/1611254976429354",
+      "assetId": "098beef3-6e27-45f5-9f27-80c43e60a388/1615587652503899",
       "bundleName": "global_pokemon",
-      "version": "1611254976429354",
-      "checksum": 3223330255,
-      "size": 1232570
+      "version": "1615587652503899",
+      "checksum": 1973125844,
+      "size": 1248752
     },
     {
       "assetId": "0996a5eb-a5f0-4923-9d40-7e07cad80d9c/1608755040943849",
@@ -1253,11 +1267,11 @@
       "size": 522566
     },
     {
-      "assetId": "0d634186-ef17-42dd-8202-3e674f4b3e5b/1611254978428131",
+      "assetId": "0d634186-ef17-42dd-8202-3e674f4b3e5b/1615587656489386",
       "bundleName": "buddy_crown",
-      "version": "1611254978428131",
-      "checksum": 805572692,
-      "size": 75920
+      "version": "1615587656489386",
+      "checksum": 2630296283,
+      "size": 75921
     },
     {
       "assetId": "0d68da6c-ab76-4c31-b3df-4068a8764a12/1512759803143570",
@@ -1617,11 +1631,11 @@
       "size": 9353
     },
     {
-      "assetId": "115dc97f-358a-4c45-8ac1-e20e4821f609/1613685671717107",
+      "assetId": "115dc97f-358a-4c45-8ac1-e20e4821f609/1615511151039731",
       "bundleName": "json_patch_i18n_russian",
-      "version": "1613685671717107",
-      "checksum": 1534900628,
-      "size": 126302
+      "version": "1615511151039731",
+      "checksum": 1636134411,
+      "size": 73848
     },
     {
       "assetId": "11616b6c-6439-4fab-868d-d6795c6e9162/1605722674181968",
@@ -1993,6 +2007,13 @@
       "size": 361912
     },
     {
+      "assetId": "16d30a80-5df9-405a-b7fc-eb9a99cccc40/1614388634637501",
+      "bundleName": "m_shirt_elesa_00_bundle_icon",
+      "version": "1614388634637501",
+      "checksum": 2912639461,
+      "size": 9231
+    },
+    {
       "assetId": "16d66c83-ba79-4e4d-948b-2c77c980db75/1608754029495474",
       "bundleName": "pm0316_00",
       "version": "1608754029495474",
@@ -2111,6 +2132,13 @@
       "version": "1608752809380258",
       "checksum": 38383771,
       "size": 361949
+    },
+    {
+      "assetId": "18bbc2a8-21e3-4e00-a393-9f9ddfa50011/1614388639963388",
+      "bundleName": "m_pants_elesa_00_bundle_icon",
+      "version": "1614388639963388",
+      "checksum": 287978697,
+      "size": 8519
     },
     {
       "assetId": "18bd3a02-5e80-4771-986b-3716f56639da/1608753850724460",
@@ -2347,11 +2375,11 @@
       "size": 5206
     },
     {
-      "assetId": "1bb14249-cfa4-44d4-a0d6-1c58e8261650/1613685660182916",
+      "assetId": "1bb14249-cfa4-44d4-a0d6-1c58e8261650/1615511138657831",
       "bundleName": "json_patch_i18n_italian",
-      "version": "1613685660182916",
-      "checksum": 3847024276,
-      "size": 51523
+      "version": "1615511138657831",
+      "checksum": 3857402807,
+      "size": 50879
     },
     {
       "assetId": "1bbc5eec-7ce1-4649-8e00-dce0ed5864fc/1613176742335639",
@@ -3767,11 +3795,11 @@
       "key": "/FEF7hUM85mDw2hD67WdSQ=="
     },
     {
-      "assetId": "2b58a4ea-6704-4b59-baa3-93d3322eb74d/1613685656283437",
+      "assetId": "2b58a4ea-6704-4b59-baa3-93d3322eb74d/1615511133844279",
       "bundleName": "json_patch_i18n_german",
-      "version": "1613685656283437",
-      "checksum": 929654908,
-      "size": 58089
+      "version": "1615511133844279",
+      "checksum": 2001927219,
+      "size": 55530
     },
     {
       "assetId": "2b62593e-546c-4844-ab6d-d5b8c0f5fbea/1608752845315357",
@@ -5141,11 +5169,11 @@
       "size": 10141
     },
     {
-      "assetId": "3d93143b-a6da-43a5-95c4-153d6045925e/1613685633620162",
+      "assetId": "3d93143b-a6da-43a5-95c4-153d6045925e/1615511114038889",
       "bundleName": "json_patch_i18n_brazilianportuguese",
-      "version": "1613685633620162",
-      "checksum": 3207804225,
-      "size": 50493
+      "version": "1615511114038889",
+      "checksum": 1241667073,
+      "size": 48262
     },
     {
       "assetId": "3da83d1a-267a-4f63-9854-420c6f75b881/1605722763517762",
@@ -5941,6 +5969,13 @@
       "size": 589760
     },
     {
+      "assetId": "48678867-c430-4fd5-8163-413424c0da1a/1614388653281335",
+      "bundleName": "f_shirt_elesa_00_bundle_icon",
+      "version": "1614388653281335",
+      "checksum": 2432023211,
+      "size": 7398
+    },
+    {
       "assetId": "487fd9cf-a94e-4090-a3f5-d00d16338fb8/1584911725479397",
       "bundleName": "f_pants_frlg_bundle_icon",
       "version": "1584911725479397",
@@ -5955,11 +5990,11 @@
       "size": 10112
     },
     {
-      "assetId": "4894c86c-9a45-4814-9215-0a92968690f7/1613685663844659",
+      "assetId": "4894c86c-9a45-4814-9215-0a92968690f7/1615511142726727",
       "bundleName": "json_patch_i18n_japanese",
-      "version": "1613685663844659",
-      "checksum": 1220611205,
-      "size": 63026
+      "version": "1615511142726727",
+      "checksum": 2191312636,
+      "size": 60729
     },
     {
       "assetId": "489e8bc1-e751-473f-8ff8-7729dd807d8c/1584917767023332",
@@ -6958,11 +6993,11 @@
       "size": 1028291
     },
     {
-      "assetId": "53cddc85-85a7-4cc1-bad4-18518d879da2/1613685647496319",
+      "assetId": "53cddc85-85a7-4cc1-bad4-18518d879da2/1615511126274614",
       "bundleName": "json_patch_i18n_english context",
-      "version": "1613685647496319",
-      "checksum": 900577176,
-      "size": 3146
+      "version": "1615511126274614",
+      "checksum": 285504844,
+      "size": 3144
     },
     {
       "assetId": "53da6244-c62e-4d37-9a9e-624fddaa0f88/1603474914449132",
@@ -8227,18 +8262,18 @@
       "size": 4734
     },
     {
-      "assetId": "63632052-8e1c-4b30-aabb-1264231bc72e/1584900974131867",
+      "assetId": "63632052-8e1c-4b30-aabb-1264231bc72e/1615587655528181",
       "bundleName": "pokemon_icon_310",
-      "version": "1584900974131867",
-      "checksum": 2499593384,
-      "size": 19525
+      "version": "1615587655528181",
+      "checksum": 1391145572,
+      "size": 42492
     },
     {
-      "assetId": "636575d6-7213-4ffc-88e8-5f125e7112d6/1613685639604621",
+      "assetId": "636575d6-7213-4ffc-88e8-5f125e7112d6/1615511118239753",
       "bundleName": "json_patch_i18n_chinesetraditional",
-      "version": "1613685639604621",
-      "checksum": 2200099727,
-      "size": 64594
+      "version": "1615511118239753",
+      "checksum": 1070185393,
+      "size": 60281
     },
     {
       "assetId": "63747ce3-3770-4b98-bdfb-999dc27bc558/1605722790130702",
@@ -9006,11 +9041,11 @@
       "size": 821737
     },
     {
-      "assetId": "6b8f3fef-4233-45f7-9395-39f56e0912e1/1613685680067767",
+      "assetId": "6b8f3fef-4233-45f7-9395-39f56e0912e1/1615511158364739",
       "bundleName": "json_patch_i18n_thai",
-      "version": "1613685680067767",
-      "checksum": 2103395355,
-      "size": 73630
+      "version": "1615511158364739",
+      "checksum": 2639147216,
+      "size": 63936
     },
     {
       "assetId": "6bab0511-7fd0-4e48-851c-1ba9a8c0e2f9/1602526094676398",
@@ -9053,6 +9088,13 @@
       "version": "1608752790638324",
       "checksum": 1203610086,
       "size": 667844
+    },
+    {
+      "assetId": "6c50d468-5887-43d4-b4b6-eea3f6b8e4ae/1615587657532085",
+      "bundleName": "pm0310_51",
+      "version": "1615587657532085",
+      "checksum": 1631364251,
+      "size": 389046
     },
     {
       "assetId": "6c543fc2-a956-4480-ba81-ca9cdbe8a965/1584910075468186",
@@ -9237,6 +9279,13 @@
       "checksum": 3763276897,
       "size": 358202,
       "key": "Nz9nYECi24u3yXyAO6QFtQ=="
+    },
+    {
+      "assetId": "6e765aa0-8b13-48f1-8a09-aec3afd71899/1614388646777874",
+      "bundleName": "m_pants_elesa_bundle",
+      "version": "1614388646777874",
+      "checksum": 1882523082,
+      "size": 186412
     },
     {
       "assetId": "6e7c9283-dbba-44dd-ae4b-a1f91f3e199b/1584904768718454",
@@ -9875,6 +9924,13 @@
       "version": "1584900449881208",
       "checksum": 3862639224,
       "size": 7699
+    },
+    {
+      "assetId": "764a8a15-b6cd-4768-9db4-00121a1cf805/1614388633164589",
+      "bundleName": "f_hat_elesa_bundle",
+      "version": "1614388633164589",
+      "checksum": 378115066,
+      "size": 211896
     },
     {
       "assetId": "76558299-4d26-4dc8-926e-998bcf81342c/1584899191319169",
@@ -12017,6 +12073,13 @@
       "size": 429196
     },
     {
+      "assetId": "8e5d0fd6-b678-404b-bd56-b3abc75f3a32/1614388645269073",
+      "bundleName": "f_socks_elesa_bundle",
+      "version": "1614388645269073",
+      "checksum": 3515675976,
+      "size": 210188
+    },
+    {
       "assetId": "8e6d36a9-07ed-41a2-8e88-e459a04b95d8/1584902380102354",
       "bundleName": "pokemon_icon_486",
       "version": "1584902380102354",
@@ -12057,6 +12120,13 @@
       "version": "1584912996899984",
       "checksum": 3526312826,
       "size": 275596
+    },
+    {
+      "assetId": "8ec29d2a-b69d-4352-b04d-b0eeb7f31fdc/1614388638034649",
+      "bundleName": "f_shoes_elesa_bundle",
+      "version": "1614388638034649",
+      "checksum": 2845593707,
+      "size": 164721
     },
     {
       "assetId": "8eed3d3b-3225-47a6-b5b2-5424431ee02f/1602528157697593",
@@ -13859,11 +13929,11 @@
       "size": 8667
     },
     {
-      "assetId": "a381995c-f9ca-4de5-93db-38159a7d032c/1613685676472892",
+      "assetId": "a381995c-f9ca-4de5-93db-38159a7d032c/1615511154734136",
       "bundleName": "json_patch_i18n_spanish",
-      "version": "1613685676472892",
-      "checksum": 3968456867,
-      "size": 52398
+      "version": "1615511154734136",
+      "checksum": 1444737090,
+      "size": 50931
     },
     {
       "assetId": "a3880a65-ed02-4d13-a333-cb71a7226cb0/1608077065827435",
@@ -14685,6 +14755,13 @@
       "version": "1608753844614046",
       "checksum": 820402473,
       "size": 517284
+    },
+    {
+      "assetId": "ad1111b5-c255-4426-9a53-b806093584fd/1614388636668483",
+      "bundleName": "m_shoes_elesa_bundle",
+      "version": "1614388636668483",
+      "checksum": 1558443274,
+      "size": 172236
     },
     {
       "assetId": "ad262f2d-09ac-4752-a85c-27ecad403371/1584917421034908",
@@ -15576,6 +15653,13 @@
       "version": "1608752594887429",
       "checksum": 3395567174,
       "size": 99311
+    },
+    {
+      "assetId": "b73303b9-79af-403c-af9c-dede7928764d/1614388654208930",
+      "bundleName": "f_shoes_elesa_00_bundle_icon",
+      "version": "1614388654208930",
+      "checksum": 2249274808,
+      "size": 8239
     },
     {
       "assetId": "b7424db8-3d66-4c14-896f-db07dc50111e/1584902331765110",
@@ -17443,11 +17527,11 @@
       "size": 498275
     },
     {
-      "assetId": "cd53a84f-5c55-4563-84b3-edda474e01f1/1613685643475849",
+      "assetId": "cd53a84f-5c55-4563-84b3-edda474e01f1/1615511122294281",
       "bundleName": "json_patch_i18n_english",
-      "version": "1613685643475849",
-      "checksum": 2006489830,
-      "size": 48784
+      "version": "1615511122294281",
+      "checksum": 2605789597,
+      "size": 47076
     },
     {
       "assetId": "cd6505ba-8c14-49d2-9bb8-2b8840b60f6a/1584900513103046",
@@ -18106,6 +18190,13 @@
       "size": 636722
     },
     {
+      "assetId": "d4bf7231-5344-41f1-bb9f-73dcfc5f1a73/1614388651491552",
+      "bundleName": "f_shirt_elesa_bundle",
+      "version": "1614388651491552",
+      "checksum": 4262952795,
+      "size": 466987
+    },
+    {
       "assetId": "d4ed0d57-bb40-4ace-bc52-d827975edf05/1584913282511027",
       "bundleName": "f_hat_pikachucap_0_bundle_icon",
       "version": "1584913282511027",
@@ -18148,11 +18239,11 @@
       "size": 26689
     },
     {
-      "assetId": "d5722a9b-a9a3-4ca5-9f56-f825642bf311/1608077259248727",
+      "assetId": "d5722a9b-a9a3-4ca5-9f56-f825642bf311/1614388641481076",
       "bundleName": "f_avatar_poses_bundle",
-      "version": "1608077259248727",
-      "checksum": 3173119325,
-      "size": 211928
+      "version": "1614388641481076",
+      "checksum": 3574149304,
+      "size": 218093
     },
     {
       "assetId": "d574e934-a789-4912-9ad2-d5cd2cf8df6c/1584912661588161",
@@ -18749,11 +18840,11 @@
       "size": 7554
     },
     {
-      "assetId": "dccbb419-951a-4bf9-8448-8a32e5bae6d1/1613685667790433",
+      "assetId": "dccbb419-951a-4bf9-8448-8a32e5bae6d1/1615511147317431",
       "bundleName": "json_patch_i18n_korean",
-      "version": "1613685667790433",
-      "checksum": 3248175087,
-      "size": 62045
+      "version": "1615511147317431",
+      "checksum": 3935150019,
+      "size": 57899
     },
     {
       "assetId": "dcd89218-66fa-4ea3-a549-7d49df98b5d1/1512759924956220",
@@ -18806,11 +18897,11 @@
       "size": 425615
     },
     {
-      "assetId": "dd3866d4-f0ae-44cd-8679-9d80ca3c493b/1608753892837247",
+      "assetId": "dd3866d4-f0ae-44cd-8679-9d80ca3c493b/1615587654345382",
       "bundleName": "pm0310_00",
-      "version": "1608753892837247",
-      "checksum": 2770077580,
-      "size": 475864
+      "version": "1615587654345382",
+      "checksum": 1404761741,
+      "size": 469533
     },
     {
       "assetId": "dd40dfd7-450e-446b-97f1-39c1a1802bfd/1608754039191740",
@@ -20828,6 +20919,13 @@
       "size": 13815
     },
     {
+      "assetId": "f50d8f39-b94f-469e-b3a6-c8acd8b9d044/1614388649638144",
+      "bundleName": "f_hat_elesa_00_bundle_icon",
+      "version": "1614388649638144",
+      "checksum": 503410552,
+      "size": 8558
+    },
+    {
       "assetId": "f51d6441-0978-416b-a5dd-846913492502/1584913180785976",
       "bundleName": "m_shirt_spiritomb_bundle",
       "version": "1584913180785976",
@@ -21116,11 +21214,11 @@
       "size": 9528
     },
     {
-      "assetId": "f81c317b-b38c-454e-ac41-b716acec654f/1613685651823146",
+      "assetId": "f81c317b-b38c-454e-ac41-b716acec654f/1615511130111236",
       "bundleName": "json_patch_i18n_french",
-      "version": "1613685651823146",
-      "checksum": 2656078892,
-      "size": 58458
+      "version": "1615511130111236",
+      "checksum": 2288614726,
+      "size": 56167
     },
     {
       "assetId": "f826a71a-90f8-46c9-a731-f05a07d215ef/1584914399966786",
@@ -21291,6 +21389,13 @@
       "version": "1608754205781396",
       "checksum": 4173378785,
       "size": 708491
+    },
+    {
+      "assetId": "f9b4ef1b-45ce-4118-8d53-9770b8dd924c/1614388643348802",
+      "bundleName": "m_hat_elesa_bundle",
+      "version": "1614388643348802",
+      "checksum": 2366287558,
+      "size": 225919
     },
     {
       "assetId": "f9b97afd-0b1f-4cc5-b57a-1e559c09a334/1584918021218831",
@@ -21695,6 +21800,13 @@
       "size": 16865
     },
     {
+      "assetId": "fe0c83de-2bed-4fe7-8d1d-e5f38b1cae5a/1614388639098037",
+      "bundleName": "m_hat_elesa_00_bundle_icon",
+      "version": "1614388639098037",
+      "checksum": 805419890,
+      "size": 8576
+    },
+    {
       "assetId": "fe2ad58d-9fc3-4d8b-89b0-ff27d6cbefc6/1584904840757708",
       "bundleName": "pokemon_icon_619",
       "version": "1584904840757708",
@@ -21814,6 +21926,6 @@
       "size": 290355
     }
   ],
-  "timestamp": "1614037773565345",
+  "timestamp": "1615587657532085",
   "result": "SUCCESS"
 }
