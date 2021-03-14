@@ -4149,7 +4149,7 @@ message ActivateVsSeekerProto {
 }
 
 message AdDetails {
-	OKDDLOJFGEN akonmipflmh = 1;
+	ImageTextCreativeProto akonmipflmh = 1;
 	bytes jfdgdjgkiph = 2;
 }
 
@@ -4170,6 +4170,10 @@ message AdRequestDeviceInfo {
 	OperatingSystem operating_system = 1;
 	string device_model = 2;
 	string carrier = 3;
+}
+
+message AdTargetingInfoProto {
+	AdRequestDeviceInfo device_info = 1;
 }
 
 message AddFortModifierOutProto {
@@ -4647,7 +4651,7 @@ message AttackRaidBattleProto {
 	repeated BattleActionProto attacker_actions = 3;
 	BattleActionProto last_retrieved_action = 4;
 	int64 timestamp_ms = 5;
-	MMHBDOAEAAA ad_targeting_info = 6;
+	AdTargetingInfoProto ad_targeting_info = 6;
 }
 
 message AvailableSkuProto {
@@ -8339,7 +8343,7 @@ message FortSearchProto {
 	double player_lng_degrees = 3;
 	double fort_lat_degrees = 4;
 	double fort_lng_degrees = 5;
-	MMHBDOAEAAA ad_targeting_info = 7;
+	AdTargetingInfoProto ad_targeting_info = 7;
 	bool is_player_eligible_for_geotargeted_quest = 8;
 }
 
@@ -10655,6 +10659,15 @@ message ImageGalleryTelemetry {
 	ImageGalleryEventId image_gallery_telemetry_id = 1;
 }
 
+message ImageTextCreativeProto {
+	string cnedmjpobib = 1;
+	string jclilkfkdmo = 2;
+	string kbehaahbmfd = 3;
+	string llijoamanmj = 4;
+	string nlpfkalcpdb = 5;
+	string npbnnkmdggo = 6;
+}
+
 message InGamePurchaseDetails {
 	string ingame_type = 1;
 	int64 ingame_price = 2;
@@ -10745,6 +10758,13 @@ message InputSettingsProto {
 	bool enable_frame_independent_spin = 1;
 	int32 milliseconds_processed_spin_force = 2;
 	float spin_speed_multiplier = 3;
+}
+
+message InternalAuthProto {
+	string email = 1;
+	string player_id = 2;
+	string app_id = 3;
+	string key = 4;
 }
 
 message InvasionAvailabilitySettingsProto {
@@ -10990,16 +11010,6 @@ message ItemTelemetry {
 	string item_id_string = 5;
 }
 
-message JKNCMBHFIHH {
-	enum Status {
-		SUCCESS = 0;
-		MALFORMED = 1;
-		EXPIRED = 2;
-	}
-
-	Status status = 1;
-}
-
 message JNAFMCHMMDM {
 	int32 efodjlegeei = 1;
 }
@@ -11099,7 +11109,7 @@ message KoalaSettingsProto {
 message LHPHHMGAHBJ {
 	double npdmpionkfc = 1;
 	double kjlgekeibmi = 2;
-	MMHBDOAEAAA nijofmkhcnb = 3;
+	AdTargetingInfoProto nijofmkhcnb = 3;
 }
 
 message Label {
@@ -11483,19 +11493,6 @@ message LootProto {
 
 message LuckyPokemonSettingsProto {
 	float power_up_stardust_discount_percent = 1;
-}
-
-message MBEIJKKDDDA {
-	enum Status {
-		SUCCESS = 0;
-		ERROR = 1;
-	}
-
-	Status status = 1;
-}
-
-message MMHBDOAEAAA {
-	AdRequestDeviceInfo dgklbflfmbc = 1;
 }
 
 message MapArea {
@@ -11963,15 +11960,6 @@ message NpcPokemonProto {
 	PokemonDisplayProto pokemon_display = 2;
 }
 
-message OKDDLOJFGEN {
-	string cnedmjpobib = 1;
-	string jclilkfkdmo = 2;
-	string kbehaahbmfd = 3;
-	string llijoamanmj = 4;
-	string nlpfkalcpdb = 5;
-	string npbnnkmdggo = 6;
-}
-
 message OnboardingSettingsProto {
 	bool skip_avatar_customization = 1;
 	bool disable_initial_ar_prompt = 2;
@@ -12188,24 +12176,6 @@ message OpenTradingProto {
 
 message OptOutProto {
 	repeated string categories = 1;
-}
-
-message PALGNEJMECF {
-	enum Status {
-		UNSET = 0;
-		SUCCESS = 1;
-		ERROR_UNKNOWN = 2;
-		ERROR_PLAYER_NOT_FOUND = 3;
-	}
-
-	Status status = 1;
-}
-
-message PPKJIMPEBII {
-	string almicpjbaok = 1;
-	string lckgjigijbe = 2;
-	string glmihgnacei = 3;
-	string ionnedmiifh = 4;
 }
 
 message ParticipationProto {
@@ -16444,6 +16414,15 @@ message ReportAdFeedbackRequest {
 	string free_text_response = 8;
 }
 
+message ReportAdFeedbackResponse {
+	enum Status {
+		SUCCESS = 0;
+		ERROR = 1;
+	}
+
+	Status status = 1;
+}
+
 message ReportAdInteractionProto {
 	enum AdType {
 		AD_TYPE_UNKNOWN = 0;
@@ -16510,6 +16489,16 @@ message ReportAdInteractionProto {
 	string guid = 3;
 	bytes encrypted_ad_token = 4;
 	AdType ad_type = 100;
+}
+
+message ReportAdInteractionResponse {
+	enum Status {
+		SUCCESS = 0;
+		MALFORMED = 1;
+		EXPIRED = 2;
+	}
+
+	Status status = 1;
 }
 
 message ReviveAttributesProto {
@@ -17407,7 +17396,7 @@ message SponsoredDetailsProto {
 	string call_to_action_link = 3;
 	PromoButtonMessageType promo_button_message_type = 4;
 	string campaign_id = 5;
-	OKDDLOJFGEN promo_image_creative = 6;
+	ImageTextCreativeProto promo_image_creative = 6;
 }
 
 message SponsoredGeofenceGiftSettingsProto {
@@ -18070,6 +18059,17 @@ message UpdateAdventureSyncFitnessResponseProto {
 
 message UpdateAdventureSyncSettingsRequestProto {
 	AdventureSyncSettingsProto adventure_sync_settings = 1;
+}
+
+message UpdateBreadcrumbHistoryResponseProto {
+	enum Status {
+		UNSET = 0;
+		SUCCESS = 1;
+		ERROR_UNKNOWN = 2;
+		ERROR_PLAYER_NOT_FOUND = 3;
+	}
+
+	Status status = 1;
 }
 
 message UpdateCombatOutProto {
