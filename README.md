@@ -17,7 +17,7 @@ We are following [semantic versioning](http://semver.org/) for POGOProtos.  Ever
 
 | Version      | Base                                                                                                      | Notes                  | Extra                           |
 |--------------|-----------------------------------------------------------------------------------------------------------|------------------------|---------------------------------|
-| 2.53.8       |  [v0.201.0](https://github.com/Furtif/POGOProtos/blob/master/base/v0.201.0.proto)                         | **Updated** (_/base/base.proto_)  |  Protocol Buffers v3.14.0     |
+| 2.53.9       |  [v0.203.0](https://github.com/Furtif/POGOProtos/blob/master/base/v0.203.0.proto)                         | **Updated** (_/base/base.proto_)  |  Protocol Buffers v3.14.0     |
 
 ### Addons
 
@@ -64,7 +64,7 @@ This is an example of how the generated code will be organized:
 
 ```
 python compile_base.py -l cpp -k:
- - v0.201.0.proto -> out/single_file/cpp/POGOProtos.Rpc.desc
+ - v0.203.0.proto -> out/single_file/cpp/POGOProtos.Rpc.desc
  -                -> out/single_file/cpp/POGOProtos.Rpc.pb.cc
  -                -> out/single_file/cpp/POGOProtos.Rpc.pb.h
  -                -> out/single_file/cpp/POGOProtos.Rpc.proto
