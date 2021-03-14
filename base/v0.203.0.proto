@@ -4149,8 +4149,8 @@ message ActivateVsSeekerProto {
 }
 
 message AdDetails {
-	ImageTextCreativeProto akonmipflmh = 1;
-	bytes jfdgdjgkiph = 2;
+	ImageTextCreativeProto image_text_creative = 1;
+	bytes encrypted_ad_token = 2;
 }
 
 message AdFeedbackSettingsProto {
@@ -4799,11 +4799,6 @@ message AwardedGymBadge {
 	PlayerRaidInfoProto raids = 15;
 }
 
-message BPKCKBJLHFD {
-	string ibjeanchcek = 1;
-	repeated HHEFBOGOEFE knkoifeagad = 2;
-}
-
 message BackgroundModeGlobalSettingsProto {
 	uint32 min_player_level_fitness = 1;
 	int64 service_prompt_timestamp_ms = 2;
@@ -5217,6 +5212,12 @@ message BoundingRect {
 	double south = 2;
 	double east = 3;
 	double west = 4;
+}
+
+message BreadcrumbRecordProto {
+	int64 timestamp_ms = 1;
+	double latitude_deg = 2;
+	double longitude_deg = 3;
 }
 
 message BuddyActivityCategorySettings {
@@ -7539,10 +7540,6 @@ message DummyDataProto {
 	PokemonProto dummy_pokemon = 1;
 }
 
-message EKICCCAPOFP {
-	bytes bamoiecjgla = 1;
-}
-
 message EchoOutProto {
 	string context = 1;
 }
@@ -8464,11 +8461,6 @@ message FriendshipMilestoneRewardNotificationProto {
 message FriendshipMilestoneRewardProto {
 	string friend_id = 1;
 	FriendshipLevelMilestone friendship_milestone = 2;
-}
-
-message GCFFGBOCBEC {
-	bytes kfmnjaggmgm = 1;
-	string mpddahfajbm = 2;
 }
 
 message GameClientPhotoGalleryPoiImageProto {
@@ -10437,14 +10429,8 @@ message GymStatusAndDefendersProto {
 	repeated GymDefenderProto gym_defender = 2;
 }
 
-message HGIOBDAEBKB {
-	string llhbkbpakji = 1;
-}
-
-message HHEFBOGOEFE {
-	int64 hoiabnpepbf = 1;
-	double hpchhbbcajc = 2;
-	double affmhkhgiho = 3;
+message HashedKeyProto {
+	string hashed_key_raw = 1;
 }
 
 message HelpshiftSettingsProto {
@@ -10660,12 +10646,12 @@ message ImageGalleryTelemetry {
 }
 
 message ImageTextCreativeProto {
-	string cnedmjpobib = 1;
-	string jclilkfkdmo = 2;
-	string kbehaahbmfd = 3;
-	string llijoamanmj = 4;
-	string nlpfkalcpdb = 5;
-	string npbnnkmdggo = 6;
+	string name = 1;
+	string title = 2;
+	string description = 3;
+	string preview_image_url = 4;
+	string fullscreen_image_url = 5;
+	string cta_link = 6;
 }
 
 message InGamePurchaseDetails {
@@ -11010,10 +10996,6 @@ message ItemTelemetry {
 	string item_id_string = 5;
 }
 
-message JNAFMCHMMDM {
-	int32 efodjlegeei = 1;
-}
-
 message JoinBuddyMultiplayerSessionOutProto {
 	enum Result {
 		JOIN_SUCCESS = 0;
@@ -11076,8 +11058,8 @@ message JoinLobbyProto {
 }
 
 message JournalAddEntryProto {
-	HGIOBDAEBKB begnpimfemg = 1;
-	int64 bcnfldngpjl = 2;
+	HashedKeyProto hashed_key = 1;
+	int64 entry_size = 2;
 }
 
 message JournalEntryProto {
@@ -11089,11 +11071,15 @@ message JournalEntryProto {
 }
 
 message JournalReadEntryProto {
-	HGIOBDAEBKB begnpimfemg = 1;
+	HashedKeyProto hashed_key = 1;
 }
 
 message JournalRemoveEntryProto {
-	HGIOBDAEBKB begnpimfemg = 1;
+	HashedKeyProto hashed_key = 1;
+}
+
+message JournalVersionProto {
+	int32 version = 1;
 }
 
 message KangarooSettingsProto {
@@ -12145,6 +12131,10 @@ message OpenSponsoredGiftOutProto {
 	LootProto rewards = 2;
 }
 
+message OpenSponsoredGiftProto {
+	bytes encrypted_ad_token = 1;
+}
+
 message OpenTradingOutProto {
 	enum Result {
 		UNSET = 0;
@@ -12559,8 +12549,8 @@ message PoiGlobalSettingsProto {
 }
 
 message PoiPlayerMetadataTelemetry {
-	string dlnncjehpgh = 1;
-	string kflbbakdoii = 2;
+	string device_model = 1;
+	string device_os = 2;
 }
 
 message PoiSubmissionPhotoUploadErrorTelemetry {
@@ -17084,6 +17074,11 @@ message SetPokemonTagsForPokemonProto {
 	repeated PokemonTagChangeProto tag_changes = 1;
 }
 
+message SfidaAuthToken {
+	bytes response_token = 1;
+	string sfida_id = 2;
+}
+
 message SfidaCaptureRequest {
 	string spawnpoint_id = 1;
 	int64 encounter_id = 2;
@@ -18059,6 +18054,11 @@ message UpdateAdventureSyncFitnessResponseProto {
 
 message UpdateAdventureSyncSettingsRequestProto {
 	AdventureSyncSettingsProto adventure_sync_settings = 1;
+}
+
+message UpdateBreadcrumbHistoryRequestProto {
+	string session_context = 1;
+	repeated BreadcrumbRecordProto breadcrumb_history = 2;
 }
 
 message UpdateBreadcrumbHistoryResponseProto {
