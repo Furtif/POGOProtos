@@ -26,4 +26,6 @@ message FortRenderingType {
 		DEFAULT = 0;
 		INTERNAL_TEST = 1;
 	}
+
+	RenderingType rendering_type = 1;
 }

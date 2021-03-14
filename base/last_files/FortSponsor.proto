@@ -48,4 +48,6 @@ message FortSponsor {
 		NIA_OPS = 22;
 		WHISK = 23;
 	}
+
+	Sponsor sponsor = 1;
 }

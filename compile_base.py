@@ -861,7 +861,20 @@ def open_proto_file(main_file, head):
                     new_base_data = new_base_data.replace("bool warn_weather = 2;", "Severity severity = 1;\n\tbool warn_weather = 2;")
                 if new_base_proto_name == "GameplayWeatherProto" and not operator.contains(new_base_data, "WeatherCondition gameplay_condition = 1;"):
                     new_base_data = new_base_data.replace("\t}", "\t}\n\n\tWeatherCondition gameplay_condition = 1;")
+                # fix others
+                if new_base_proto_name == "SocialProto" and not operator.contains(new_base_data, "AppKey app_key = 1;"):
+                    new_base_data = new_base_data.replace("\t}", "\t}\n\n\tAppKey app_key = 1;")
+                if new_base_proto_name == "FortRenderingType" and not operator.contains(new_base_data, "RenderingType rendering_type = 1;"):
+                    new_base_data = new_base_data.replace("\t}", "\t}\n\n\tRenderingType rendering_type = 1;")
+                if new_base_proto_name == "FortSponsor" and not operator.contains(new_base_data, "Sponsor sponsor = 1;"):
+                    new_base_data = new_base_data.replace("\t}", "\t}\n\n\tSponsor sponsor = 1;")
+                if new_base_proto_name == "InvasionStatus" and not operator.contains(new_base_data, "Status status = 1;"):
+                    new_base_data = new_base_data.replace("\t}", "\t}\n\n\tStatus status = 1;")
+                if new_base_proto_name == "VasaClientAction" and not operator.contains(new_base_data, "ActionEnum action = 1;"):
+                    new_base_data = new_base_data.replace("\t}", "\t}\n\n\tActionEnum action = 1;")
+
                 new_base_messages.setdefault(new_base_proto_name, new_base_data)
+
             new_base_as_data = False
             new_base_is_enum = False
             new_base_proto_name = ''

@@ -28,4 +28,6 @@ message SocialProto {
 		HOLOHOLO_DELETED = 2;
 		LEXICON_DELETED = 3;
 	}
+
+	AppKey app_key = 1;
 }

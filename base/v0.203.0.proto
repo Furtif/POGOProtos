@@ -8272,6 +8272,8 @@ message FortRenderingType {
 		DEFAULT = 0;
 		INTERNAL_TEST = 1;
 	}
+
+	RenderingType rendering_type = 1;
 }
 
 message FortSearchLogEntry {
@@ -8375,6 +8377,8 @@ message FortSponsor {
 		NIA_OPS = 22;
 		WHISK = 23;
 	}
+
+	Sponsor sponsor = 1;
 }
 
 message FrameRate {
@@ -10817,6 +10821,8 @@ message InvasionStatus {
 		ERROR_INVALID_HEALTH_UPDATES = 20;
 		ERROR_ATTACKING_POKEMON_INVALID = 30;
 	}
+
+	Status status = 1;
 }
 
 message InvasionTelemetry {
@@ -17299,6 +17305,8 @@ message SocialProto {
 		HOLOHOLO_DELETED = 2;
 		LEXICON_DELETED = 3;
 	}
+
+	AppKey app_key = 1;
 }
 
 message SocialSettings {
@@ -18546,6 +18554,8 @@ message VasaClientAction {
 		INVALID_VASA_CLIENT_ACTION = 0;
 		COLLECT_ADID = 8000;
 	}
+
+	ActionEnum action = 1;
 }
 
 message VerifyChallengeOutProto {

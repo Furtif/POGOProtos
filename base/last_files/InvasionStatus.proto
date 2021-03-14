@@ -38,4 +38,6 @@ message InvasionStatus {
 		ERROR_INVALID_HEALTH_UPDATES = 20;
 		ERROR_ATTACKING_POKEMON_INVALID = 30;
 	}
+
+	Status status = 1;
 }

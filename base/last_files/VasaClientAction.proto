@@ -26,4 +26,6 @@ message VasaClientAction {
 		INVALID_VASA_CLIENT_ACTION = 0;
 		COLLECT_ADID = 8000;
 	}
+
+	ActionEnum action = 1;
 }
