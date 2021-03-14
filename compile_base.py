@@ -728,6 +728,8 @@ def open_proto_file(main_file, head):
             messages_dic.setdefault(proto_name, "ExitVfxContext")
         elif operator.contains(proto_line, "START = 1;") and len(proto_name) == 11 and proto_name.isupper() and operator.contains(last_line, "NONE = 0;"):
             messages_dic.setdefault(proto_name, "VfxLevel")
+        elif operator.contains(proto_line, "ICON = 6;") and len(proto_name) == 11 and proto_name.isupper():
+            messages_dic.setdefault(proto_name, "POIDecorationProperties")
 
         # clean some after conditions, ok in double build gen vx.xxx.x... (enums only stuff)
         if proto_name == "BadgeRank" and operator.contains(proto_line, "BadgeRank_") and not operator.contains(proto_line, "{"):
@@ -805,6 +807,8 @@ def open_proto_file(main_file, head):
             messages_dic.setdefault("ExitVfxContext_", "EXIT_VFX_CONTEXT_")
         elif proto_name == "VfxLevel" and operator.contains(proto_line, "VfxLevel_") and not operator.contains(proto_line, "{"):
             messages_dic.setdefault("VfxLevel_", "VFX_LEVEL_")
+        elif proto_name == "POIDecorationProperties" and operator.contains(proto_line, "POIDecorationProperties_") and not operator.contains(proto_line, "{"):
+            messages_dic.setdefault("POIDecorationProperties_", "POI_DECORATION_PROPERTIES_")
         ##
 
         # set last line for compare..
