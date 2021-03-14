@@ -1,0 +1,58 @@
+/*
+* Copyright 2016-2021 --=FurtiF=--.
+*
+* Licensed under the
+*	Educational Community License, Version 2.0 (the "License"); you may
+*	not use this file except in compliance with the License. You may
+*	obtain a copy of the License at
+*
+*	http://www.osedu.org/licenses/ECL-2.0
+*
+*	Unless required by applicable law or agreed to in writing,
+*	software distributed under the License is distributed on an "AS IS"
+*	BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
+*	or implied. See the License for the specific language governing
+*	permissions and limitations under the License.
+*
+* Note: For references only.
+*
+*/
+
+syntax = "proto3";
+package POGOProtos.Rpc;
+
+message ReferralMilestonesProto {
+	oneof PlayerId {
+		string referrer_player_id = 3;
+		string referee_player_id = 4;
+	}
+
+	message MilestoneProto {
+		enum Status {
+			UNSET = 0;
+			ACTIVE = 1;
+			ACHIEVED = 2;
+			ACTIVE_HIDDEN = 3;
+			ACHIEVED_HIDDEN = 4;
+			REWARDS_CLAIMED = 5;
+		}
+
+		message TemplateVariableProto {
+			string name = 1;
+			string literal = 2;
+		}
+
+		string name_key = 1;
+		Status status = 2;
+		repeated bytes reward = 3;
+		string milestone_template_id = 4;
+		int32 version = 5;
+		repeated TemplateVariableProto name_template_variable = 6;
+		bool viewed_by_client = 7;
+		int64 created_timestamp_ms = 8;
+	}
+
+	string milestones_template_id = 1;
+	int32 version = 2;
+	map<string, MilestoneProto> milestone = 5;
+}

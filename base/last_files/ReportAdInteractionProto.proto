@@ -22,6 +22,12 @@ syntax = "proto3";
 package POGOProtos.Rpc;
 
 message ReportAdInteractionProto {
+	enum AdType {
+		AD_TYPE_UNKNOWN = 0;
+		AD_TYPE_SPONSORED_GIFT = 1;
+		AD_TYPE_SPONSORED_BALLOON = 2;
+	}
+
 	oneof InteractionType {
 		ViewImpressionInteraction view_impression = 5;
 		ViewFullscreenInteraction view_fullscreen = 6;
@@ -31,15 +37,34 @@ message ReportAdInteractionProto {
 		AdDismissedInteraction ad_dismissed = 10;
 	}
 
-	enum AdType {
-		AD_TYPE_UNKNOWN = 0;
-		AD_TYPE_SPONSORED_GIFT = 1;
-		AD_TYPE_SPONSORED_BALLOON = 2;
+	message AdDismissedInteraction {
+		enum AdDismissal {
+			AD_DISMISSAL_UNKNOWN = 0;
+			AD_DISMISSAL_TR_DISPLACES_AD_BALLOON = 1;
+			AD_DISMISSAL_NEW_AD_BALLOON_DISPLACES_OLD = 2;
+			AD_DISMISSAL_AD_BALLOON_AUTO_DISMISS = 3;
+			AD_DISMISSAL_PLAYER_OPTED_OUT_OF_ADS = 4;
+		}
+
+		AdDismissal ad_dismissal = 1;
 	}
 
 	message ViewImpressionInteraction {
 		string preview_image_url = 1;
 		bool is_persisted_gift = 2;
+	}
+
+	message AdSpawendInteraction {
+		enum AdInhibition {
+			AD_INHIBITION_UNKNOWN = 0;
+			AD_INHIBITION_TR_PREVENTS_BALLOON_SPAWN = 1;
+			AD_INHIBITION_CLIENT_ERROR = 2;
+			AD_INHIBITION_DISABLED_IN_GMT = 3;
+			AD_INHIBITION_PLAYER_OPTED_OUT_OF_ADS = 4;
+		}
+
+		bool ad_spawend_bool = 1;
+		AdInhibition ad_inhibition = 2;
 	}
 
 	message CTAClickInteraction {
@@ -50,31 +75,11 @@ message ReportAdInteractionProto {
 		string fullscreen_image_url = 1;
 	}
 
-	message AdDismissedInteraction {
-		enum AdDismissal {
-			AD_DISMISSAL_UNKNOWN = 0;
-			AD_DISMISSAL_TR_DISPLACES_AD_BALLOON = 1;
-		}
-
-		AdDismissal ad_dismissal = 1;
-	}
-
 	message FullScreenInteraction {
 		string fullscreen_image_url = 1;
 		int64 total_residence_time_ms = 2;
 		int64 time_away_ms = 3;
 		bool took_screenshot = 4;
-	}
-
-	message AdSpawendInteraction {
-		enum AdInhibition {
-			AD_INHIBITION_UNKNOWN = 0;
-			AD_INHIBITION_TR_PREVENTS_BALLOON_SPAWN = 1;
-			AD_INHIBITION_CLIENT_ERROR = 2;
-		}
-
-		bool ad_spawend_bool = 1;
-		AdInhibition ad_inhibition = 2;
 	}
 
 	string game_id = 1;

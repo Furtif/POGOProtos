@@ -58,6 +58,7 @@ import "EvolutionV2SettingsProto.proto";
 import "IncidentGlobalSettingsProto.proto";
 import "KoalaSettingsProto.proto";
 import "KangarooSettingsProto.proto";
+import "RouteGlobalSettingsProto.proto";
 import "BuddyGlobalSettingsProto.proto";
 import "InputSettingsProto.proto";
 import "GmtSettingsProto.proto";
@@ -122,6 +123,7 @@ message GlobalSettingsProto {
 	IncidentGlobalSettingsProto incident_settings = 39;
 	KoalaSettingsProto koala_settings = 40;
 	KangarooSettingsProto kangaroo_settings = 41;
+	RouteGlobalSettingsProto route_settings = 42;
 	BuddyGlobalSettingsProto buddy_settings = 43;
 	InputSettingsProto input_settings = 44;
 	GmtSettingsProto gmt_settings = 45;

@@ -1,0 +1,51 @@
+/*
+* Copyright 2016-2021 --=FurtiF=--.
+*
+* Licensed under the
+*	Educational Community License, Version 2.0 (the "License"); you may
+*	not use this file except in compliance with the License. You may
+*	obtain a copy of the License at
+*
+*	http://www.osedu.org/licenses/ECL-2.0
+*
+*	Unless required by applicable law or agreed to in writing,
+*	software distributed under the License is distributed on an "AS IS"
+*	BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
+*	or implied. See the License for the specific language governing
+*	permissions and limitations under the License.
+*
+* Note: For references only.
+*
+*/
+
+syntax = "proto3";
+package POGOProtos.Rpc;
+
+import "RouteType.proto";
+
+message ClientRouteProto {
+	message ImageProto {
+		string image_url = 1;
+	}
+
+	message WaypointProto {
+		string fort_id = 1;
+		double lat_degrees = 2;
+		double lng_degrees = 3;
+	}
+
+	string id = 1;
+	string name = 2;
+	string description = 3;
+	repeated WaypointProto waypoints = 4;
+	ImageProto main_image = 5;
+	bool reversible = 6;
+	int64 submission_time = 7;
+	int64 route_distance_meters = 8;
+	float direction_in_degrees = 9;
+	float avg_rating = 10;
+	RouteType route_type = 11;
+	int64 route_duration_seconds = 12;
+	int32 num_completions = 13;
+	int64 cooldown_finish_ms = 14;
+}

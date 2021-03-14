@@ -53,6 +53,7 @@ message QuestProto {
 		TGC_TRACKING_QUEST = 7;
 		EVOLUTION_QUEST = 8;
 		TIMED_MINI_COLLECTION_QUEST = 9;
+		REFERRAL_QUEST = 10;
 	}
 
 	oneof Quest {
@@ -75,6 +76,11 @@ message QuestProto {
 		STATUS_UNDEFINED = 0;
 		STATUS_ACTIVE = 1;
 		STATUS_COMPLETED = 2;
+	}
+
+	message ReferralInfoProto {
+		string referrer_id = 1;
+		bool completion_message_sent = 2;
 	}
 
 	QuestType quest_type = 1;
@@ -101,4 +107,5 @@ message QuestProto {
 	string reward_pokemon_icon_url = 118;
 	int64 end_timestamp_ms = 119;
 	bool is_bonus_challenge = 120;
+	ReferralInfoProto referral_info = 121;
 }

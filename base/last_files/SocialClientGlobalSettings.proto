@@ -27,6 +27,7 @@ message SocialClientGlobalSettings {
 	message CrossGameSocialSettingsProto {
 		bool niantic_profile_codename_opt_out_enabled = 1;
 		repeated string disabled_outgoing_game_invite_app_key = 2;
+		repeated string unreleased_app_key = 3;
 	}
 
 	CrossGameSocialSettingsProto cross_game_social_settings = 1;

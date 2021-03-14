@@ -37,6 +37,7 @@ import "RaidTicketsProto.proto";
 import "QuestsProto.proto";
 import "GiftBoxesProto.proto";
 import "BelugaIncenseBoxProto.proto";
+import "RouteMakerProto.proto";
 import "LimitedPurchaseSkuRecordProto.proto";
 import "MegaEvolvePokemonSpeciesProto.proto";
 import "StickerProto.proto";
@@ -63,6 +64,7 @@ message HoloInventoryItemProto {
 		QuestsProto quests = 14;
 		GiftBoxesProto gift_boxes = 15;
 		BelugaIncenseBoxProto beluga_incense = 16;
+		RouteMakerProto route_maker = 18;
 		LimitedPurchaseSkuRecordProto limited_purchase_sku_record = 19;
 		MegaEvolvePokemonSpeciesProto mega_evolve_species = 21;
 		StickerProto sticker = 22;

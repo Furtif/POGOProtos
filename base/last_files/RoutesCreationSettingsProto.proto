@@ -1,0 +1,42 @@
+/*
+* Copyright 2016-2021 --=FurtiF=--.
+*
+* Licensed under the
+*	Educational Community License, Version 2.0 (the "License"); you may
+*	not use this file except in compliance with the License. You may
+*	obtain a copy of the License at
+*
+*	http://www.osedu.org/licenses/ECL-2.0
+*
+*	Unless required by applicable law or agreed to in writing,
+*	software distributed under the License is distributed on an "AS IS"
+*	BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
+*	or implied. See the License for the specific language governing
+*	permissions and limitations under the License.
+*
+* Note: For references only.
+*
+*/
+
+syntax = "proto3";
+package POGOProtos.Rpc;
+
+message RoutesCreationSettingsProto {
+	int32 max_open_routes = 1;
+	int32 min_stops_amount = 2;
+	int32 max_stops_amount = 3;
+	float min_total_distance_m = 4;
+	float max_total_distance_m = 5;
+	float min_distance_between_stops_m = 6;
+	float max_distance_between_stops_m = 7;
+	int32 max_total_checkpoint_amount = 8;
+	int32 max_checkpoint_amount_between_two_poi = 9;
+	float min_distance_between_checkpoints_m = 10;
+	float max_distance_between_checkpoints_m = 11;
+	float allow_checkpoint_per_route_distance = 12;
+	float checkpoint_recommendation_distance_between_pois = 13;
+	int32 max_name_length = 14;
+	int32 max_description_length = 15;
+	uint32 min_player_level = 16;
+	bool enabled = 17;
+}

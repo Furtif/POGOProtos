@@ -72,6 +72,7 @@ import "BuddyLevelSettings.proto";
 import "BuddyActivityCategorySettings.proto";
 import "BuddyActivitySettings.proto";
 import "BuddySwapSettings.proto";
+import "RoutesCreationSettingsProto.proto";
 import "VsSeekerClientSettingsProto.proto";
 import "BuddyEncounterCameoSettings.proto";
 import "LimitedPurchaseSkuSettingsProto.proto";
@@ -115,6 +116,7 @@ import "RecommendedSearchProto.proto";
 import "InventorySettingsProto.proto";
 import "EggTransparencySettingsProto.proto";
 import "IncidentPrioritySettingsProto.proto";
+import "ReferralSettingsProto.proto";
 
 message GameMasterClientTemplateProto {
 	string template_id = 1;
@@ -169,6 +171,7 @@ message GameMasterClientTemplateProto {
 	BuddyActivityCategorySettings buddy_activity_category_settings = 53;
 	BuddyActivitySettings buddy_activity_settings = 54;
 	BuddySwapSettings buddy_swap_settings = 56;
+	RoutesCreationSettingsProto route_creation_settings = 57;
 	VsSeekerClientSettingsProto vs_seeker_client_settings = 58;
 	BuddyEncounterCameoSettings buddy_encounter_cameo_settings = 59;
 	LimitedPurchaseSkuSettingsProto limited_purchase_sku_settings = 60;
@@ -212,4 +215,5 @@ message GameMasterClientTemplateProto {
 	InventorySettingsProto inventory_settings = 103;
 	EggTransparencySettingsProto egg_transparency_settings = 105;
 	IncidentPrioritySettingsProto incident_priority_settings = 108;
+	ReferralSettingsProto referral_settings = 109;
 }

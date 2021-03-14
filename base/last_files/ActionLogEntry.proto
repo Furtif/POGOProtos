@@ -43,6 +43,7 @@ import "VsSeekerSetLogEntry.proto";
 import "VsSeekerCompleteSeasonLogEntry.proto";
 import "VsSeekerWinRewardsLogEntry.proto";
 import "BuddyConsumablesLogEntry.proto";
+import "CompleteReferralMilestoneLogEntry.proto";
 
 message ActionLogEntry {
 	oneof Action {
@@ -68,6 +69,7 @@ message ActionLogEntry {
 		VsSeekerCompleteSeasonLogEntry vs_seeker_complete_season = 22;
 		VsSeekerWinRewardsLogEntry vs_seeker_win_rewards = 23;
 		BuddyConsumablesLogEntry buddy_consumables = 24;
+		CompleteReferralMilestoneLogEntry complete_referral_milestone = 25;
 	}
 
 	int64 timestamp_ms = 1;

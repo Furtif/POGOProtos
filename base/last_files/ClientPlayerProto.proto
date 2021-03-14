@@ -66,4 +66,5 @@ message ClientPlayerProto {
 	string helpshift_user_id = 28;
 	PlayerPreferencesProto player_preferences = 29;
 	repeated EventTicketActiveTimeProto event_ticket_active_time = 30;
+	int64 lapsed_player_returned_time_ms = 31;
 }

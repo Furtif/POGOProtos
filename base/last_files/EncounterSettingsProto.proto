@@ -40,4 +40,6 @@ message EncounterSettingsProto {
 	float escaped_bonus_multiplier_by_excellent_throw = 16;
 	float escaped_bonus_multiplier_by_great_throw = 17;
 	float escaped_bonus_multiplier_by_nice_throw = 18;
+	float global_stardust_multiplier = 20;
+	float global_candy_multiplier = 21;
 }

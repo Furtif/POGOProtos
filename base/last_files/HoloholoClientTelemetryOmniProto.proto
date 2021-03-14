@@ -93,6 +93,7 @@ import "PokemonHomeTelemetry.proto";
 import "PokemonSearchTelemetry.proto";
 import "ImageGalleryTelemetry.proto";
 import "PlayerShownLevelUpShareScreenTelemetry.proto";
+import "ReferralTelemetry.proto";
 import "ServerData.proto";
 import "CommonFilterProto.proto";
 
@@ -170,6 +171,7 @@ message HoloholoClientTelemetryOmniProto {
 		PokemonSearchTelemetry pokemon_search_telemetry = 70;
 		ImageGalleryTelemetry image_gallery_telemetry = 71;
 		PlayerShownLevelUpShareScreenTelemetry player_shown_level_up_share_screen_telemetry = 72;
+		ReferralTelemetry referral_telemetry = 73;
 	}
 
 	ServerData server_data = 1001;

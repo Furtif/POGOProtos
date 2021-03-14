@@ -22,6 +22,24 @@ syntax = "proto3";
 package POGOProtos.Rpc;
 
 message SponsoredGeofenceGiftSettingsProto {
+	message SponsoredBalloonGiftSettingsProto {
+		message SponsoredBalloonMovementSettingsProto {
+			float wander_min_distance = 1;
+			float wander_max_distance = 2;
+			float wander_interval_min = 3;
+			float wander_interval_max = 4;
+			float max_speed = 5;
+			float target_camera_distance = 6;
+		}
+
+		bool enable_balloon_gift = 1;
+		int32 balloon_auto_dismiss_time_ms = 2;
+		bool incident_balloon_prevents_sponsored_balloon = 3;
+		bool incident_balloon_dismisses_sponsored_balloon = 4;
+		int32 get_wasabi_ad_rpc_interval_ms = 5;
+		SponsoredBalloonMovementSettingsProto balloon_movement_settings = 6;
+	}
+
 	bool gift_persistence_enabled = 1;
 	int32 gift_persistence_time_ms = 2;
 	int32 map_presentation_time_ms = 3;
@@ -31,4 +49,5 @@ message SponsoredGeofenceGiftSettingsProto {
 	bool enable_raid_gift = 7;
 	bool enable_incident_gift = 8;
 	int32 fullscreen_disable_exit_button_time_ms = 9;
+	SponsoredBalloonGiftSettingsProto balloon_gift_settings = 10;
 }

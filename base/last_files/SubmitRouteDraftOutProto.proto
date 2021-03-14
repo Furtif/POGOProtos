@@ -1,0 +1,44 @@
+/*
+* Copyright 2016-2021 --=FurtiF=--.
+*
+* Licensed under the
+*	Educational Community License, Version 2.0 (the "License"); you may
+*	not use this file except in compliance with the License. You may
+*	obtain a copy of the License at
+*
+*	http://www.osedu.org/licenses/ECL-2.0
+*
+*	Unless required by applicable law or agreed to in writing,
+*	software distributed under the License is distributed on an "AS IS"
+*	BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
+*	or implied. See the License for the specific language governing
+*	permissions and limitations under the License.
+*
+* Note: For references only.
+*
+*/
+
+syntax = "proto3";
+package POGOProtos.Rpc;
+
+import "RouteCreationProto.proto";
+import "RouteValidation.proto";
+
+message SubmitRouteDraftOutProto {
+	enum Result {
+		UNSET = 0;
+		SUCCESS = 1;
+		ERROR_UNKNOWN = 2;
+		ERROR_INVALID_ROUTE = 3;
+		ERROR_OLD_VERSION = 4;
+		ERROR_ROUTE_STATE_NOT_IN_PROGRESS = 5;
+		ERROR_TOO_MANY_RECENT_SUBMISSIONS = 6;
+		ERROR_ROUTE_SUBMISSION_UNAVAILABLE = 7;
+		ERROR_UNVISITED_FORT = 8;
+		ERROR_MATCHES_REJECTION = 9;
+	}
+
+	Result result = 1;
+	RouteCreationProto submitted_route = 2;
+	RouteValidation validation_result = 3;
+}

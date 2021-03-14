@@ -22,4 +22,5 @@ syntax = "proto3";
 package POGOProtos.Rpc;
 
 message GetClientFeatureFlagsRequest {
+	string country_code = 1;
 }

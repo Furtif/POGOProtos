@@ -84,4 +84,6 @@ message PlayerStatsProto {
 	int32 num_pokemon_form_changes = 61;
 	int32 num_rocket_balloon_battles_won = 62;
 	int32 num_rocket_balloon_battles_total = 63;
+	int32 num_routes_accepted = 64;
+	int32 num_players_referred = 65;
 }
