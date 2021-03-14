@@ -718,10 +718,6 @@ def open_proto_file(main_file, head):
             messages_dic.setdefault(proto_name, "IncidentFinishSequence")
         elif operator.contains(proto_line, "FAILURE = 1;") and len(proto_name) == 11 and proto_name.isupper() and operator.contains(last_line, "SUCCESS = 0;"):
             messages_dic.setdefault(proto_name, "IncubationResult")
-        # unnamed
-        elif operator.contains(proto_line, "POI = 0;") and len(proto_name) == 11 and proto_name.isupper():
-            messages_dic.setdefault(proto_name, "AA_NEW_ENUM_0")
-        #
         elif operator.contains(proto_line, "QUIT = 1;") and len(proto_name) == 11 and proto_name.isupper() and operator.contains(last_line, "SUCCESS = 0;"):
             messages_dic.setdefault(proto_name, "AvatarCompletion")
         elif operator.contains(proto_line, "VICTORY = 1;") and len(proto_name) == 11 and proto_name.isupper() and operator.contains(last_line, "NORMAL = 0;"):
@@ -730,6 +726,16 @@ def open_proto_file(main_file, head):
             messages_dic.setdefault(proto_name, "VfxLevel")
         elif operator.contains(proto_line, "ICON = 6;") and len(proto_name) == 11 and proto_name.isupper():
             messages_dic.setdefault(proto_name, "POIDecorationProperties")
+        # unnamed
+        elif operator.contains(proto_line, "POI = 0;") and len(proto_name) == 11 and proto_name.isupper():
+            messages_dic.setdefault(proto_name, "AA_NEW_ENUM_0")
+        elif operator.contains(proto_line, "AR_SNAP_SHOT = 2;") and len(proto_name) == 11 and proto_name.isupper():
+            messages_dic.setdefault(proto_name, "AA_NEW_ENUM_1")
+        elif operator.contains(proto_line, "SET_AS_START = 1;") and len(proto_name) == 11 and proto_name.isupper():
+            messages_dic.setdefault(proto_name, "AA_NEW_ENUM_2")
+        elif operator.contains(proto_line, "ROUTE_DATA_ERROR = 0;") and len(proto_name) == 11 and proto_name.isupper():
+            messages_dic.setdefault(proto_name, "AA_NEW_ENUM_3")
+        #
 
         # clean some after conditions, ok in double build gen vx.xxx.x... (enums only stuff)
         if proto_name == "BadgeRank" and operator.contains(proto_line, "BadgeRank_") and not operator.contains(proto_line, "{"):
@@ -798,9 +804,6 @@ def open_proto_file(main_file, head):
             messages_dic.setdefault("IncidentFinishSequence_", "INCIDENT_FINISH_SEQUENCE_")
         elif proto_name == "IncubationResult" and operator.contains(proto_line, "IncubationResult_") and not operator.contains(proto_line, "{"):
             messages_dic.setdefault("IncubationResult_", "INCUBATION_RESULT_")
-        # unnamed..
-        #elif proto_name == "AA_NEW_ENUM_0" and operator.contains(proto_line, "AA_NEW_ENUM_0_") and not operator.contains(proto_line, "{"):
-        #    messages_dic.setdefault("AA_NEW_ENUM_0_", "AA_NEW_ENUM_0_")
         elif proto_name == "AvatarCompletion" and operator.contains(proto_line, "AvatarCompletion_") and not operator.contains(proto_line, "{"):
             messages_dic.setdefault("AvatarCompletion_", "AVATAR_COMPLETION_")
         elif proto_name == "ExitVfxContext" and operator.contains(proto_line, "ExitVfxContext_") and not operator.contains(proto_line, "{"):
@@ -809,6 +812,15 @@ def open_proto_file(main_file, head):
             messages_dic.setdefault("VfxLevel_", "VFX_LEVEL_")
         elif proto_name == "POIDecorationProperties" and operator.contains(proto_line, "POIDecorationProperties_") and not operator.contains(proto_line, "{"):
             messages_dic.setdefault("POIDecorationProperties_", "POI_DECORATION_PROPERTIES_")
+        # unnamed..
+        #elif proto_name == "AA_NEW_ENUM_0" and operator.contains(proto_line, "AA_NEW_ENUM_0_") and not operator.contains(proto_line, "{"):
+        #    messages_dic.setdefault("AA_NEW_ENUM_0_", "AA_NEW_ENUM_0_")
+        #elif proto_name == "AA_NEW_ENUM_1" and operator.contains(proto_line, "AA_NEW_ENUM_1_") and not operator.contains(proto_line, "{"):
+        #    messages_dic.setdefault("AA_NEW_ENUM_1_", "AA_NEW_ENUM_1_")
+        #elif proto_name == "AA_NEW_ENUM_2" and operator.contains(proto_line, "AA_NEW_ENUM_2_") and not operator.contains(proto_line, "{"):
+        #    messages_dic.setdefault("AA_NEW_ENUM_2_", "AA_NEW_ENUM_2_")
+        #elif proto_name == "AA_NEW_ENUM_3" and operator.contains(proto_line, "AA_NEW_ENUM_3_") and not operator.contains(proto_line, "{"):
+        #    messages_dic.setdefault("AA_NEW_ENUM_3_", "AA_NEW_ENUM_3_")
         ##
 
         # set last line for compare..
