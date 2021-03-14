@@ -27,6 +27,30 @@ enum AA_NEW_ENUM_0 {
 	AA_NEW_ENUM_0_NEARBY_POKEMON = 2;
 }
 
+enum AA_NEW_ENUM_1 {
+	AA_NEW_ENUM_1_NULL = 0;
+	AA_NEW_ENUM_1_UNSET = 1;
+	AA_NEW_ENUM_1_AR_SNAP_SHOT = 2;
+	AA_NEW_ENUM_1_LEVEL_UP_SCREEN_SHARE = 3;
+}
+
+enum AA_NEW_ENUM_2 {
+	AA_NEW_ENUM_2_UNSET = 0;
+	AA_NEW_ENUM_2_SET_AS_START = 1;
+	AA_NEW_ENUM_2_ADD_POINT = 2;
+	AA_NEW_ENUM_2_REMOVE_POINT = 3;
+	AA_NEW_ENUM_2_CANNOT_ADD_POINT = 4;
+}
+
+enum AA_NEW_ENUM_3 {
+	AA_NEW_ENUM_3_ROUTE_DATA_ERROR = 0;
+	AA_NEW_ENUM_3_UNSET = 1;
+	AA_NEW_ENUM_3_TOO_MANY_STOPS_IN_ROUTE = 2;
+	AA_NEW_ENUM_3_EXCEEDS_MAX_TOTAL_DISTANCE = 3;
+	AA_NEW_ENUM_3_TOO_CLOSE_TO_LAST_POI = 4;
+	AA_NEW_ENUM_3_TOO_FAR_AWAY_FROM_LAST_POI = 5;
+}
+
 enum AdFeedbackComplaintReason {
 	AD_FEEDBACK_COMPLAINT_REASON_INVALID = 0;
 	AD_FEEDBACK_COMPLAINT_REASON_OFFENSIVE = 1;
@@ -221,12 +245,6 @@ enum BuddyLevel {
 	BUDDY_LEVEL_3 = 4;
 	BUDDY_LEVEL_4 = 5;
 	BUDDY_LEVEL_5 = 6;
-}
-
-enum CEOFPMCGBMH {
-	CEOFPMCGBMH_UNKNOWN_GAME_BACKGROUND_MODE_ACTION = 0;
-	CEOFPMCGBMH_REGISTER_BACKGROUND_SERVICE = 230000;
-	CEOFPMCGBMH_GET_CLIENT_BGMODE_SETTINGS = 230001;
 }
 
 enum CalendarAddResult {
@@ -436,21 +454,6 @@ enum DeviceServiceTelemetryIds {
 	DEVICE_SERVICE_TELEMETRY_IDS_ADVENTURE_SYNC = 5;
 }
 
-enum ECCIIEGCHEE {
-	ECCIIEGCHEE_ECCIIEGCHEE_AUTO_INVALID = 0;
-	ECCIIEGCHEE_UNSET = 1;
-	ECCIIEGCHEE_AR_SNAP_SHOT = 2;
-	ECCIIEGCHEE_LEVEL_UP_SCREEN_SHARE = 3;
-}
-
-enum EMLBJIJKLJG {
-	EMLBJIJKLJG_UNSET = 0;
-	EMLBJIJKLJG_SET_AS_START = 1;
-	EMLBJIJKLJG_ADD_POINT = 2;
-	EMLBJIJKLJG_REMOVE_POINT = 3;
-	EMLBJIJKLJG_CANNOT_ADD_POINT = 4;
-}
-
 enum EggIncubatorType {
 	INCUBATOR_UNSET = 0;
 	INCUBATOR_DISTANCE = 1;
@@ -602,6 +605,12 @@ enum FriendshipLevelMilestone {
 	FRIENDSHIP_LEVEL_2 = 3;
 	FRIENDSHIP_LEVEL_3 = 4;
 	FRIENDSHIP_LEVEL_4 = 5;
+}
+
+enum GameBackgroundModeAction {
+	UNKNOWN_GAME_BACKGROUND_MODE_ACTION = 0;
+	REGISTER_BACKGROUND_SERVICE = 230000;
+	GET_CLIENT_BGMODE_SETTINGS = 230001;
 }
 
 enum GameChatActions {
@@ -3134,15 +3143,6 @@ enum NotificationType {
 	NOTIFICATION_TYPE_SYSTEM_NOTIFICATIONS = 4;
 }
 
-enum OKMGCIKINOH {
-	OKMGCIKINOH_ROUTE_DATA_ERROR = 0;
-	OKMGCIKINOH_UNSET = 1;
-	OKMGCIKINOH_TOO_MANY_STOPS_IN_ROUTE = 2;
-	OKMGCIKINOH_EXCEEDS_MAX_TOTAL_DISTANCE = 3;
-	OKMGCIKINOH_TOO_CLOSE_TO_LAST_POI = 4;
-	OKMGCIKINOH_TOO_FAR_AWAY_FROM_LAST_POI = 5;
-}
-
 enum OmniNotificationSubscriptionType {
 	OMNI_NOTIFICATION_SUBSCRIPTION_TYPE_OPTED_IN = 0;
 	OMNI_NOTIFICATION_SUBSCRIPTION_TYPE_SUBSCRIBED = 1;
@@ -5566,18 +5566,6 @@ message BuddySwapSettings {
 
 message BuddyWalkSettings {
 	float km_required_per_affection_point = 1;
-}
-
-message CJICCANHKEN {
-	enum Result {
-		UNSET = 0;
-		SUCCESS_AD_RECEIVED = 1;
-		SUCCESS_NO_ADS_AVAILABLE = 2;
-		ERROR_REQUEST_FAILED = 3;
-	}
-
-	Result result = 1;
-	AdDetails jnlgdlfndla = 2;
 }
 
 message CameraSettingsProto {
@@ -11090,12 +11078,6 @@ message KoalaSettingsProto {
 	string app_id = 1;
 	bool use_sandbox = 2;
 	bool use_koala = 3;
-}
-
-message LHPHHMGAHBJ {
-	double npdmpionkfc = 1;
-	double kjlgekeibmi = 2;
-	AdTargetingInfoProto nijofmkhcnb = 3;
 }
 
 message Label {
@@ -18953,4 +18935,22 @@ message WithWinGymBattleStatusProto {
 }
 
 message WithWinRaidStatusProto {
+}
+
+message ZZ_UNKONW_OUT_PROTO_0 {
+	enum Result {
+		UNSET = 0;
+		SUCCESS_AD_RECEIVED = 1;
+		SUCCESS_NO_ADS_AVAILABLE = 2;
+		ERROR_REQUEST_FAILED = 3;
+	}
+
+	Result result = 1;
+	AdDetails ad_details = 2;
+}
+
+message ZZ_UNKONW_PROTO_0 {
+	double double_0 = 1;
+	double double_1 = 2;
+	AdTargetingInfoProto ad_targeting_info = 3;
 }
