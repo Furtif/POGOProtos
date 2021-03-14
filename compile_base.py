@@ -685,6 +685,18 @@ def open_proto_file(main_file, head):
             messages_dic.setdefault(proto_name, "BannedPlayerReason")
         elif operator.contains(proto_line, "AD_FEEDBACK_COMPLAINT_REASON_INVALID = 0;") and len(proto_name) == 11 and proto_name.isupper():
             messages_dic.setdefault(proto_name, "AdFeedbackComplaintReason")
+        elif operator.contains(proto_line, "PORTRAIT = 1;") and len(proto_name) == 11 and proto_name.isupper():
+            messages_dic.setdefault(proto_name, "PhoneBoothPresentationMode")
+        elif operator.contains(proto_line, "WHAT_IS_POKESTOP = 0;") and len(proto_name) == 11 and proto_name.isupper():
+            messages_dic.setdefault(proto_name, "PoiSubmissionTutorialPage")
+        elif operator.contains(proto_line, "LOADING = 1;") and len(proto_name) == 11 and proto_name.isupper():
+            messages_dic.setdefault(proto_name, "AssetBundleStatus")
+        elif operator.contains(proto_line, "YELLOW_LEADER = 3;") and len(proto_name) == 11 and proto_name.isupper():
+            messages_dic.setdefault(proto_name, "Speaker")
+        elif operator.contains(proto_line, "POST_SUSPENSION_WARNING = 1;") and len(proto_name) == 11 and proto_name.isupper():
+            messages_dic.setdefault(proto_name, "WarnedPlayerReason")
+        elif operator.contains(proto_line, "PROXY_CHAT_ACTION = 660000;") and len(proto_name) == 11 and proto_name.isupper():
+            messages_dic.setdefault(proto_name, "GameChatActions")
 
         # clean some after conditions, ok in double build gen vx.xxx.x... (enums only stuff)
         if proto_name == "BadgeRank" and operator.contains(proto_line, "BadgeRank_") and not operator.contains(proto_line, "{"):
@@ -721,6 +733,18 @@ def open_proto_file(main_file, head):
             messages_dic.setdefault("BannedPlayerReason_", "BANNED_PLAYER_REASON_")
         elif proto_name == "AdFeedbackComplaintReason" and operator.contains(proto_line, "AdFeedbackComplaintReason_") and not operator.contains(proto_line, "{"):
             messages_dic.setdefault("AdFeedbackComplaintReason_", "")
+        elif proto_name == "PhoneBoothPresentationMode" and operator.contains(proto_line, "PhoneBoothPresentationMode_") and not operator.contains(proto_line, "{"):
+            messages_dic.setdefault("PhoneBoothPresentationMode_", "PHONE_BOOTH_PRESENTATION_MODE_")
+        elif proto_name == "PoiSubmissionTutorialPage" and operator.contains(proto_line, "PoiSubmissionTutorialPage_") and not operator.contains(proto_line, "{"):
+            messages_dic.setdefault("PoiSubmissionTutorialPage_", "POI_SUBMISSION_TUTORIAL_PAGE_")
+        elif proto_name == "AssetBundleStatus" and operator.contains(proto_line, "AssetBundleStatus_") and not operator.contains(proto_line, "{"):
+            messages_dic.setdefault("AssetBundleStatus_", "ASSET_BUNDLE_STATUS_")
+        elif proto_name == "Speaker" and operator.contains(proto_line, "Speaker_") and not operator.contains(proto_line, "{"):
+            messages_dic.setdefault("Speaker_", "SPEAKER_")
+        elif proto_name == "WarnedPlayerReason" and operator.contains(proto_line, "WarnedPlayerReason_") and not operator.contains(proto_line, "{"):
+            messages_dic.setdefault("WarnedPlayerReason_", "WARNED_PLAYER_REASON_")
+        elif proto_name == "GameChatActions" and operator.contains(proto_line, "GameChatActions_") and not operator.contains(proto_line, "{"):
+            messages_dic.setdefault("GameChatActions_", "")
         ##
 
         ## shows still obfuscated
