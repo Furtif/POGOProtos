@@ -632,6 +632,7 @@ def open_proto_file(main_file, head):
     ## check in messages basic obfuscated names...
     proto_name = ''
     messages_dic = {}
+    last_line = ''
     for proto_line in messages.split("\n"):
         if is_blank(proto_line):
             continue
@@ -697,6 +698,36 @@ def open_proto_file(main_file, head):
             messages_dic.setdefault(proto_name, "WarnedPlayerReason")
         elif operator.contains(proto_line, "PROXY_CHAT_ACTION = 660000;") and len(proto_name) == 11 and proto_name.isupper():
             messages_dic.setdefault(proto_name, "GameChatActions")
+        elif operator.contains(proto_line, "MAP_EMPTY_WARNING = 8;") and len(proto_name) == 11 and proto_name.isupper():
+            messages_dic.setdefault(proto_name, "IncidentLeaderStringTypes")
+        elif operator.contains(proto_line, "NPC = 0;") and len(proto_name) == 11 and proto_name.isupper():
+            messages_dic.setdefault(proto_name, "IncidentStartContext")
+        elif operator.contains(proto_line, "ENCOUNTER = 0;") and len(proto_name) == 11 and proto_name.isupper():
+            messages_dic.setdefault(proto_name, "ArToggleContext")
+        elif operator.contains(proto_line, "ARSTANDARD = 1;") and len(proto_name) == 11 and proto_name.isupper():
+            messages_dic.setdefault(proto_name, "ArMode")
+        elif operator.contains(proto_line, "ONLINE_ELSEWHERE = 1;") and len(proto_name) == 11 and proto_name.isupper():
+            messages_dic.setdefault(proto_name, "OnlineStatus")
+        elif operator.contains(proto_line, "V2 = 2;") and len(proto_name) == 11 and proto_name.isupper() and operator.contains(last_line, "V1 = 1;"):
+            messages_dic.setdefault(proto_name, "PlayerOnboardingPath")
+        elif operator.contains(proto_line, "EXIT = 1;") and len(proto_name) == 11 and proto_name.isupper() and operator.contains(last_line, "SELECTED = 0;"):
+            messages_dic.setdefault(proto_name, "IncubatorSelectionResult")
+        elif operator.contains(proto_line, "NICE = 1;") and len(proto_name) == 11 and proto_name.isupper():
+            messages_dic.setdefault(proto_name, "CameraZoomInLevel")
+        elif operator.contains(proto_line, "VICTORY = 1;") and len(proto_name) == 11 and proto_name.isupper() and operator.contains(last_line, "NONE = 0;"):
+            messages_dic.setdefault(proto_name, "IncidentFinishSequence")
+        elif operator.contains(proto_line, "FAILURE = 1;") and len(proto_name) == 11 and proto_name.isupper() and operator.contains(last_line, "SUCCESS = 0;"):
+            messages_dic.setdefault(proto_name, "IncubationResult")
+        # unnamed
+        elif operator.contains(proto_line, "POI = 0;") and len(proto_name) == 11 and proto_name.isupper():
+            messages_dic.setdefault(proto_name, "AA_NEW_ENUM_0")
+        #
+        elif operator.contains(proto_line, "QUIT = 1;") and len(proto_name) == 11 and proto_name.isupper() and operator.contains(last_line, "SUCCESS = 0;"):
+            messages_dic.setdefault(proto_name, "AvatarCompletion")
+        elif operator.contains(proto_line, "VICTORY = 1;") and len(proto_name) == 11 and proto_name.isupper() and operator.contains(last_line, "NORMAL = 0;"):
+            messages_dic.setdefault(proto_name, "ExitVfxContext")
+        elif operator.contains(proto_line, "START = 1;") and len(proto_name) == 11 and proto_name.isupper() and operator.contains(last_line, "NONE = 0;"):
+            messages_dic.setdefault(proto_name, "VfxLevel")
 
         # clean some after conditions, ok in double build gen vx.xxx.x... (enums only stuff)
         if proto_name == "BadgeRank" and operator.contains(proto_line, "BadgeRank_") and not operator.contains(proto_line, "{"):
@@ -745,7 +776,39 @@ def open_proto_file(main_file, head):
             messages_dic.setdefault("WarnedPlayerReason_", "WARNED_PLAYER_REASON_")
         elif proto_name == "GameChatActions" and operator.contains(proto_line, "GameChatActions_") and not operator.contains(proto_line, "{"):
             messages_dic.setdefault("GameChatActions_", "")
+        elif proto_name == "IncidentLeaderStringTypes" and operator.contains(proto_line, "IncidentLeaderStringTypes_") and not operator.contains(proto_line, "{"):
+            messages_dic.setdefault("IncidentLeaderStringTypes_", "INCIDENT_LEADER_STRING_TYPES_")
+        elif proto_name == "IncidentStartContext" and operator.contains(proto_line, "IncidentStartContext_") and not operator.contains(proto_line, "{"):
+            messages_dic.setdefault("IncidentStartContext_", "INCIDENT_START_CONTEXT_")
+        elif proto_name == "ArToggleContext" and operator.contains(proto_line, "ArToggleContext_") and not operator.contains(proto_line, "{"):
+            messages_dic.setdefault("ArToggleContext_", "AR_TOGGLE_CONTEXT_")
+        elif proto_name == "ArMode" and operator.contains(proto_line, "ArMode_") and not operator.contains(proto_line, "{"):
+            messages_dic.setdefault("ArMode_", "AR_MODE_")
+        elif proto_name == "OnlineStatus" and operator.contains(proto_line, "OnlineStatus_") and not operator.contains(proto_line, "{"):
+            messages_dic.setdefault("OnlineStatus_", "ONLINE_STATUS_")
+        elif proto_name == "PlayerOnboardingPath" and operator.contains(proto_line, "PlayerOnboardingPath_") and not operator.contains(proto_line, "{"):
+            messages_dic.setdefault("PlayerOnboardingPath_", "PLAYER_ONBOARDING_PATH_")
+        elif proto_name == "IncubatorSelectionResult" and operator.contains(proto_line, "IncubatorSelectionResult_") and not operator.contains(proto_line, "{"):
+            messages_dic.setdefault("IncubatorSelectionResult_", "INCUBATOR_SELECTION_RESULT_")
+        elif proto_name == "CameraZoomInLevel" and operator.contains(proto_line, "CameraZoomInLevel_") and not operator.contains(proto_line, "{"):
+            messages_dic.setdefault("CameraZoomInLevel_", "CAMERA_ZOOM_IN_LEVEL_")
+        elif proto_name == "IncidentFinishSequence" and operator.contains(proto_line, "IncidentFinishSequence_") and not operator.contains(proto_line, "{"):
+            messages_dic.setdefault("IncidentFinishSequence_", "INCIDENT_FINISH_SEQUENCE_")
+        elif proto_name == "IncubationResult" and operator.contains(proto_line, "IncubationResult_") and not operator.contains(proto_line, "{"):
+            messages_dic.setdefault("IncubationResult_", "INCUBATION_RESULT_")
+        # unnamed..
+        #elif proto_name == "AA_NEW_ENUM_0" and operator.contains(proto_line, "AA_NEW_ENUM_0_") and not operator.contains(proto_line, "{"):
+        #    messages_dic.setdefault("AA_NEW_ENUM_0_", "AA_NEW_ENUM_0_")
+        elif proto_name == "AvatarCompletion" and operator.contains(proto_line, "AvatarCompletion_") and not operator.contains(proto_line, "{"):
+            messages_dic.setdefault("AvatarCompletion_", "AVATAR_COMPLETION_")
+        elif proto_name == "ExitVfxContext" and operator.contains(proto_line, "ExitVfxContext_") and not operator.contains(proto_line, "{"):
+            messages_dic.setdefault("ExitVfxContext_", "EXIT_VFX_CONTEXT_")
+        elif proto_name == "VfxLevel" and operator.contains(proto_line, "VfxLevel_") and not operator.contains(proto_line, "{"):
+            messages_dic.setdefault("VfxLevel_", "VFX_LEVEL_")
         ##
+
+        # set last line for compare..
+        last_line = proto_line
 
         ## shows still obfuscated
         if operator.contains(proto_line, "{") and len(proto_name) == 11 and proto_name.isupper():
