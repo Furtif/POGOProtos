@@ -825,13 +825,14 @@ def open_proto_file(main_file, head):
         ##
 
     ## Others cleans if present..
-    messages_dic.setdefault("POI_DECORATION_FOLLOW_FLAGS_POI_DECORATION_FOLLOW_FLAGS_AUTO_INVALID", "POI_DECORATION_FOLLOW_FLAGS_UNSET")
+    if "POI_DECORATION_FOLLOW_FLAGS_POI_DECORATION_FOLLOW_FLAGS_AUTO_INVALID" in messages:
+        messages_dic.setdefault("POI_DECORATION_FOLLOW_FLAGS_POI_DECORATION_FOLLOW_FLAGS_AUTO_INVALID", "POI_DECORATION_FOLLOW_FLAGS_UNSET")
     ##
 
     ## fix messages obfuscated names
     # print("Cleaning process on messages...")
     for _message in messages_dic:
-        # print("Cleaned obfuscated message name " + _message + " clean message name " + messages_dic[_message])
+        print("Cleaned obfuscated message name " + _message + " clean message name " + messages_dic[_message])
         messages = messages.replace(_message, messages_dic[_message])
     ##
 
