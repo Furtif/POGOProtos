@@ -10,7 +10,7 @@ from subprocess import call
 #warnings.simplefilter('error')
 
 # Variables
-global_version = '0.203.0'
+global_version = '0.203.1'
 protoc_executable = "protoc"
 package_name = 'POGOProtos.Rpc'
 input_file = "POGOProtos.Rpc.proto"
@@ -726,6 +726,8 @@ def open_proto_file(main_file, head):
             messages_dic.setdefault(proto_name, "VfxLevel")
         elif operator.contains(proto_line, "ICON = 6;") and len(proto_name) == 11 and proto_name.isupper():
             messages_dic.setdefault(proto_name, "POIDecorationProperties")
+        elif operator.contains(proto_line, "REGISTER_BACKGROUND_SERVICE = 230000;") and len(proto_name) == 11 and proto_name.isupper():
+            messages_dic.setdefault(proto_name, "GameBackgroundModeAction")
         # unnamed
         elif operator.contains(proto_line, "POI = 0;") and len(proto_name) == 11 and proto_name.isupper():
             messages_dic.setdefault(proto_name, "AA_NEW_ENUM_0")
@@ -812,6 +814,8 @@ def open_proto_file(main_file, head):
             messages_dic.setdefault("VfxLevel_", "VFX_LEVEL_")
         elif proto_name == "POIDecorationProperties" and operator.contains(proto_line, "POIDecorationProperties_") and not operator.contains(proto_line, "{"):
             messages_dic.setdefault("POIDecorationProperties_", "POI_DECORATION_PROPERTIES_")
+        elif proto_name == "GameBackgroundModeAction" and operator.contains(proto_line, "GameBackgroundModeAction_") and not operator.contains(proto_line, "{"):
+            messages_dic.setdefault("GameBackgroundModeAction_", "")
         # unnamed..
         #elif proto_name == "AA_NEW_ENUM_0" and operator.contains(proto_line, "AA_NEW_ENUM_0_") and not operator.contains(proto_line, "{"):
         #    messages_dic.setdefault("AA_NEW_ENUM_0_", "AA_NEW_ENUM_0_")
