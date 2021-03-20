@@ -23,7 +23,7 @@ package POGOProtos.Rpc;
 
 import "AdDetails.proto";
 
-message ZZ_UNKONW_OUT_PROTO_0 {
+message GetGeofencedAdOutProto {
 	enum Result {
 		UNSET = 0;
 		SUCCESS_AD_RECEIVED = 1;

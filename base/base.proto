@@ -9103,6 +9103,24 @@ message GetGameMasterClientTemplatesProto {
 	uint64 page_timestamp = 3;
 }
 
+message GetGeofencedAdOutProto {
+	enum Result {
+		UNSET = 0;
+		SUCCESS_AD_RECEIVED = 1;
+		SUCCESS_NO_ADS_AVAILABLE = 2;
+		ERROR_REQUEST_FAILED = 3;
+	}
+
+	Result result = 1;
+	AdDetails ad_details = 2;
+}
+
+message GetGeofencedAdProto {
+	double double_0 = 1;
+	double double_1 = 2;
+	AdTargetingInfoProto ad_targeting_info = 3;
+}
+
 message GetGiftBoxDetailsOutProto {
 	enum Result {
 		UNSET = 0;
@@ -18945,22 +18963,4 @@ message WithWinGymBattleStatusProto {
 }
 
 message WithWinRaidStatusProto {
-}
-
-message ZZ_UNKONW_OUT_PROTO_0 {
-	enum Result {
-		UNSET = 0;
-		SUCCESS_AD_RECEIVED = 1;
-		SUCCESS_NO_ADS_AVAILABLE = 2;
-		ERROR_REQUEST_FAILED = 3;
-	}
-
-	Result result = 1;
-	AdDetails ad_details = 2;
-}
-
-message ZZ_UNKONW_PROTO_0 {
-	double double_0 = 1;
-	double double_1 = 2;
-	AdTargetingInfoProto ad_targeting_info = 3;
 }
