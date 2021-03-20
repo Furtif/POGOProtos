@@ -42,7 +42,7 @@ If you want to figure out the current version in an automated system, use this f
 *Note: This file will contain pre-release versions too.*
 
 ### Preparation
-Current recommended protoc version: "Protocol Buffers v3.14.0".
+Current recommended protoc version: "Protocol Buffers v3.15.6".
 You can find download links [here](https://github.com/google/protobuf/releases).
 
 #### Windows

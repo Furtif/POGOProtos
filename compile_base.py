@@ -228,6 +228,7 @@ def open_proto_file(main_file, head):
     messages = ''
     # ignored_one_of = {}
     # is_ignored = False
+    check_sub_message_end = False
     proto_name = ''
 
     with open(main_file, 'r') as proto_file:

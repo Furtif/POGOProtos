@@ -10,8 +10,8 @@ python:
   - "3.8"
 install:
   - pushd /tmp
-  - wget https://github.com/protocolbuffers/protobuf/releases/download/v3.14.0/protoc-3.14.0-linux-x86_64.zip
-  - unzip protoc-3.14.0-linux-x86_64.zip
+  - wget https://github.com/protocolbuffers/protobuf/releases/download/v3.15.6/protoc-3.15.6-linux-x86_64.zip
+  - unzip protoc-3.15.6-linux-x86_64.zip
   - popd
   - export PATH=/tmp/bin:$PATH
 script:
