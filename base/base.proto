@@ -14,7 +14,7 @@
 *	or implied. See the License for the specific language governing
 *	permissions and limitations under the License.
 *
-* Version: 0.203.0
+* Version: 0.203.1
 *
 */
 
@@ -16420,12 +16420,6 @@ message ReportAdFeedbackResponse {
 }
 
 message ReportAdInteractionProto {
-	enum AdType {
-		AD_TYPE_UNKNOWN = 0;
-		AD_TYPE_SPONSORED_GIFT = 1;
-		AD_TYPE_SPONSORED_BALLOON = 2;
-	}
-
 	oneof InteractionType {
 		ViewImpressionInteraction view_impression = 5;
 		ViewFullscreenInteraction view_fullscreen = 6;
@@ -16433,6 +16427,16 @@ message ReportAdInteractionProto {
 		CTAClickInteraction cta_clicked = 8;
 		AdSpawendInteraction ad_spawned = 9;
 		AdDismissedInteraction ad_dismissed = 10;
+	}
+
+	enum AdType {
+		AD_TYPE_UNKNOWN = 0;
+		AD_TYPE_SPONSORED_GIFT = 1;
+		AD_TYPE_SPONSORED_BALLOON = 2;
+	}
+
+	message ViewFullscreenInteraction {
+		string fullscreen_image_url = 1;
 	}
 
 	message AdDismissedInteraction {
@@ -16447,9 +16451,20 @@ message ReportAdInteractionProto {
 		AdDismissal ad_dismissal = 1;
 	}
 
+	message FullScreenInteraction {
+		string fullscreen_image_url = 1;
+		int64 total_residence_time_ms = 2;
+		int64 time_away_ms = 3;
+		bool took_screenshot = 4;
+	}
+
 	message ViewImpressionInteraction {
 		string preview_image_url = 1;
 		bool is_persisted_gift = 2;
+	}
+
+	message CTAClickInteraction {
+		string cta_url = 6;
 	}
 
 	message AdSpawendInteraction {
@@ -16463,21 +16478,6 @@ message ReportAdInteractionProto {
 
 		bool ad_spawend_bool = 1;
 		AdInhibition ad_inhibition = 2;
-	}
-
-	message CTAClickInteraction {
-		string cta_url = 6;
-	}
-
-	message ViewFullscreenInteraction {
-		string fullscreen_image_url = 1;
-	}
-
-	message FullScreenInteraction {
-		string fullscreen_image_url = 1;
-		int64 total_residence_time_ms = 2;
-		int64 time_away_ms = 3;
-		bool took_screenshot = 4;
 	}
 
 	string game_id = 1;
