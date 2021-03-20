@@ -652,6 +652,7 @@ def open_proto_file(main_file, head):
             messages_dic.setdefault(proto_name, "InvasionCharacter")
 
         ## Needs double clean or rebuild for auto mode... (enums only stuff)
+        #enums
         elif operator.contains(proto_line, "PLATINUM = 4;") and len(proto_name) == 11 and proto_name.isupper():
             messages_dic.setdefault(proto_name, "BadgeRank")
         elif operator.contains(proto_line, "_GEN8 = 7;") and len(proto_name) == 11 and proto_name.isupper():

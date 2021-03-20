@@ -4006,42 +4006,10 @@ enum WebTelemetryIds {
 	WEB_TELEMETRY_IDS_POINT_OF_INTEREST_DESCRIPTION_WEB_CLICK = 1;
 }
 
-message AIGBNPNBODC {
-	string fojhpbhheeo = 1;
-	string mbfocaoicnj = 2;
-}
-
 message AKALJMDMNPJ {
 	int64 eepfbnhkjgb = 1;
 	double ajpfdeapjeh = 2;
 	double kpelkpgebme = 3;
-}
-
-message AKLCEABFKDM {
-	enum BBMHNPOJABC {
-		UNSET = 0;
-		FOUND = 1;
-		NEARBY = 2;
-		OUT_OF_RANGE = 3;
-		ALREADY_CAUGHT = 4;
-		NOT_AVAILABLE = 5;
-	}
-
-	BBMHNPOJABC bbhkakgbkne = 1;
-	int32 fhaggedpldm = 2;
-	string dobcanfbfbc = 3;
-}
-
-message ALNGMHLCBLB {
-	enum FOMEDHHHGLP {
-		UNSET = 0;
-		INITIALIZATION = 1;
-		ACCUMULATION = 2;
-	}
-
-	FOMEDHHHGLP jcmagehmggp = 1;
-	int64 eepfbnhkjgb = 2;
-	MINAOMDPFMC eeolmmhppdk = 3;
 }
 
 message ARBuddyMultiplayerSessionTelemetry {
@@ -5586,44 +5554,8 @@ message BuddyWalkSettings {
 	float km_required_per_affection_point = 1;
 }
 
-message CCFLFPEOJDH {
-	CEDKNLBGLDG migkacodgjg = 1;
-}
-
 message CEDKNLBGLDG {
 	string gbgnmgfjmdl = 1;
-}
-
-message CGLFDCNDLBJ {
-	enum JADIADKNPJK {
-		UNSET = 0;
-		ENTER = 1;
-		RETAKE = 2;
-		CONFIRM = 3;
-		EXIT = 4;
-	}
-
-	enum LCLDEMGFMKD {
-		UNKNOWN = 0;
-		POI_NOMINATION_ENTER = 1;
-		POI_TUTORIAL_COMPLETE = 2;
-		POI_MAP_CHANGEDVIEW_MAP = 3;
-		POI_MAP_CHANGEDVIEW_SATELLITE = 4;
-		POI_MAP_CENTER_LOCATION = 5;
-		POI_LOCATION_SET = 6;
-		POI_PHOTO_CAMERA_ENTER = 7;
-		POI_PHOTO_CAMERA_EXIT = 8;
-		POI_TITLE_ENTERED = 9;
-		POI_DESCRIPTION_ENTER = 10;
-		POI_DETAILS_CONFIRM = 11;
-		POI_SUPPORTINGINFO_ENTER = 12;
-		POI_SUBMIT_BUTTON_HIT = 13;
-		POI_EXIT_BUTTON_HIT = 14;
-	}
-
-	LCLDEMGFMKD lmfcnneffag = 1;
-	PoiImageType honnbggcakp = 2;
-	JADIADKNPJK ejbefplfjlo = 3;
 }
 
 message CMFEONBFMEG {
@@ -7173,32 +7105,8 @@ message CurrentNewsProto {
 	int64 last_updated_timestamp = 3;
 }
 
-message DAMHKOIDBDD {
-	oneof MMDPEIFANJE {
-		AdFeedbackComplaintReason complaint_reason = 5;
-		AdFeedbackNotInterestedReason not_interested_reason = 6;
-		AdFeedbackLikeReason like_reason = 7;
-	}
-
-	string hffnemhfdmc = 1;
-	string bkcpnghapfa = 2;
-	string lnnbnicaodn = 3;
-	bytes hkaiclbjgmi = 4;
-	string fhblkfnjojk = 8;
-}
-
 message DMEOBKFDBHO {
 	int32 jihbbmddhgh = 1;
-}
-
-message DPCBJCNPAAL {
-	oneof EFEFHKKLNOB {
-		CGLFDCNDLBJ poi_submission_telemetry = 1;
-		KJPPNHDKPGC poi_submission_photo_upload_error_telemetry = 2;
-		AIGBNPNBODC player_metadata_telemetry = 3;
-	}
-
-	ServerData efbpjmlbgfo = 1001;
 }
 
 message DPHMGDOGAPO {
@@ -7650,11 +7558,6 @@ message DumbBeaconProto {
 
 message DummyDataProto {
 	PokemonProto dummy_pokemon = 1;
-}
-
-message ECLHJGNANFH {
-	CEDKNLBGLDG migkacodgjg = 1;
-	int64 iefcaopkmjh = 2;
 }
 
 message EECKFHLKDMM {
@@ -8221,7 +8124,7 @@ message ExperienceBoostAttributesProto {
 }
 
 message FCMIBFKOACE {
-	enum LLGPECPDDDL {
+	enum Result {
 		UNSET = 0;
 		POKEMON_CAPTURED = 1;
 		POKEMON_FLED = 2;
@@ -8232,7 +8135,7 @@ message FCMIBFKOACE {
 		ENCOUNTER_ALREADY_FINISHED = 7;
 	}
 
-	LLGPECPDDDL bbhkakgbkne = 1;
+	Result result = 1;
 	int32 agjabidimpi = 2;
 }
 
@@ -8653,6 +8556,16 @@ message GameClientPhotoGalleryPoiImageProto {
 	int64 creation_timestamp_ms = 5;
 	bool has_player_voted = 6;
 	int32 num_votes_from_game = 7;
+}
+
+message GameClientTelemetryOmniProto {
+	oneof TelemetryData {
+		PoiSubmissionTelemetry poi_submission_telemetry = 1;
+		PoiSubmissionPhotoUploadErrorTelemetry poi_submission_photo_upload_error_telemetry = 2;
+		PoiPlayerMetadataTelemetry player_metadata_telemetry = 3;
+	}
+
+	ServerData server_data = 1001;
 }
 
 message GameItemContentProto {
@@ -10781,18 +10694,6 @@ message HoloholoClientTelemetryOmniProto {
 	CommonFilterProto common_filters = 1002;
 }
 
-message IBAKAOADIMO {
-	enum EOCOJCHJLEF {
-		UNSET = 0;
-		STAGE1 = 1;
-		STAGE2 = 2;
-		STAGE3 = 3;
-	}
-
-	EOCOJCHJLEF icohkpnpgnh = 1;
-	bytes cimhbfeocen = 2;
-}
-
 message IDKOKHIGLCA {
 	enum KMKKKEBEPDO {
 		SUCCESS = 0;
@@ -10802,23 +10703,15 @@ message IDKOKHIGLCA {
 	KMKKKEBEPDO lifpjmodfkl = 1;
 }
 
-message IMEDBOHODFJ {
-	oneof MNFLMGBJBHA {
-		ECLHJGNANFH add_entry = 1;
-		JPBBLAIONPP read_entry = 2;
-		CCFLFPEOJDH remove_entry = 3;
-	}
-}
-
 message IPNKJIGFHHB {
-	enum AABBMAACIIK {
+	enum Result {
 		UNSET = 0;
 		SUCCESS_AD_RECEIVED = 1;
 		SUCCESS_NO_ADS_AVAILABLE = 2;
 		ERROR_REQUEST_FAILED = 3;
 	}
 
-	AABBMAACIIK bbhkakgbkne = 1;
+	Result result = 1;
 	MNHEJKOLHJF ccdldkhbaed = 2;
 }
 
@@ -11227,10 +11120,6 @@ message JOMIEIKJCOD {
 	bytes cimhbfeocen = 1;
 }
 
-message JPBBLAIONPP {
-	CEDKNLBGLDG migkacodgjg = 1;
-}
-
 message JoinBuddyMultiplayerSessionOutProto {
 	enum Result {
 		JOIN_SUCCESS = 0;
@@ -11292,6 +11181,27 @@ message JoinLobbyProto {
 	string inviter_id = 10;
 }
 
+message JournalAddEntryProto {
+	CEDKNLBGLDG migkacodgjg = 1;
+	int64 iefcaopkmjh = 2;
+}
+
+message JournalEntryProto {
+	oneof Subentry {
+		JournalAddEntryProto add_entry = 1;
+		JournalReadEntryProto read_entry = 2;
+		JournalRemoveEntryProto remove_entry = 3;
+	}
+}
+
+message JournalReadEntryProto {
+	CEDKNLBGLDG migkacodgjg = 1;
+}
+
+message JournalRemoveEntryProto {
+	CEDKNLBGLDG migkacodgjg = 1;
+}
+
 message KAAJAIEFIOG {
 	enum MOGDGHMMOFI {
 		SUCCESS = 0;
@@ -11307,18 +11217,6 @@ message KJKDOGLMNLN {
 	string oenaklbbmbm = 2;
 }
 
-message KJPPNHDKPGC {
-	enum LGOFMHOGJIC {
-		UNSET = 0;
-		POI_PHOTO_UPLOAD_ERROR = 1;
-		POI_PHOTO_UPLOAD_TIMEOUT = 2;
-	}
-
-	LGOFMHOGJIC gcpcnmakgmj = 1;
-	PoiImageType honnbggcakp = 2;
-	string gcdpacpemcf = 3;
-}
-
 message KangarooSettingsProto {
 	bool enable_kangaroo_v2 = 1;
 }
@@ -11330,7 +11228,7 @@ message KoalaSettingsProto {
 }
 
 message LACEFFNPBLK {
-	enum EHNOCAOLCFP {
+	enum Result {
 		UNSET = 0;
 		SUCCESS = 1;
 		ERROR_UNKNOWN = 2;
@@ -11338,7 +11236,7 @@ message LACEFFNPBLK {
 		ERROR_GIFT_REDEEMED = 4;
 	}
 
-	EHNOCAOLCFP bbhkakgbkne = 1;
+	Result result = 1;
 	LootProto mkbokbkpmco = 2;
 }
 
@@ -11723,13 +11621,6 @@ message LootProto {
 
 message LuckyPokemonSettingsProto {
 	float power_up_stardust_discount_percent = 1;
-}
-
-message MINAOMDPFMC {
-	double ndmimhinmkn = 1;
-	int32 bjobbfagnbl = 2;
-	double hkagmgkmflf = 3;
-	int64 laoldokfgbh = 4;
 }
 
 message MNHEJKOLHJF {
@@ -12421,74 +12312,6 @@ message OptOutProto {
 	repeated string categories = 1;
 }
 
-message PNIEFMOMDMH {
-	oneof BFOKGGANJBF {
-		JJMNEGGAPBG view_impression = 5;
-		CJABEKGLNGF view_fullscreen = 6;
-		IDDGLEAMGOK fullscreen_interaction = 7;
-		JPHHEHACPNP cta_clicked = 8;
-		KJHOIOLECON ad_spawned = 9;
-		DILCNIAAJOH ad_dismissed = 10;
-	}
-
-	enum DHFKCJEAEMK {
-		AD_TYPE_UNKNOWN = 0;
-		AD_TYPE_SPONSORED_GIFT = 1;
-		AD_TYPE_SPONSORED_BALLOON = 2;
-	}
-
-	message CJABEKGLNGF {
-		string igellbcegjd = 1;
-	}
-
-	message DILCNIAAJOH {
-		enum DPCBIFKIFMC {
-			AD_DISMISSAL_UNKNOWN = 0;
-			AD_DISMISSAL_TR_DISPLACES_AD_BALLOON = 1;
-			AD_DISMISSAL_NEW_AD_BALLOON_DISPLACES_OLD = 2;
-			AD_DISMISSAL_AD_BALLOON_AUTO_DISMISS = 3;
-			AD_DISMISSAL_PLAYER_OPTED_OUT_OF_ADS = 4;
-		}
-
-		DPCBIFKIFMC bjhkcagpico = 1;
-	}
-
-	message IDDGLEAMGOK {
-		string igellbcegjd = 1;
-		int64 gfipmkamlic = 2;
-		int64 gihmiileiol = 3;
-		bool efabjdcmgpn = 4;
-	}
-
-	message JJMNEGGAPBG {
-		string ldicodjbbhn = 1;
-		bool ljfiejpleii = 2;
-	}
-
-	message JPHHEHACPNP {
-		string kkjmfdmdimf = 6;
-	}
-
-	message KJHOIOLECON {
-		enum GIEDGNNDKPK {
-			AD_INHIBITION_UNKNOWN = 0;
-			AD_INHIBITION_TR_PREVENTS_BALLOON_SPAWN = 1;
-			AD_INHIBITION_CLIENT_ERROR = 2;
-			AD_INHIBITION_DISABLED_IN_GMT = 3;
-			AD_INHIBITION_PLAYER_OPTED_OUT_OF_ADS = 4;
-		}
-
-		bool eollelaohaa = 1;
-		GIEDGNNDKPK okbkjgffhbk = 2;
-	}
-
-	string hffnemhfdmc = 1;
-	string bkcpnghapfa = 2;
-	string lnnbnicaodn = 3;
-	bytes hkaiclbjgmi = 4;
-	DHFKCJEAEMK ecaclloejhg = 100;
-}
-
 message PPHDNPJNPJN {
 	double jkljpbgecac = 1;
 	double jooenaebfma = 2;
@@ -12835,20 +12658,25 @@ message PoiGlobalSettingsProto {
 	repeated string player_submission_type_enabled = 2;
 }
 
+message PoiPlayerMetadataTelemetry {
+	string fojhpbhheeo = 1;
+	string mbfocaoicnj = 2;
+}
+
 message PoiSubmissionPhotoUploadErrorTelemetry {
-	enum PoiSubmissionPhotoUploadErrorIds {
+	enum LGOFMHOGJIC {
 		UNSET = 0;
 		POI_PHOTO_UPLOAD_ERROR = 1;
 		POI_PHOTO_UPLOAD_TIMEOUT = 2;
 	}
 
-	PoiSubmissionPhotoUploadErrorIds error_id = 1;
-	PoiImageType image_type = 2;
-	string error_message = 3;
+	LGOFMHOGJIC gcpcnmakgmj = 1;
+	PoiImageType honnbggcakp = 2;
+	string gcdpacpemcf = 3;
 }
 
 message PoiSubmissionTelemetry {
-	enum PoiCameraStepIds {
+	enum JADIADKNPJK {
 		UNSET = 0;
 		ENTER = 1;
 		RETAKE = 2;
@@ -12856,7 +12684,7 @@ message PoiSubmissionTelemetry {
 		EXIT = 4;
 	}
 
-	enum PoiSubmissionGuiEventId {
+	enum LCLDEMGFMKD {
 		UNKNOWN = 0;
 		POI_NOMINATION_ENTER = 1;
 		POI_TUTORIAL_COMPLETE = 2;
@@ -12872,12 +12700,11 @@ message PoiSubmissionTelemetry {
 		POI_SUPPORTINGINFO_ENTER = 12;
 		POI_SUBMIT_BUTTON_HIT = 13;
 		POI_EXIT_BUTTON_HIT = 14;
-		POI_NOMINATION_GUIDELINES_HIT = 15;
 	}
 
-	PoiSubmissionGuiEventId gui_event_id = 1;
-	PoiImageType image_type = 2;
-	PoiCameraStepIds camera_step_id = 3;
+	LCLDEMGFMKD lmfcnneffag = 1;
+	PoiImageType honnbggcakp = 2;
+	JADIADKNPJK ejbefplfjlo = 3;
 }
 
 message PoiVideoSubmissionMetadataProto {
@@ -16673,6 +16500,88 @@ message RemoveQuestProto {
 	string quest_id = 1;
 }
 
+message ReportAdFeedbackRequest {
+	oneof Feedback {
+		AdFeedbackComplaintReason complaint_reason = 5;
+		AdFeedbackNotInterestedReason not_interested_reason = 6;
+		AdFeedbackLikeReason like_reason = 7;
+	}
+
+	string game_id = 1;
+	string user_id = 2;
+	string guid = 3;
+	bytes encrypted_ad_token = 4;
+	string free_text_response = 8;
+}
+
+message ReportAdInteractionProto {
+	oneof InteractionType {
+		ViewImpressionInteraction view_impression = 5;
+		ViewFullscreenInteraction view_fullscreen = 6;
+		FullScreenInteraction fullscreen_interaction = 7;
+		CTAClickInteraction cta_clicked = 8;
+		AdSpawendInteraction ad_spawned = 9;
+		AdDismissedInteraction ad_dismissed = 10;
+	}
+
+	enum AdType {
+		AD_TYPE_UNKNOWN = 0;
+		AD_TYPE_SPONSORED_GIFT = 1;
+		AD_TYPE_SPONSORED_BALLOON = 2;
+	}
+
+	message ViewFullscreenInteraction {
+		string fullscreen_image_url = 1;
+	}
+
+	message AdDismissedInteraction {
+		enum AdDismissal {
+			AD_DISMISSAL_UNKNOWN = 0;
+			AD_DISMISSAL_TR_DISPLACES_AD_BALLOON = 1;
+			AD_DISMISSAL_NEW_AD_BALLOON_DISPLACES_OLD = 2;
+			AD_DISMISSAL_AD_BALLOON_AUTO_DISMISS = 3;
+			AD_DISMISSAL_PLAYER_OPTED_OUT_OF_ADS = 4;
+		}
+
+		AdDismissal ad_dismissal = 1;
+	}
+
+	message FullScreenInteraction {
+		string fullscreen_image_url = 1;
+		int64 total_residence_time_ms = 2;
+		int64 time_away_ms = 3;
+		bool took_screenshot = 4;
+	}
+
+	message ViewImpressionInteraction {
+		string preview_image_url = 1;
+		bool is_persisted_gift = 2;
+	}
+
+	message CTAClickInteraction {
+		string cta_url = 6;
+	}
+
+	message AdSpawendInteraction {
+		enum AdInhibition {
+			AD_INHIBITION_UNKNOWN = 0;
+			AD_INHIBITION_TR_PREVENTS_BALLOON_SPAWN = 1;
+			AD_INHIBITION_CLIENT_ERROR = 2;
+			AD_INHIBITION_DISABLED_IN_GMT = 3;
+			AD_INHIBITION_PLAYER_OPTED_OUT_OF_ADS = 4;
+		}
+
+		bool ad_spawend_bool = 1;
+		AdInhibition ad_inhibition = 2;
+	}
+
+	string game_id = 1;
+	string user_id = 2;
+	string guid = 3;
+	bytes encrypted_ad_token = 4;
+	AdType ad_type = 100;
+}
+
 message ReviveAttributesProto {
 	float sta_percent = 1;
 }
@@ -17256,8 +17165,54 @@ message SetPokemonTagsForPokemonProto {
 	repeated PokemonTagChangeProto tag_changes = 1;
 }
 
+message SfidaCertificationRequest {
+	enum SfidaCertificationStage {
+		UNSET = 0;
+		STAGE1 = 1;
+		STAGE2 = 2;
+		STAGE3 = 3;
+	}
+
+	SfidaCertificationStage stage = 1;
+	bytes payload = 2;
+}
+
+message SfidaDowserResponse {
+	enum Result {
+		UNSET = 0;
+		FOUND = 1;
+		NEARBY = 2;
+		OUT_OF_RANGE = 3;
+		ALREADY_CAUGHT = 4;
+		NOT_AVAILABLE = 5;
+	}
+
+	Result result = 1;
+	int32 proximity = 2;
+	string spawnpoint_id = 3;
+}
+
 message SfidaGlobalSettingsProto {
 	float low_battery_threshold = 1;
+}
+
+message SfidaMetrics {
+	double ndmimhinmkn = 1;
+	int32 bjobbfagnbl = 2;
+	double hkagmgkmflf = 3;
+	int64 laoldokfgbh = 4;
+}
+
+message SfidaMetricsUpdate {
+	enum UpdateType {
+		UNSET = 0;
+		INITIALIZATION = 1;
+		ACCUMULATION = 2;
+	}
+
+	UpdateType update_type = 1;
+	int64 timestamp_ms = 2;
+	SfidaMetrics metrics = 3;
 }
 
 message ShadowAttributesProto {
