@@ -4154,11 +4154,32 @@ message ActivateVsSeekerProto {
 	VsSeekerRewardTrack reward_track = 1;
 }
 
+message AdDetails {
+	ImageTextCreativeProto khihfgbjcfm = 1;
+	bytes hkaiclbjgmi = 2;
+}
+
 message AdFeedbackSettingsProto {
 	bool enabled = 1;
 	bool enable_report_ad = 2;
 	bool enable_not_interested = 3;
 	bool enable_see_more = 4;
+}
+
+message AdRequestDeviceInfo {
+	enum KLNMKIHFMJM {
+		PLATFORM_UNKNOWN = 0;
+		PLATFORM_ANDROID = 1;
+		PLATFORM_IOS = 2;
+	}
+
+	KLNMKIHFMJM ijcfklofpad = 1;
+	string fojhpbhheeo = 2;
+	string jcikogjnpoi = 3;
+}
+
+message AdTargetingInfoProto {
+	AdRequestDeviceInfo device_info = 1;
 }
 
 message AddFortModifierOutProto {
@@ -4627,7 +4648,7 @@ message AttackRaidBattleOutProto {
 
 	Result result = 1;
 	BattleUpdateProto battle_update = 2;
-	MNHEJKOLHJF sponsored_gift = 3;
+	AdDetails sponsored_gift = 3;
 }
 
 message AttackRaidBattleProto {
@@ -4636,7 +4657,7 @@ message AttackRaidBattleProto {
 	repeated BattleActionProto attacker_actions = 3;
 	BattleActionProto last_retrieved_action = 4;
 	int64 timestamp_ms = 5;
-	NPMOCGAGMAO ad_targeting_info = 6;
+	AdTargetingInfoProto ad_targeting_info = 6;
 }
 
 message AvailableSkuProto {
@@ -5554,12 +5575,8 @@ message BuddyWalkSettings {
 	float km_required_per_affection_point = 1;
 }
 
-message CEDKNLBGLDG {
-	string gbgnmgfjmdl = 1;
-}
-
 message CMFEONBFMEG {
-	enum ONCKDIIFLCG {
+	enum Status {
 		STATUS_UNKNOWN = 0;
 		STATUS_SUCCESS = 1;
 		STATUS_ALREADY_REDEEMED = 2;
@@ -5577,7 +5594,7 @@ message CMFEONBFMEG {
 		int32 hahjgdkoppd = 2;
 	}
 
-	ONCKDIIFLCG lifpjmodfkl = 1;
+	Status status = 1;
 	int32 hcilameggjd = 2;
 	repeated HDDEPJHEFPK mkbokbkpmco = 3;
 	string loijgpjlhaf = 5;
@@ -7109,18 +7126,6 @@ message DMEOBKFDBHO {
 	int32 jihbbmddhgh = 1;
 }
 
-message DPHMGDOGAPO {
-	enum KLNMKIHFMJM {
-		PLATFORM_UNKNOWN = 0;
-		PLATFORM_ANDROID = 1;
-		PLATFORM_IOS = 2;
-	}
-
-	KLNMKIHFMJM ijcfklofpad = 1;
-	string fojhpbhheeo = 2;
-	string jcikogjnpoi = 3;
-}
-
 message DailyBonusProto {
 	int64 next_collect_timestamp_ms = 1;
 	int64 next_defender_bonus_collect_timestamp_ms = 2;
@@ -7575,14 +7580,14 @@ message EECKFHLKDMM {
 }
 
 message EJKKKFLPMNB {
-	enum KKIMLOOJDLC {
+	enum Status {
 		UNSET = 0;
 		SUCCESS = 1;
 		ERROR_UNKNOWN = 2;
 		ERROR_PLAYER_NOT_FOUND = 3;
 	}
 
-	KKIMLOOJDLC lifpjmodfkl = 1;
+	Status status = 1;
 }
 
 message EMCODPOHDIH {
@@ -8414,7 +8419,7 @@ message FortSearchOutProto {
 	string fort_id = 13;
 	ClientQuestProto challenge_quest = 14;
 	GiftBoxProto gift_box = 15;
-	MNHEJKOLHJF sponsored_gift = 16;
+	AdDetails sponsored_gift = 16;
 }
 
 message FortSearchProto {
@@ -8423,7 +8428,7 @@ message FortSearchProto {
 	double player_lng_degrees = 3;
 	double fort_lat_degrees = 4;
 	double fort_lng_degrees = 5;
-	NPMOCGAGMAO ad_targeting_info = 7;
+	AdTargetingInfoProto ad_targeting_info = 7;
 	bool is_player_eligible_for_geotargeted_quest = 8;
 }
 
@@ -10510,22 +10515,13 @@ message GymStatusAndDefendersProto {
 	repeated GymDefenderProto gym_defender = 2;
 }
 
-message HEDJJNKODCH {
-	string nfdhaghdknl = 1;
-	string lflcldcgmaj = 2;
-	string dhmebniibdl = 3;
-	string ldicodjbbhn = 4;
-	string igellbcegjd = 5;
-	string ncahjncgpdk = 6;
-}
-
 message HGMCAKNLDIB {
-	enum NADACFGANDP {
+	enum Status {
 		UNSET = 0;
 		SUCCESS = 1;
 	}
 
-	NADACFGANDP lifpjmodfkl = 1;
+	Status status = 1;
 	bool lagggmpcbpd = 2;
 	bool oepkgfkeoec = 3;
 	bool pmcaokofmec = 4;
@@ -10539,6 +10535,10 @@ message HGMCAKNLDIB {
 
 message HPAPLOPNDLE {
 	repeated GameMasterClientTemplateProto dgghhnhcoci = 1;
+}
+
+message HashedKeyProto {
+	string gbgnmgfjmdl = 1;
 }
 
 message HelpshiftSettingsProto {
@@ -10695,12 +10695,12 @@ message HoloholoClientTelemetryOmniProto {
 }
 
 message IDKOKHIGLCA {
-	enum KMKKKEBEPDO {
+	enum Status {
 		SUCCESS = 0;
 		ERROR = 1;
 	}
 
-	KMKKKEBEPDO lifpjmodfkl = 1;
+	Status status = 1;
 }
 
 message IPNKJIGFHHB {
@@ -10712,7 +10712,7 @@ message IPNKJIGFHHB {
 	}
 
 	Result result = 1;
-	MNHEJKOLHJF ccdldkhbaed = 2;
+	AdDetails ccdldkhbaed = 2;
 }
 
 message IapItemCategoryDisplayProto {
@@ -10772,6 +10772,15 @@ message ImageGalleryTelemetry {
 	}
 
 	ImageGalleryEventId image_gallery_telemetry_id = 1;
+}
+
+message ImageTextCreativeProto {
+	string nfdhaghdknl = 1;
+	string lflcldcgmaj = 2;
+	string dhmebniibdl = 3;
+	string ldicodjbbhn = 4;
+	string igellbcegjd = 5;
+	string ncahjncgpdk = 6;
 }
 
 message InGamePurchaseDetails {
@@ -11182,8 +11191,8 @@ message JoinLobbyProto {
 }
 
 message JournalAddEntryProto {
-	CEDKNLBGLDG migkacodgjg = 1;
-	int64 iefcaopkmjh = 2;
+	HashedKeyProto hashed_key = 1;
+	int64 entry_size = 2;
 }
 
 message JournalEntryProto {
@@ -11195,21 +11204,21 @@ message JournalEntryProto {
 }
 
 message JournalReadEntryProto {
-	CEDKNLBGLDG migkacodgjg = 1;
+	HashedKeyProto hashed_key = 1;
 }
 
 message JournalRemoveEntryProto {
-	CEDKNLBGLDG migkacodgjg = 1;
+	HashedKeyProto hashed_key = 1;
 }
 
 message KAAJAIEFIOG {
-	enum MOGDGHMMOFI {
+	enum Status {
 		SUCCESS = 0;
 		MALFORMED = 1;
 		EXPIRED = 2;
 	}
 
-	MOGDGHMMOFI lifpjmodfkl = 1;
+	Status status = 1;
 }
 
 message KJKDOGLMNLN {
@@ -11623,11 +11632,6 @@ message LuckyPokemonSettingsProto {
 	float power_up_stardust_discount_percent = 1;
 }
 
-message MNHEJKOLHJF {
-	HEDJJNKODCH khihfgbjcfm = 1;
-	bytes hkaiclbjgmi = 2;
-}
-
 message MapArea {
 	string description = 1;
 	int32 epoch = 2;
@@ -12001,10 +12005,6 @@ message MultiPartQuestProto {
 	repeated QuestProto sub_quests = 1;
 }
 
-message NPMOCGAGMAO {
-	DPHMGDOGAPO accelhginnc = 1;
-}
-
 message NamedMapSettings {
 	string name = 1;
 	GmmSettings gmm_settings = 2;
@@ -12315,7 +12315,7 @@ message OptOutProto {
 message PPHDNPJNPJN {
 	double jkljpbgecac = 1;
 	double jooenaebfma = 2;
-	NPMOCGAGMAO aekbagmpbob = 3;
+	AdTargetingInfoProto aekbagmpbob = 3;
 }
 
 message ParticipationProto {
@@ -17422,7 +17422,7 @@ message SponsoredDetailsProto {
 	string call_to_action_link = 3;
 	PromoButtonMessageType promo_button_message_type = 4;
 	string campaign_id = 5;
-	HEDJJNKODCH promo_image_creative = 6;
+	ImageTextCreativeProto promo_image_creative = 6;
 }
 
 message SponsoredGeofenceGiftSettingsProto {
