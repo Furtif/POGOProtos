@@ -4006,10 +4006,10 @@ enum WebTelemetryIds {
 	WEB_TELEMETRY_IDS_POINT_OF_INTEREST_DESCRIPTION_WEB_CLICK = 1;
 }
 
-message AKALJMDMNPJ {
-	int64 eepfbnhkjgb = 1;
-	double ajpfdeapjeh = 2;
-	double kpelkpgebme = 3;
+message BreadcrumbRecordProto {
+	int64 timestamp_ms = 1;
+	double latitude_deg = 2;
+	double longitude_deg = 3;
 }
 
 message ARBuddyMultiplayerSessionTelemetry {
@@ -4155,8 +4155,8 @@ message ActivateVsSeekerProto {
 }
 
 message AdDetails {
-	ImageTextCreativeProto khihfgbjcfm = 1;
-	bytes hkaiclbjgmi = 2;
+	ImageTextCreativeProto image_text_creative = 1;
+	bytes encrypted_ad_token = 2;
 }
 
 message AdFeedbackSettingsProto {
@@ -4167,15 +4167,15 @@ message AdFeedbackSettingsProto {
 }
 
 message AdRequestDeviceInfo {
-	enum KLNMKIHFMJM {
+	enum OperatingSystem {
 		PLATFORM_UNKNOWN = 0;
 		PLATFORM_ANDROID = 1;
 		PLATFORM_IOS = 2;
 	}
 
-	KLNMKIHFMJM ijcfklofpad = 1;
-	string fojhpbhheeo = 2;
-	string jcikogjnpoi = 3;
+	OperatingSystem operating_system = 1;
+	string device_model = 2;
+	string carrier = 3;
 }
 
 message AdTargetingInfoProto {
@@ -4805,11 +4805,11 @@ message AwardedGymBadge {
 	PlayerRaidInfoProto raids = 15;
 }
 
-message BIHFAODNKEH {
-	string cgglfmnjjdp = 1;
-	string njagbebebmg = 2;
-	string epdcgiihbbh = 3;
-	string bhfdacmgfem = 4;
+message InternalAuthProto {
+	string email = 1;
+	string player_id = 2;
+	string app_id = 3;
+	string key = 4;
 }
 
 message BackgroundModeGlobalSettingsProto {
@@ -5575,7 +5575,7 @@ message BuddyWalkSettings {
 	float km_required_per_affection_point = 1;
 }
 
-message CMFEONBFMEG {
+message PasscodeRedemptionFlowResponse {
 	enum Status {
 		STATUS_UNKNOWN = 0;
 		STATUS_SUCCESS = 1;
@@ -5589,16 +5589,16 @@ message CMFEONBFMEG {
 		STATUS_EXPIRED = 9;
 	}
 
-	message HDDEPJHEFPK {
-		string cojalmenmph = 1;
-		int32 hahjgdkoppd = 2;
+	message Reward {
+		string item = 1;
+		int32 count = 2;
 	}
 
 	Status status = 1;
-	int32 hcilameggjd = 2;
-	repeated HDDEPJHEFPK mkbokbkpmco = 3;
-	string loijgpjlhaf = 5;
-	bytes jcoogjnicpg = 6;
+	int32 inventory_check_failed_reason = 2;
+	repeated Reward rewards = 3;
+	string passcode_batch_id = 5;
+	bytes in_game_reward = 6;
 }
 
 message CameraSettingsProto {
@@ -7122,8 +7122,8 @@ message CurrentNewsProto {
 	int64 last_updated_timestamp = 3;
 }
 
-message DMEOBKFDBHO {
-	int32 jihbbmddhgh = 1;
+message JournalVersionProto {
+	int32 version = 1;
 }
 
 message DailyBonusProto {
@@ -7565,21 +7565,21 @@ message DummyDataProto {
 	PokemonProto dummy_pokemon = 1;
 }
 
-message EECKFHLKDMM {
-	enum MBNAADLAIPA {
+message PasscodeRedemptionFlowRequest {
+	enum DevicePlatform {
 		PLATFORM_UNKNOWN = 0;
 		PLATFORM_ANDROID = 1;
 		PLATFORM_IOS = 2;
 		PLATFORM_WEB = 3;
 	}
 
-	string ckhfamkieka = 1;
-	string ljbfihmdfcf = 2;
-	MBNAADLAIPA dnhalcmaaga = 3;
-	string jcikogjnpoi = 4;
+	string passcode = 1;
+	string poi_guid = 2;
+	DevicePlatform device_platform = 3;
+	string carrier = 4;
 }
 
-message EJKKKFLPMNB {
+message UpdateBreadcrumbHistoryResponseProto {
 	enum Status {
 		UNSET = 0;
 		SUCCESS = 1;
@@ -7590,8 +7590,8 @@ message EJKKKFLPMNB {
 	Status status = 1;
 }
 
-message EMCODPOHDIH {
-	int64 iihlhbpfjnm = 1;
+message SfidaDowserRequest {
+	int64 encounter_id = 1;
 }
 
 message EchoOutProto {
@@ -8128,7 +8128,7 @@ message ExperienceBoostAttributesProto {
 	int32 boost_duration_ms = 2;
 }
 
-message FCMIBFKOACE {
+message SfidaCaptureResponse {
 	enum Result {
 		UNSET = 0;
 		POKEMON_CAPTURED = 1;
@@ -8141,23 +8141,16 @@ message FCMIBFKOACE {
 	}
 
 	Result result = 1;
-	int32 agjabidimpi = 2;
+	int32 xp_gain = 2;
 }
 
-message FMCEOOCBLOI {
-	enum CDCCBDPBNFF {
-		INVALID_VASA_CLIENT_ACTION = 0;
-		COLLECT_ADID = 8000;
-	}
+message UpdateBreadcrumbHistoryRequestProto {
+	string session_context = 1;
+	repeated BreadcrumbRecordProto breadcrumb_history = 2;
 }
 
-message FOKMBKBODFG {
-	string plpjfelelnm = 1;
-	repeated AKALJMDMNPJ kpmlkcadikp = 2;
-}
-
-message FPMMGOEDCKO {
-	bytes hkaiclbjgmi = 1;
+message SfidaCertificationResponse {
+	bytes payload = 1;
 }
 
 message FavoritePokemonTelemetry {
@@ -10515,30 +10508,30 @@ message GymStatusAndDefendersProto {
 	repeated GymDefenderProto gym_defender = 2;
 }
 
-message HGMCAKNLDIB {
+message SfidaUpdateResponse {
 	enum Status {
 		UNSET = 0;
 		SUCCESS = 1;
 	}
 
 	Status status = 1;
-	bool lagggmpcbpd = 2;
-	bool oepkgfkeoec = 3;
-	bool pmcaokofmec = 4;
-	string dobcanfbfbc = 5;
-	int64 iihlhbpfjnm = 6;
-	bool kgdmimobigp = 7;
-	string ahpfkolopcc = 8;
-	EncounterType bimhcjiheng = 9;
-	int32 aopgndkfakj = 10;
+	bool nearby_pokemon = 2;
+	bool uncaught_pokemon = 3;
+	bool legendary_pokemon = 4;
+	string spawnpoint_id = 5;
+	int64 encounter_id = 6;
+	bool nearby_pokestop = 7;
+	string pokestop_id = 8;
+	EncounterType encounter_type = 9;
+	int32 pokedex_number = 10;
 }
 
-message HPAPLOPNDLE {
-	repeated GameMasterClientTemplateProto dgghhnhcoci = 1;
+message GameMasterLocalProto {
+	repeated GameMasterClientTemplateProto templates = 1;
 }
 
 message HashedKeyProto {
-	string gbgnmgfjmdl = 1;
+	string hashed_key_raw = 1;
 }
 
 message HelpshiftSettingsProto {
@@ -10694,7 +10687,7 @@ message HoloholoClientTelemetryOmniProto {
 	CommonFilterProto common_filters = 1002;
 }
 
-message IDKOKHIGLCA {
+message ReportAdFeedbackResponse {
 	enum Status {
 		SUCCESS = 0;
 		ERROR = 1;
@@ -10703,7 +10696,7 @@ message IDKOKHIGLCA {
 	Status status = 1;
 }
 
-message IPNKJIGFHHB {
+message GetGeofencedAdOutProto {
 	enum Result {
 		UNSET = 0;
 		SUCCESS_AD_RECEIVED = 1;
@@ -10712,7 +10705,7 @@ message IPNKJIGFHHB {
 	}
 
 	Result result = 1;
-	AdDetails ccdldkhbaed = 2;
+	AdDetails ad_details = 2;
 }
 
 message IapItemCategoryDisplayProto {
@@ -10775,12 +10768,12 @@ message ImageGalleryTelemetry {
 }
 
 message ImageTextCreativeProto {
-	string nfdhaghdknl = 1;
-	string lflcldcgmaj = 2;
-	string dhmebniibdl = 3;
-	string ldicodjbbhn = 4;
-	string igellbcegjd = 5;
-	string ncahjncgpdk = 6;
+	string name = 1;
+	string title = 2;
+	string description = 3;
+	string preview_image_url = 4;
+	string fullscreen_image_url = 5;
+	string cta_link = 6;
 }
 
 message InGamePurchaseDetails {
@@ -11120,13 +11113,13 @@ message ItemTelemetry {
 	string item_id_string = 5;
 }
 
-message JODNGKHEMCE {
-	double dlnfmcgepdi = 1;
-	double fbndebmbmgo = 2;
+message SfidaUpdateRequest {
+	double player_lat = 1;
+	double player_lng = 2;
 }
 
-message JOMIEIKJCOD {
-	bytes cimhbfeocen = 1;
+message OpenSponsoredGiftProto {
+	bytes encrypted_ad_token = 1;
 }
 
 message JoinBuddyMultiplayerSessionOutProto {
@@ -11211,7 +11204,7 @@ message JournalRemoveEntryProto {
 	HashedKeyProto hashed_key = 1;
 }
 
-message KAAJAIEFIOG {
+message ReportAdInteractionResponse {
 	enum Status {
 		SUCCESS = 0;
 		MALFORMED = 1;
@@ -11221,9 +11214,9 @@ message KAAJAIEFIOG {
 	Status status = 1;
 }
 
-message KJKDOGLMNLN {
-	bytes mcijjnihokl = 1;
-	string oenaklbbmbm = 2;
+message SfidaAuthToken {
+	bytes response_token = 1;
+	string sfida_id = 2;
 }
 
 message KangarooSettingsProto {
@@ -11236,7 +11229,7 @@ message KoalaSettingsProto {
 	bool use_koala = 3;
 }
 
-message LACEFFNPBLK {
+message OpenSponsoredGiftOutProto {
 	enum Result {
 		UNSET = 0;
 		SUCCESS = 1;
@@ -11246,7 +11239,7 @@ message LACEFFNPBLK {
 	}
 
 	Result result = 1;
-	LootProto mkbokbkpmco = 2;
+	LootProto rewards = 2;
 }
 
 message Label {
@@ -12097,14 +12090,14 @@ message NpcPokemonProto {
 	PokemonDisplayProto pokemon_display = 2;
 }
 
-message OHODAKJOOED {
-	string dobcanfbfbc = 1;
-	int64 iihlhbpfjnm = 2;
-	double dlnfmcgepdi = 3;
-	double fbndebmbmgo = 4;
-	EncounterType bimhcjiheng = 5;
-	double kjfbdfojggg = 6;
-	double hhobhjknamb = 7;
+message SfidaCaptureRequest {
+	string spawnpoint_id = 1;
+	int64 encounter_id = 2;
+	double player_lat = 3;
+	double player_lng = 4;
+	EncounterType encounter_type = 5;
+	double gym_lat = 6;
+	double gym_lng = 7;
 }
 
 message OnboardingSettingsProto {
@@ -12312,10 +12305,10 @@ message OptOutProto {
 	repeated string categories = 1;
 }
 
-message PPHDNPJNPJN {
-	double jkljpbgecac = 1;
-	double jooenaebfma = 2;
-	AdTargetingInfoProto aekbagmpbob = 3;
+message GetGeofencedAdProto {
+	double lat_degrees = 1;
+	double lng_degrees = 2;
+	AdTargetingInfoProto ad_targeting_info = 3;
 }
 
 message ParticipationProto {
@@ -12659,24 +12652,24 @@ message PoiGlobalSettingsProto {
 }
 
 message PoiPlayerMetadataTelemetry {
-	string fojhpbhheeo = 1;
-	string mbfocaoicnj = 2;
+	string device_model = 1;
+	string device_os = 2;
 }
 
 message PoiSubmissionPhotoUploadErrorTelemetry {
-	enum LGOFMHOGJIC {
+	enum PoiSubmissionPhotoUploadErrorIds {
 		UNSET = 0;
 		POI_PHOTO_UPLOAD_ERROR = 1;
 		POI_PHOTO_UPLOAD_TIMEOUT = 2;
 	}
 
-	LGOFMHOGJIC gcpcnmakgmj = 1;
-	PoiImageType honnbggcakp = 2;
-	string gcdpacpemcf = 3;
+	PoiSubmissionPhotoUploadErrorIds error_id = 1;
+	PoiImageType image_type = 2;
+	string error_message = 3;
 }
 
 message PoiSubmissionTelemetry {
-	enum JADIADKNPJK {
+	enum PoiCameraStepIds {
 		UNSET = 0;
 		ENTER = 1;
 		RETAKE = 2;
@@ -12684,7 +12677,7 @@ message PoiSubmissionTelemetry {
 		EXIT = 4;
 	}
 
-	enum LCLDEMGFMKD {
+	enum PoiSubmissionGuiEventId {
 		UNKNOWN = 0;
 		POI_NOMINATION_ENTER = 1;
 		POI_TUTORIAL_COMPLETE = 2;
@@ -12702,9 +12695,9 @@ message PoiSubmissionTelemetry {
 		POI_EXIT_BUTTON_HIT = 14;
 	}
 
-	LCLDEMGFMKD lmfcnneffag = 1;
-	PoiImageType honnbggcakp = 2;
-	JADIADKNPJK ejbefplfjlo = 3;
+	PoiSubmissionGuiEventId gui_event_id = 1;
+	PoiImageType image_type = 2;
+	PoiCameraStepIds camera_step_id = 3;
 }
 
 message PoiVideoSubmissionMetadataProto {
@@ -17197,10 +17190,10 @@ message SfidaGlobalSettingsProto {
 }
 
 message SfidaMetrics {
-	double ndmimhinmkn = 1;
-	int32 bjobbfagnbl = 2;
-	double hkagmgkmflf = 3;
-	int64 laoldokfgbh = 4;
+	double distance_walked_km = 1;
+	int32 step_count = 2;
+	double calories_burned = 3;
+	int64 exercise_time_ms = 4;
 }
 
 message SfidaMetricsUpdate {
