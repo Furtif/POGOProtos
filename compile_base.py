@@ -843,6 +843,8 @@ def open_proto_file(main_file, head):
     ## Others cleans if present..
     if "POI_DECORATION_FOLLOW_FLAGS_POI_DECORATION_FOLLOW_FLAGS_AUTO_INVALID" in messages:
         messages_dic.setdefault("POI_DECORATION_FOLLOW_FLAGS_POI_DECORATION_FOLLOW_FLAGS_AUTO_INVALID", "POI_DECORATION_FOLLOW_FLAGS_UNSET")
+    if "AA_NEW_ENUM_1_AA_NEW_ENUM_1_AUTO_INVALID = 0;" in messages:
+        messages_dic.setdefault("AA_NEW_ENUM_1_AA_NEW_ENUM_1_AUTO_INVALID = 0;", "AA_NEW_ENUM_1_NULL = 0;")
     ##
 
     ## fix messages obfuscated names
