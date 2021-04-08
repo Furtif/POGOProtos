@@ -37,7 +37,6 @@ message RedeemPasscodeResponseProto {
 	}
 
 	Result result = 1;
-	repeated AcquiredItem acquired_item = 2;
-	bytes acquired_items_proto = 3;
-	string passcode = 4;
+	bytes acquired_items_proto = 2;
+	string passcode = 3;
 }

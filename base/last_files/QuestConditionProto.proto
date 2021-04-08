@@ -52,6 +52,7 @@ import "WithTempEvoIdProto.proto";
 import "WithGblRankProto.proto";
 import "WithEncounterTypeProto.proto";
 import "WithCombatTypeProto.proto";
+import "WithItemTypeProto.proto";
 
 message QuestConditionProto {
 	oneof Condition {
@@ -86,6 +87,7 @@ message QuestConditionProto {
 		WithGblRankProto with_gbl_rank = 30;
 		WithEncounterTypeProto with_encounter_type = 31;
 		WithCombatTypeProto with_combat_type = 32;
+		WithItemTypeProto with_item_type = 33;
 	}
 
 	enum ConditionType {
@@ -132,6 +134,7 @@ message QuestConditionProto {
 		WITH_ENCOUNTER_TYPE = 40;
 		WITH_COMBAT_TYPE = 41;
 		WITH_GEOTARGETED_POI = 42;
+		WITH_ITEM_TYPE = 43;
 	}
 
 	ConditionType type = 1;

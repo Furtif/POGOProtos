@@ -21,15 +21,19 @@
 syntax = "proto3";
 package POGOProtos.Rpc;
 
-message EventBannerSectionProto {
-	string event_icon = 1;
-	string title_text = 2;
-	string body_text = 3;
-	string image_url = 4;
-	string header_image_url = 5;
-	string image_overlay_text = 6;
-	string link_from_image = 7;
-	string image_sub_text = 8;
-	repeated string image_urls = 9;
-	int64 image_auto_scroll_ms = 10;
+message RoutePlayStatus {
+	enum Status {
+		UNSET = 0;
+		SUCCESS = 1;
+		ERROR_UNKNOWN = 2;
+		ERROR_ROUTE_NOT_FOUND = 3;
+		ERROR_FORT_NOT_FOUND = 4;
+		ERROR_INVALID_START_FORT = 5;
+		ERROR_WRONG_WAYPOINT = 6;
+		ERROR_ROUTE_PLAY_EXPIRED = 7;
+		ERROR_ROUTE_IN_COOLDOWN = 8;
+		ERROR_ROUTE_PLAY_NOT_FOUND = 9;
+		ERROR_PLAYER_LEVEL_TOO_LOW = 10;
+		ERROR_U13_NO_PERMISSION = 11;
+	}
 }

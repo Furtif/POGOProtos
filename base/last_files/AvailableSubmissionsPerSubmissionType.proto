@@ -30,4 +30,5 @@ message AvailableSubmissionsPerSubmissionType {
 	repeated string blacklisted_os = 6;
 	repeated string blacklisted_device_id = 7;
 	bool is_whitelisted_user = 8;
+	bool is_upload_later_enabled = 9;
 }

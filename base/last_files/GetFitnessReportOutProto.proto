@@ -34,7 +34,6 @@ message GetFitnessReportOutProto {
 	}
 
 	Status status = 1;
-	repeated FitnessReportProto daily_reports = 2;
-	repeated FitnessReportProto weekly_reports = 3;
-	int64 week_reset_timestamp_since_monday_ms = 4;
+	repeated FitnessReportProto weekly_reports = 2;
+	int64 week_reset_timestamp_since_monday_ms = 3;
 }

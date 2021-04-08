@@ -21,15 +21,11 @@
 syntax = "proto3";
 package POGOProtos.Rpc;
 
-message EventBannerSectionProto {
-	string event_icon = 1;
-	string title_text = 2;
-	string body_text = 3;
-	string image_url = 4;
-	string header_image_url = 5;
-	string image_overlay_text = 6;
-	string link_from_image = 7;
-	string image_sub_text = 8;
-	repeated string image_urls = 9;
-	int64 image_auto_scroll_ms = 10;
+import "HoloPokemonType.proto";
+
+message CompleteWildSnapshotSessionProto {
+	int32 photo_pokedex_id = 1;
+	int32 num_photos_taken = 2;
+	HoloPokemonType type1 = 3;
+	HoloPokemonType type2 = 4;
 }

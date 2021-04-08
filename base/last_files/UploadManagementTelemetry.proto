@@ -21,15 +21,18 @@
 syntax = "proto3";
 package POGOProtos.Rpc;
 
-message EventBannerSectionProto {
-	string event_icon = 1;
-	string title_text = 2;
-	string body_text = 3;
-	string image_url = 4;
-	string header_image_url = 5;
-	string image_overlay_text = 6;
-	string link_from_image = 7;
-	string image_sub_text = 8;
-	repeated string image_urls = 9;
-	int64 image_auto_scroll_ms = 10;
+message UploadManagementTelemetry {
+	enum UploadManagementEventId {
+		UNKNOWN = 0;
+		UPLOAD_ALL_FROM_ENTRY_POINT = 1;
+		UPLOAD_ALL_FROM_UPLOAD_MGMT_MENU = 2;
+		CANCEL_ALL_FROM_ENTRY_POINT = 3;
+		CANCEL_ALL_FROM_UPLOAD_MGMT_MENU = 4;
+		CANCEL_INDIVIDUAL_UPLOAD = 5;
+		DELETE_INDIVIDUAL_UPLOAD = 6;
+		UPLOAD_ALL_SUCCESS = 7;
+		UPLOAD_ALL_FAILURE = 8;
+	}
+
+	UploadManagementEventId upload_management_telemetry_id = 1;
 }

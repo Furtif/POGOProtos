@@ -39,12 +39,13 @@ import "GiftBoxesProto.proto";
 import "BelugaIncenseBoxProto.proto";
 import "RouteMakerProto.proto";
 import "LimitedPurchaseSkuRecordProto.proto";
+import "RoutePlayProto.proto";
 import "MegaEvolvePokemonSpeciesProto.proto";
 import "StickerProto.proto";
 import "PokemonHomeProto.proto";
 import "BadgeData.proto";
 import "PlayerStatsSnapshotsProto.proto";
-import "DummyDataProto.proto";
+import "FakeDataProto.proto";
 
 message HoloInventoryItemProto {
 	oneof Type {
@@ -66,11 +67,12 @@ message HoloInventoryItemProto {
 		BelugaIncenseBoxProto beluga_incense = 16;
 		RouteMakerProto route_maker = 18;
 		LimitedPurchaseSkuRecordProto limited_purchase_sku_record = 19;
+		RoutePlayProto route_play = 20;
 		MegaEvolvePokemonSpeciesProto mega_evolve_species = 21;
 		StickerProto sticker = 22;
 		PokemonHomeProto pokemon_home = 23;
 		BadgeData badge_data = 24;
 		PlayerStatsSnapshotsProto player_stats_snapshots = 25;
-		DummyDataProto dummy_data = 26;
+		FakeDataProto fake_data = 26;
 	}
 }

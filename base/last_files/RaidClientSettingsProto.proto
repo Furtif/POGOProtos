@@ -38,4 +38,5 @@ message RaidClientSettingsProto {
 	int32 max_num_friend_invites_per_action = 12;
 	repeated RaidLevel unsupported_raid_levels_for_friend_invites = 13;
 	repeated RaidLevel unsupported_remote_raid_levels = 14;
+	bool is_nearby_raid_notification_disabled = 15;
 }

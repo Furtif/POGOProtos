@@ -103,4 +103,5 @@ message PokemonProto {
 	EggSlotType egg_slot_type = 69;
 	EggTelemetryProto egg_telemetry = 70;
 	EggDistributionProto egg_distribution = 71;
+	PokemonDisplayProto original_pokemon_display = 72;
 }

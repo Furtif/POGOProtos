@@ -24,4 +24,6 @@ package POGOProtos.Rpc;
 message RouteGlobalSettingsProto {
 	bool enable_routes = 1;
 	bool enable_poi_detail_caching = 2;
+	bool enable_route_play = 3;
+	bool enable_route_tappables = 4;
 }

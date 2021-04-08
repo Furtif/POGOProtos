@@ -1,0 +1,51 @@
+/*
+* Copyright 2016-2021 --=FurtiF=--.
+*
+* Licensed under the
+*	Educational Community License, Version 2.0 (the "License"); you may
+*	not use this file except in compliance with the License. You may
+*	obtain a copy of the License at
+*
+*	http://www.osedu.org/licenses/ECL-2.0
+*
+*	Unless required by applicable law or agreed to in writing,
+*	software distributed under the License is distributed on an "AS IS"
+*	BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
+*	or implied. See the License for the specific language governing
+*	permissions and limitations under the License.
+*
+* Note: For references only.
+*
+*/
+
+syntax = "proto3";
+package POGOProtos.Rpc;
+
+import "RouteStamp.proto";
+
+message RoutePlayProto {
+	message RoutePlayWaypointProto {
+		string fort_id = 1;
+		string fort_name = 2;
+		string image_url = 3;
+		double lat = 4;
+		double lng = 5;
+		bool is_progressed = 6;
+		int32 num_tappables = 7;
+		int32 num_collected_tappables = 8;
+		RouteStamp route_stamp = 9;
+		string fort_description = 10;
+	}
+
+	string route_id = 1;
+	repeated RoutePlayWaypointProto waypoints = 2;
+	int32 route_version = 3;
+	string route_name = 4;
+	string route_description = 5;
+	string route_creator_codename = 6;
+	string route_image_url = 7;
+	bool is_reversed = 8;
+	bool has_received_completion_rewards = 9;
+	int32 play_version = 10;
+	int64 expiration_time_ms = 11;
+}

@@ -37,8 +37,9 @@ message ReportAdInteractionProto {
 		AD_TYPE_SPONSORED_BALLOON = 2;
 	}
 
-	message ViewFullscreenInteraction {
-		string fullscreen_image_url = 1;
+	message ViewImpressionInteraction {
+		string preview_image_url = 1;
+		bool is_persisted_gift = 2;
 	}
 
 	message AdDismissedInteraction {
@@ -53,22 +54,6 @@ message ReportAdInteractionProto {
 		AdDismissal ad_dismissal = 1;
 	}
 
-	message FullScreenInteraction {
-		string fullscreen_image_url = 1;
-		int64 total_residence_time_ms = 2;
-		int64 time_away_ms = 3;
-		bool took_screenshot = 4;
-	}
-
-	message ViewImpressionInteraction {
-		string preview_image_url = 1;
-		bool is_persisted_gift = 2;
-	}
-
-	message CTAClickInteraction {
-		string cta_url = 6;
-	}
-
 	message AdSpawendInteraction {
 		enum AdInhibition {
 			AD_INHIBITION_UNKNOWN = 0;
@@ -80,6 +65,21 @@ message ReportAdInteractionProto {
 
 		bool ad_spawend_bool = 1;
 		AdInhibition ad_inhibition = 2;
+	}
+
+	message FullScreenInteraction {
+		string fullscreen_image_url = 1;
+		int64 total_residence_time_ms = 2;
+		int64 time_away_ms = 3;
+		bool took_screenshot = 4;
+	}
+
+	message CTAClickInteraction {
+		string cta_url = 6;
+	}
+
+	message ViewFullscreenInteraction {
+		string fullscreen_image_url = 1;
 	}
 
 	string game_id = 1;

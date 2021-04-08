@@ -21,8 +21,9 @@
 syntax = "proto3";
 package POGOProtos.Rpc;
 
-import "PokemonProto.proto";
+import "DialogueNpcProto.proto";
 
-message DummyDataProto {
-	PokemonProto dummy_pokemon = 1;
+message DialogueLineProto {
+	string text = 1;
+	DialogueNpcProto npc = 2;
 }

@@ -55,4 +55,5 @@ message MapDisplaySettingsProto {
 	MapEffect map_effect = 1;
 	string research_icon_url = 2;
 	MusicType bgm = 3;
+	bool show_enhanced_sky = 4;
 }

@@ -30,8 +30,7 @@ message GetAvailableSubmissionsOutProto {
 	bool is_feature_enabled = 4;
 	int64 time_window_for_submissions_limit_ms = 5;
 	int32 max_poi_distance_in_meters = 6;
-	repeated string blacklisted_os = 7;
-	repeated AvailableSubmissionsPerSubmissionType availability_result_per_type = 8;
-	repeated string blacklisted_device_id = 9;
-	int32 max_poi_location_edit_move_distance_meters = 10;
+	repeated AvailableSubmissionsPerSubmissionType availability_result_per_type = 7;
+	int32 max_poi_location_edit_move_distance_meters = 8;
+	bool is_upload_later_enabled = 9;
 }

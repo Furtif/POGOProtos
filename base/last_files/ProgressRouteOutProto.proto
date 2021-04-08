@@ -21,15 +21,19 @@
 syntax = "proto3";
 package POGOProtos.Rpc;
 
-message EventBannerSectionProto {
-	string event_icon = 1;
-	string title_text = 2;
-	string body_text = 3;
-	string image_url = 4;
-	string header_image_url = 5;
-	string image_overlay_text = 6;
-	string link_from_image = 7;
-	string image_sub_text = 8;
-	repeated string image_urls = 9;
-	int64 image_auto_scroll_ms = 10;
+import "RoutePlayProto.proto";
+import "RouteActivityResponseProto.proto";
+
+message ProgressRouteOutProto {
+	enum ProgressionState {
+		UNSET = 0;
+		IN_PROGRESS = 1;
+		COMPLETE = 2;
+	}
+
+	ProgressionState progression_state = 1;
+	RoutePlayStatus.Status status = 2;
+	RoutePlayProto route_play = 3;
+	RouteActivityResponseProto activity_output = 4;
+	int64 cooldown_finish_ms = 5;
 }

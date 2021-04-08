@@ -21,12 +21,27 @@
 syntax = "proto3";
 package POGOProtos.Rpc;
 
-enum SubscriptionState {
-	SUBSCRIPTION_STATE_UNKNOWN = 0;
-	SUBSCRIPTION_STATE_ACTIVE = 1;
-	SUBSCRIPTION_STATE_CANCELLED = 2;
-	SUBSCRIPTION_STATE_EXPIRED = 3;
-	SUBSCRIPTION_STATE_GRACE_PERIOD = 4;
-	SUBSCRIPTION_STATE_FREE_TRIAL = 5;
-	SUBSCRIPTION_STATE_PENDING_PURCHASE = 6;
+import "NpcDialogueProto.proto";
+import "RouteStamp.proto";
+
+message ProcessRouteWaypointInteractionOutProto {
+	oneof Activity {
+		PokemonTradeActivity pokemon_trade = 2;
+		PokemonCompareActivity pokemon_compare = 3;
+		GiftTradeActivity gift_trade = 4;
+	}
+
+	message GiftTradeActivity {
+	}
+
+	message PokemonCompareActivity {
+	}
+
+	message PokemonTradeActivity {
+	}
+
+	RouteActivityType.ActivityType activity_type = 1;
+	NpcDialogueProto dialog = 5;
+	RouteStamp route_stamp = 6;
+	RoutePlayStatus.Status status = 7;
 }

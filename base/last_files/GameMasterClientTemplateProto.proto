@@ -95,6 +95,8 @@ import "PokemonFamilySettingsProto.proto";
 import "MonodepthSettingsProto.proto";
 import "LevelUpRewardsSettingsProto.proto";
 import "RaidClientSettingsProto.proto";
+import "TappableSettingsProto.proto";
+import "RoutePlaySettingsProto.proto";
 import "SponsoredGeofenceGiftSettingsProto.proto";
 import "StickerMetadataProto.proto";
 import "CrossGameSocialSettingsProto.proto";
@@ -114,9 +116,11 @@ import "GeotargetedQuestSettingsProto.proto";
 import "PokemonTagSettingsProto.proto";
 import "RecommendedSearchProto.proto";
 import "InventorySettingsProto.proto";
+import "RouteDiscoverySettingsProto.proto";
 import "EggTransparencySettingsProto.proto";
 import "IncidentPrioritySettingsProto.proto";
 import "ReferralSettingsProto.proto";
+import "AppraisalStarThresholdSettings.proto";
 
 message GameMasterClientTemplateProto {
 	string template_id = 1;
@@ -194,6 +198,8 @@ message GameMasterClientTemplateProto {
 	MonodepthSettingsProto monodepth_settings = 78;
 	LevelUpRewardsSettingsProto level_up_rewards = 79;
 	RaidClientSettingsProto raid_settings_proto = 81;
+	TappableSettingsProto tappable_settings = 82;
+	RoutePlaySettingsProto route_play_settings = 83;
 	SponsoredGeofenceGiftSettingsProto sponsored_geofence_gift_settings = 84;
 	StickerMetadataProto sticker_metadata = 85;
 	CrossGameSocialSettingsProto cross_game_social_settings = 86;
@@ -213,7 +219,9 @@ message GameMasterClientTemplateProto {
 	PokemonTagSettingsProto pokemon_tag_settings = 101;
 	RecommendedSearchProto recommended_search_proto = 102;
 	InventorySettingsProto inventory_settings = 103;
+	RouteDiscoverySettingsProto route_discovery_settings = 104;
 	EggTransparencySettingsProto egg_transparency_settings = 105;
 	IncidentPrioritySettingsProto incident_priority_settings = 108;
 	ReferralSettingsProto referral_settings = 109;
+	AppraisalStarThresholdSettings appraisal_star_threshold_settings = 112;
 }

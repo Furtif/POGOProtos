@@ -99,4 +99,6 @@ message PokemonSettingsProto {
 	bool disable_transfer_to_pokemon_home = 61;
 	float raid_boss_distance_offset = 62;
 	repeated FormChangeProto form_change = 63;
+	repeated float buddy_encounter_cameo_local_position = 64;
+	repeated float buddy_encounter_cameo_local_rotation = 65;
 }

@@ -23,4 +23,5 @@ package POGOProtos.Rpc;
 
 message SendFriendInviteViaReferralCodeProto {
 	string referral_code = 1;
+	bool read_only = 2;
 }

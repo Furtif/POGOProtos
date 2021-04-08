@@ -21,15 +21,25 @@
 syntax = "proto3";
 package POGOProtos.Rpc;
 
-message EventBannerSectionProto {
-	string event_icon = 1;
-	string title_text = 2;
-	string body_text = 3;
-	string image_url = 4;
-	string header_image_url = 5;
-	string image_overlay_text = 6;
-	string link_from_image = 7;
-	string image_sub_text = 8;
-	repeated string image_urls = 9;
-	int64 image_auto_scroll_ms = 10;
+import "RouteStamp.proto";
+import "RouteType.proto";
+
+message AwardedRouteBadge {
+	message RouteBadgeWaypoint {
+		string fort_name = 1;
+		string image_url = 2;
+		RouteStamp last_earned_stamp = 3;
+	}
+
+	string route_id = 1;
+	RouteType route_type = 2;
+	int32 num_completions = 3;
+	int64 last_played_time = 4;
+	repeated RouteStamp unique_route_stamp = 5;
+	string route_name = 6;
+	string route_description = 7;
+	string route_creator_codename = 8;
+	string route_image_url = 9;
+	int64 route_duration_seconds = 10;
+	repeated RouteBadgeWaypoint last_played_waypoints = 11;
 }

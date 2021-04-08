@@ -44,4 +44,5 @@ message RaidInvitationDetails {
 	PlayerAvatarProto inviter_avatar = 14;
 	Team inviter_team = 15;
 	HoloTemporaryEvolutionId raid_pokemon_temp_evo_id = 16;
+	PokemonDisplayProto.Costume raid_pokemon_costume = 17;
 }

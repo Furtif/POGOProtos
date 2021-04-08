@@ -25,4 +25,5 @@ message FormProto {
 	PokemonDisplayProto.Form form = 1;
 	int32 asset_bundle_value = 2;
 	string asset_bundle_suffix = 3;
+	bool is_costume = 4;
 }

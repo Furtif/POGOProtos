@@ -21,15 +21,23 @@
 syntax = "proto3";
 package POGOProtos.Rpc;
 
-message EventBannerSectionProto {
-	string event_icon = 1;
-	string title_text = 2;
-	string body_text = 3;
-	string image_url = 4;
-	string header_image_url = 5;
-	string image_overlay_text = 6;
-	string link_from_image = 7;
-	string image_sub_text = 8;
-	repeated string image_urls = 9;
-	int64 image_auto_scroll_ms = 10;
+message PokemonCompareChallenge {
+	enum CompareOperation {
+		UNSET_OPERATION = 0;
+		GREATER_WIN = 1;
+		LESSER_WIN = 2;
+	}
+
+	enum CompareStat {
+		UNSET_STAT = 0;
+		WEIGHT = 1;
+		HEIGHT = 2;
+		AGE = 3;
+		WALKED_DISTANCE_KM = 4;
+		CP = 5;
+		MAX_HP = 6;
+	}
+
+	CompareStat compare_stat = 1;
+	CompareOperation compare_operation = 2;
 }

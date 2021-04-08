@@ -94,6 +94,9 @@ import "PokemonSearchTelemetry.proto";
 import "ImageGalleryTelemetry.proto";
 import "PlayerShownLevelUpShareScreenTelemetry.proto";
 import "ReferralTelemetry.proto";
+import "UploadManagementTelemetry.proto";
+import "WayspotEditTelemetry.proto";
+import "ClientSettingsTelemetry.proto";
 import "ServerData.proto";
 import "CommonFilterProto.proto";
 
@@ -172,6 +175,9 @@ message HoloholoClientTelemetryOmniProto {
 		ImageGalleryTelemetry image_gallery_telemetry = 71;
 		PlayerShownLevelUpShareScreenTelemetry player_shown_level_up_share_screen_telemetry = 72;
 		ReferralTelemetry referral_telemetry = 73;
+		UploadManagementTelemetry upload_management_telemetry = 74;
+		WayspotEditTelemetry wayspot_edit_telemetry = 75;
+		ClientSettingsTelemetry client_settings_telemetry = 76;
 	}
 
 	ServerData server_data = 1001;

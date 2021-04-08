@@ -40,4 +40,5 @@ message ClientMapCellProto {
 	repeated ClientSpawnPointProto decimated_spawn_point = 9;
 	repeated MapPokemonProto catchable_pokemon = 10;
 	repeated NearbyPokemonProto nearby_pokemon = 11;
+	string route_list_hash = 15;
 }

@@ -81,6 +81,7 @@ import "CatchPokemonGlobalSettingsProto.proto";
 import "IdfaSettingsProto.proto";
 import "FormChangeSettingsProto.proto";
 import "StoreIapSettingsProto.proto";
+import "UploadManagementSettings.proto";
 
 message GlobalSettingsProto {
 	FortSettingsProto fort_settings = 2;
@@ -147,4 +148,5 @@ message GlobalSettingsProto {
 	IdfaSettingsProto idfa_settings = 67;
 	FormChangeSettingsProto form_change_settings = 68;
 	repeated StoreIapSettingsProto iap_settings = 69;
+	UploadManagementSettings upload_management_settings = 72;
 }

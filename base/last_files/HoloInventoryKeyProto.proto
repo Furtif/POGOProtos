@@ -48,12 +48,13 @@ message HoloInventoryKeyProto {
 		bool vs_seeker_upgrades = 17;
 		bool route_maker = 18;
 		bool limited_purchase_sku_record = 19;
+		bool route_play = 20;
 		int32 mega_evo_pokemon_species_id = 21;
 		string sticker_id = 22;
 		bool pokemon_home = 23;
 		HoloBadgeType badge = 24;
 		bool player_stats_snapshot = 25;
 		int64 unknown_key = 26;
-		uint64 dummy_data = 27;
+		uint64 fake_data = 27;
 	}
 }

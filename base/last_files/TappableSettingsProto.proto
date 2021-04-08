@@ -21,15 +21,12 @@
 syntax = "proto3";
 package POGOProtos.Rpc;
 
-message EventBannerSectionProto {
-	string event_icon = 1;
-	string title_text = 2;
-	string body_text = 3;
-	string image_url = 4;
-	string header_image_url = 5;
-	string image_overlay_text = 6;
-	string link_from_image = 7;
-	string image_sub_text = 8;
-	repeated string image_urls = 9;
-	int64 image_auto_scroll_ms = 10;
+message TappableSettingsProto {
+	float visible_radius_meters = 1;
+	float spawn_angle_degrees = 2;
+	float movement_respawn_threshold_meters = 3;
+	float buddy_fov_degrees = 4;
+	float buddy_collect_probability = 5;
+	bool disable_player_collection = 6;
+	float avg_tappables_in_view = 7;
 }
