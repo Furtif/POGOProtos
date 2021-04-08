@@ -5268,6 +5268,12 @@ message BoundingRect {
 	double west = 4;
 }
 
+message BreadcrumbRecordProto {
+	int64 timestamp_ms = 1;
+	double latitude_deg = 2;
+	double longitude_deg = 3;
+}
+
 message BuddyActivityCategorySettings {
 	BuddyActivityCategory activity_category = 1;
 	int32 max_points_per_day = 2;
@@ -7623,10 +7629,6 @@ message DownloadUrlRequestProto {
 message DumbBeaconProto {
 }
 
-message OpenSponsoredGiftProto {
-	bytes encrypted_ad_token = 1;
-}
-
 message EchoOutProto {
 	string context = 1;
 }
@@ -8163,10 +8165,6 @@ message ExperienceBoostAttributesProto {
 	int32 boost_duration_ms = 2;
 }
 
-message JournalVersionProto {
-	int32 version = 1;
-}
-
 message FakeDataProto {
 	PokemonProto fake_pokemon = 1;
 }
@@ -8563,10 +8561,6 @@ message FriendshipMilestoneRewardNotificationProto {
 message FriendshipMilestoneRewardProto {
 	string friend_id = 1;
 	FriendshipLevelMilestone friendship_milestone = 2;
-}
-
-message SfidaDowserRequest {
-	int64 encounter_id = 1;
 }
 
 message GameClientPhotoGalleryPoiImageProto {
@@ -9229,6 +9223,12 @@ message GetGeofencedAdOutProto {
 
 	Result result = 1;
 	AdDetails ad_details = 2;
+}
+
+message GetGeofencedAdProto {
+	double lat_degrees = 1;
+	double lng_degrees = 2;
+	AdTargetingInfoProto ad_targeting_info = 3;
 }
 
 message GetGiftBoxDetailsOutProto {
@@ -10872,6 +10872,13 @@ message InputSettingsProto {
 	float spin_speed_multiplier = 3;
 }
 
+message InternalAuthProto {
+	string email = 1;
+	string player_id = 2;
+	string app_id = 3;
+	string key = 4;
+}
+
 message InvasionAvailabilitySettingsProto {
 	enum InvasionAvailabilitySettingsId {
 		INVASION_AVAILABILITY_SETTINGS_UNSET = 0;
@@ -11117,12 +11124,6 @@ message ItemTelemetry {
 	string item_id_string = 5;
 }
 
-message BreadcrumbRecordProto {
-	int64 timestamp_ms = 1;
-	double latitude_deg = 2;
-	double longitude_deg = 3;
-}
-
 message JoinBuddyMultiplayerSessionOutProto {
 	enum Result {
 		JOIN_SUCCESS = 0;
@@ -11205,20 +11206,8 @@ message JournalRemoveEntryProto {
 	HashedKeyProto hashed_key = 1;
 }
 
-message SfidaUpdateRequest {
-	double player_lat = 1;
-	double player_lng = 2;
-}
-
-message GetGeofencedAdProto {
-	double lat_degrees = 1;
-	double lng_degrees = 2;
-	AdTargetingInfoProto ad_targeting_info = 3;
-}
-
-message UpdateBreadcrumbHistoryRequestProto {
-	string session_context = 1;
-	repeated BreadcrumbRecordProto breadcrumb_history = 2;
+message JournalVersionProto {
+	int32 version = 1;
 }
 
 message KangarooSettingsProto {
@@ -11229,13 +11218,6 @@ message KoalaSettingsProto {
 	string app_id = 1;
 	bool use_sandbox = 2;
 	bool use_koala = 3;
-}
-
-message InternalAuthProto {
-	string email = 1;
-	string player_id = 2;
-	string app_id = 3;
-	string key = 4;
 }
 
 message Label {
@@ -12098,11 +12080,6 @@ message NpcPokemonProto {
 	PokemonDisplayProto pokemon_display = 2;
 }
 
-message SfidaAuthToken {
-	bytes response_token = 1;
-	string sfida_id = 2;
-}
-
 message OnboardingSettingsProto {
 	bool skip_avatar_customization = 1;
 	bool disable_initial_ar_prompt = 2;
@@ -12289,6 +12266,10 @@ message OpenSponsoredGiftOutProto {
 	LootProto rewards = 2;
 }
 
+message OpenSponsoredGiftProto {
+	bytes encrypted_ad_token = 1;
+}
+
 message OpenTradingOutProto {
 	enum Result {
 		UNSET = 0;
@@ -12320,10 +12301,6 @@ message OpenTradingProto {
 
 message OptOutProto {
 	repeated string categories = 1;
-}
-
-message SfidaCertificationResponse {
-	bytes payload = 1;
 }
 
 message ParticipationProto {
@@ -17459,6 +17436,11 @@ message SetPokemonTagsForPokemonProto {
 	repeated PokemonTagChangeProto tag_changes = 1;
 }
 
+message SfidaAuthToken {
+	bytes response_token = 1;
+	string sfida_id = 2;
+}
+
 message SfidaCaptureRequest {
 	string spawnpoint_id = 1;
 	int64 encounter_id = 2;
@@ -17497,6 +17479,14 @@ message SfidaCertificationRequest {
 	bytes payload = 2;
 }
 
+message SfidaCertificationResponse {
+	bytes payload = 1;
+}
+
+message SfidaDowserRequest {
+	int64 encounter_id = 1;
+}
+
 message SfidaDowserResponse {
 	enum Result {
 		UNSET = 0;
@@ -17533,6 +17523,11 @@ message SfidaMetricsUpdate {
 	UpdateType update_type = 1;
 	int64 timestamp_ms = 2;
 	SfidaMetrics metrics = 3;
+}
+
+message SfidaUpdateRequest {
+	double player_lat = 1;
+	double player_lng = 2;
 }
 
 message SfidaUpdateResponse {
@@ -18443,6 +18438,11 @@ message UpdateAdventureSyncFitnessResponseProto {
 
 message UpdateAdventureSyncSettingsRequestProto {
 	AdventureSyncSettingsProto adventure_sync_settings = 1;
+}
+
+message UpdateBreadcrumbHistoryRequestProto {
+	string session_context = 1;
+	repeated BreadcrumbRecordProto breadcrumb_history = 2;
 }
 
 message UpdateBreadcrumbHistoryResponseProto {
