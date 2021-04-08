@@ -10,7 +10,7 @@ from subprocess import call
 #warnings.simplefilter('error')
 
 # Variables
-global_version = '0.203.1'
+global_version = '0.205.0'
 protoc_executable = "protoc"
 package_name = 'POGOProtos.Rpc'
 input_file = "POGOProtos.Rpc.proto"
