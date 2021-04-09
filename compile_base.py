@@ -1023,6 +1023,12 @@ generated_file = raw_proto_file.replace(raw_name, input_file)
 descriptor_file = generated_file.replace(".proto", ".desc")
 descriptor_file_arguments = ['--include_source_info', '--include_imports']
 
+# small ???
+try:
+    os.unlink(descriptor_file)
+except OSError:
+    pass
+
 commands.append(
     """"{0}" --proto_path="{1}" --descriptor_set_out="{2}" {3} {4}""".format(
         protoc_executable,
