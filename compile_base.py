@@ -1004,7 +1004,8 @@ def add_command_for_new_proto_file(file):
 compile_ext = 'proto'
 
 if gen_base and gen_files and gen_only:
-    lang = 'cpp'
+    if lang == 'proto':
+        lang = 'cpp'
     compile_ext = 'remaster all'
 elif gen_base and not gen_only and not gen_files:
     compile_ext = 'base'
@@ -1013,7 +1014,7 @@ elif not gen_base and gen_only and not gen_files:
 elif not gen_base and not gen_only and gen_files:
     compile_ext = 'v' + version + '.proto, generate files'
 elif lang != 'proto':
-    compile_ext = lang
+    compile_ext = 'out mode (' + lang + ')'
 
 
 print("Compile: " + compile_ext + ", please await...")
