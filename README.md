@@ -23,18 +23,18 @@ We are following [semantic versioning](http://semver.org/) for POGOProtos.  Ever
 
 | Additional resources as *.json files | Source                                                                               | Status
 |------------------------|--------------------------------------------------------------------------------------|--------
-| [v2_GAME_MASTER.json](https://raw.githubusercontent.com/Furtif/POGOProtos/master/GM/v2_GAME_MASTER.json) | Root                                   |  OK
-| [GAME_MASTER.json](https://raw.githubusercontent.com/Furtif/POGOProtos/master/GM/GAME_MASTER.json) | Root                                   |  OK
-| [ASSET_DIGEST.json](https://raw.githubusercontent.com/Furtif/POGOProtos/master/GM/ASSET_DIGEST.json) | Root                                   |  OK
+| [v2_GAME_MASTER.json](https://raw.githubusercontent.com/Furtif/POGOProtos/master/GM/v2_GAME_MASTER.json) | [Root](https://github.com/Furtif/POGOProtos/tree/master/GM)                                   |  OK
+| [GAME_MASTER.json](https://raw.githubusercontent.com/Furtif/POGOProtos/master/GM/GAME_MASTER.json) | [Root](https://github.com/Furtif/POGOProtos/tree/master/GM)                                   |  OK
+| [ASSET_DIGEST.json](https://raw.githubusercontent.com/Furtif/POGOProtos/master/GM/ASSET_DIGEST.json) | [Root](https://github.com/Furtif/POGOProtos/tree/master/GM)                                   |  OK
 
 | Additional resources as *.txt files [Decode mode by script](https://github.com/Furtif/POGOProtos#decode-game-master-or-asset-digest)| Source                                                                               | Status
 |------------------------|--------------------------------------------------------------------------------------|--------
-| [v2_GAME_MASTER.txt](https://raw.githubusercontent.com/Furtif/POGOProtos/master/GM/v2_GAME_MASTER.txt) | Root                                   |  OK
-| [ASSET_DIGEST.txt](https://raw.githubusercontent.com/Furtif/POGOProtos/master/GM/ASSET_DIGEST.txt) | Root                                   |  OK
+| [v2_GAME_MASTER.txt](https://raw.githubusercontent.com/Furtif/POGOProtos/master/GM/v2_GAME_MASTER.txt) | [Root](https://github.com/Furtif/POGOProtos/tree/master/GM)                                   |  OK
+| [ASSET_DIGEST.txt](https://raw.githubusercontent.com/Furtif/POGOProtos/master/GM/ASSET_DIGEST.txt) | [Root](https://github.com/Furtif/POGOProtos/tree/master/GM)                                   |  OK
 
 | Additional resources as *.xml files | Source                                                                               | Status
 |------------------------|--------------------------------------------------------------------------------------|--------
-| [v2_GAME_MASTER.xml](https://raw.githubusercontent.com/Furtif/POGOProtos/master/GM/v2_GAME_MASTER.xml) | Root                                   |  OK
+| [v2_GAME_MASTER.xml](https://raw.githubusercontent.com/Furtif/POGOProtos/master/GM/v2_GAME_MASTER.xml) | [Root](https://github.com/Furtif/POGOProtos/tree/master/GM)                                   |  OK
 
 ### Usage
 If you want to figure out the current version in an automated system, use this file.
