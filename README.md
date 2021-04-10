@@ -41,6 +41,37 @@ If you want to figure out the current version in an automated system, use this f
 [.current-version](https://github.com/Furtif/POGOProtos/raw/master/.current-version)
 *Note: This file will contain pre-release versions too.*
 
+```
+usage: compile_base.py [-h] [-gm GENERATE_GAME_MASTER]
+                       [-ga GENERATE_ASSET_DIGEST] [-l LANG] [-v VERSION]
+                       [-o OUT_PATH] [-m] [-g] [-b] [-k] [-gf] [-ch]
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -gm GENERATE_GAME_MASTER, --generate_game_master GENERATE_GAME_MASTER
+                        Generates v2_GAME_MASTER.txt.
+  -ga GENERATE_ASSET_DIGEST, --generate_asset_digest GENERATE_ASSET_DIGEST
+                        Generates ASSET_DIGEST.txt.
+  -l LANG, --lang LANG  Language to produce proto single file.
+  -v VERSION, --version VERSION
+                        Set version out ex:. (0.195.2)
+  -o OUT_PATH, --out_path OUT_PATH
+                        Output path for proto single file.
+  -m, --java_multiple_files
+                        Write each message to a separate .java file.
+  -g, --generate_only   Generates only proto compilable.
+  -b, --generate_new_base
+                        Generates new proto base refs.
+  -k, --keep_proto_file
+                        Do not remove .proto file after compiling.
+  -gf, --generate_proto_files
+                        Generates base/last_files/*.proto.
+  -ch, --clean_holo_string
+                        Remove holo* from names out HoloPokemonId ->
+                        PokemonId.
+                        
+```
+
 ### Preparation
 Current recommended protoc version: "Protocol Buffers v3.15.8".
 You can find download links [here](https://github.com/google/protobuf/releases).
