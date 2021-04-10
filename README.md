@@ -44,17 +44,19 @@ If you want to figure out the current version in an automated system, use this f
 ```
 usage: compile_base.py [-h] [-gm GENERATE_GAME_MASTER]
                        [-ga GENERATE_ASSET_DIGEST] [-l LANG] [-v VERSION]
-                       [-o OUT_PATH] [-m] [-g] [-b] [-k] [-gf] [-ch]
+                       [-o OUT_PATH] [-m] [-g] [-b] [-k] [-gf]
 
 optional arguments:
   -h, --help            show this help message and exit
   -gm GENERATE_GAME_MASTER, --generate_game_master GENERATE_GAME_MASTER
-                        Generates v2_GAME_MASTER.txt.
+                        Generates v2_GAME_MASTER.txt form GENERATE_GAME_MASTER
+                        = PATH/MY_BINARY.
   -ga GENERATE_ASSET_DIGEST, --generate_asset_digest GENERATE_ASSET_DIGEST
-                        Generates ASSET_DIGEST.txt.
+                        Generates ASSET_DIGEST.txt form GENERATE_ASSET_DIGEST
+                        = PATH/MY_BINARY.
   -l LANG, --lang LANG  Language to produce proto single file.
   -v VERSION, --version VERSION
-                        Set version out ex:. (0.195.2)
+                        Set version out ex:. (0.205.0)
   -o OUT_PATH, --out_path OUT_PATH
                         Output path for proto single file.
   -m, --java_multiple_files
@@ -66,9 +68,6 @@ optional arguments:
                         Do not remove .proto file after compiling.
   -gf, --generate_proto_files
                         Generates base/last_files/*.proto.
-  -ch, --clean_holo_string
-                        Remove holo* from names out HoloPokemonId ->
-                        PokemonId.
                         
 ```
 
