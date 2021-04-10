@@ -27,7 +27,7 @@ We are following [semantic versioning](http://semver.org/) for POGOProtos.  Ever
 | [GAME_MASTER.json](https://raw.githubusercontent.com/Furtif/POGOProtos/master/GM/GAME_MASTER.json) | [Root](https://github.com/Furtif/POGOProtos/tree/master/GM)                                   |  OK
 | [ASSET_DIGEST.json](https://raw.githubusercontent.com/Furtif/POGOProtos/master/GM/ASSET_DIGEST.json) | [Root](https://github.com/Furtif/POGOProtos/tree/master/GM)                                   |  OK
 
-| Additional resources as *.txt files [Decode mode by script](https://github.com/Furtif/POGOProtos#decode-game-master-or-asset-digest)| Source                                                                               | Status
+| Additional resources as *.txt files (_[Decode mode by script](https://github.com/Furtif/POGOProtos#decode-game-master-or-asset-digest)_)| Source                                                                               | Status
 |------------------------|--------------------------------------------------------------------------------------|--------
 | [v2_GAME_MASTER.txt](https://raw.githubusercontent.com/Furtif/POGOProtos/master/GM/v2_GAME_MASTER.txt) | [Root](https://github.com/Furtif/POGOProtos/tree/master/GM)                                   |  OK
 | [ASSET_DIGEST.txt](https://raw.githubusercontent.com/Furtif/POGOProtos/master/GM/ASSET_DIGEST.txt) | [Root](https://github.com/Furtif/POGOProtos/tree/master/GM)                                   |  OK
