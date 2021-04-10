@@ -58,13 +58,13 @@ Use `homebrew` to install `protobuf ` with `brew install --devel protobuf`.
 The compilation creates output specifically for the target language, i.e. respecting naming conventions, etc.  
 This is an example of how the generated code will be organized:
 
-##### Compile last raw
+##### Compile vx.xxx.x.proto [depending on the version chosen](https://github.com/Furtif/POGOProtos/blob/master/compile_base.py#L12)
 
  * _Note: the *.desc file is auto created in this function_
 
 ```
 python compile_base.py -l cpp -k:
- - v0.205.0.proto -> out/single_file/cpp/POGOProtos.Rpc.desc
+ - vx.xxx.x.proto -> out/single_file/cpp/POGOProtos.Rpc.desc
  -                -> out/single_file/cpp/POGOProtos.Rpc.pb.cc
  -                -> out/single_file/cpp/POGOProtos.Rpc.pb.h
  -                -> out/single_file/cpp/POGOProtos.Rpc.proto
