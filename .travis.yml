@@ -17,9 +17,9 @@ install:
 script:
   # Build all test...
   - chmod +x ./compile_base.py
-  # Generates new base.proto and last_files/* from raw and all test...
+  # Generates remaster_all(), base(), generate_new(), generate_files(), out_mode(cpp)...
   - ./compile_base.py -g -b -gf
-  - ./compile_base.py -l cpp -k
+  #  - ./compile_base.py -l cpp -k
   #  - ./compile_base.py -l csharp -k
   #  - ./compile_base.py -l java -k
   #  - ./compile_base.py -l js -k
