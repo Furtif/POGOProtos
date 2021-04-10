@@ -1006,15 +1006,15 @@ compile_ext = 'proto'
 if gen_base and gen_files and gen_only:
     if lang == 'proto':
         lang = 'cpp'
-    compile_ext = 'remaster all'
+    compile_ext = 'remaster_all()'
 elif gen_base and not gen_only and not gen_files:
-    compile_ext = 'base'
+    compile_ext = 'base()'
 elif not gen_base and gen_only and not gen_files:
-    compile_ext = 'v' + version + '.proto, generate new()'
+    compile_ext = 'v' + version + '.proto, generate_new()'
 elif not gen_base and not gen_only and gen_files:
-    compile_ext = 'v' + version + '.proto, generate files'
-elif lang != 'proto':
-    compile_ext = 'out mode (' + lang + ')'
+    compile_ext = 'v' + version + '.proto, generate_files()'
+else:
+    compile_ext = 'out_mode(' + lang + ')'
 
 
 print("Compile: " + compile_ext + ", please await...")
