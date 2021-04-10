@@ -27,10 +27,10 @@ def is_blank(my_string):
 
 # args
 parser = argparse.ArgumentParser()
-parser.add_argument("-gm", "--generate_game_master", help="Generates v2_GAME_MASTER.txt.")
-parser.add_argument("-ga", "--generate_asset_digest", help="Generates ASSET_DIGEST.txt.")
+parser.add_argument("-gm", "--generate_game_master", help="Generates v2_GAME_MASTER.txt form GENERATE_GAME_MASTER = PATH/MY_BINARY.")
+parser.add_argument("-ga", "--generate_asset_digest", help="Generates ASSET_DIGEST.txt form GENERATE_ASSET_DIGEST = PATH/MY_BINARY.")
 parser.add_argument("-l", "--lang", help="Language to produce proto single file.")
-parser.add_argument("-v", "--version", help="Set version out ex:. (0.195.2)")
+parser.add_argument("-v", "--version", help="Set version out ex:. (0.205.0)")
 parser.add_argument("-o", "--out_path", help="Output path for proto single file.")
 parser.add_argument("-m", "--java_multiple_files", action='store_true',
                     help='Write each message to a separate .java file.')
@@ -38,8 +38,6 @@ parser.add_argument("-g", "--generate_only", action='store_true', help='Generate
 parser.add_argument("-b", "--generate_new_base", action='store_true', help='Generates new proto base refs.')
 parser.add_argument("-k", "--keep_proto_file", action='store_true', help='Do not remove .proto file after compiling.')
 parser.add_argument("-gf", "--generate_proto_files", action='store_true', help='Generates base/last_files/*.proto.')
-parser.add_argument("-ch", "--clean_holo_string", action='store_true',
-                    help='Remove holo* from names out HoloPokemonId -> PokemonId.')
 args = parser.parse_args()
 
 # Set defaults args
@@ -51,7 +49,6 @@ gen_files = args.generate_proto_files
 version = args.version or global_version
 gen_base = args.generate_new_base
 keep_file = args.keep_proto_file
-clean_holo_string = args.clean_holo_string
 gen_game_master = args.generate_game_master or None
 gen_asset_digest = args.generate_asset_digest or None
 
@@ -624,8 +621,6 @@ def open_proto_file(main_file, head):
     ## fixes other names...
     messages = messages.replace("Titan", "")
     messages = messages.replace("Platform", "")
-    if clean_holo_string:
-        messages = messages.replace("Holo", "").replace("holo", "")
     # revert ref_py_x
     messages = messages.replace("REF_PY_1", "Platform")
     ##
